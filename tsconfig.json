@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "declaration": true,
+    "declarationDir": "."
+  },
+  "extends": "@asjuanguilherme/tsconfig/react-library.json",
+  "include": [".", "src/assets"],
+  "exclude": ["dist", "node_modules"]
+}
