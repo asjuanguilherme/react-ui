@@ -1,0 +1,60 @@
+import {
+  DropdownMenu,
+  BRFlagIcon,
+  USAFlagIcon,
+  DropdownMenuProps,
+} from 'components'
+
+export type ValidLocales = 'pt-BR' | 'en'
+
+export type LanguagesDropdownProps = DropdownMenuProps & {
+  items?: never
+  title?: never
+  icon?: never
+  activeLocale?: ValidLocales
+  onLocaleChange?: (locale: ValidLocales) => void
+}
+
+const locales = [
+  {
+    locale: 'pt-BR',
+    title: {
+      'pt-BR': 'Português',
+      en: 'Portuguese',
+    },
+    icon: BRFlagIcon,
+  },
+  {
+    locale: 'en',
+    title: {
+      'pt-BR': 'Inglês',
+      en: 'English',
+    },
+    icon: USAFlagIcon,
+  },
+] as const
+
+export const LanguagesDropdown = ({
+  activeLocale = 'en',
+  onLocaleChange,
+  ...props
+}: LanguagesDropdownProps) => {
+  const activeLocaleData = locales.filter(
+    item => item.locale === activeLocale,
+  )[0]!
+
+  return (
+    <DropdownMenu
+      {...props}
+      icon={activeLocaleData.icon}
+      title={activeLocaleData.title[activeLocale]}
+      items={locales.map(item => ({
+        icon: item.icon,
+        title: item.title[activeLocale],
+        onClick: () => {
+          onLocaleChange && onLocaleChange(item.locale)
+        },
+      }))}
+    />
+  )
+}
