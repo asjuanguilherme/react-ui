@@ -8,39 +8,44 @@ import { terser } from 'rollup-plugin-terser'
 
 import { createRequire } from 'node:module'
 const require = createRequire(import.meta.url)
-const packageJson = require('./package.json')
+const pkg = require('./package.json')
 
-/** @type {import('rollup').RollupOptions} */
-export default [
-  {
-    input: 'src/index.ts',
-    output: [
-      {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: true,
-        name: 'asjuanguilherme-react-ui',
-      },
-      {
-        file: packageJson.module,
-        format: 'esm',
-        sourcemap: true,
-      },
-    ],
-    plugins: [
-      peerDepsExternal(),
-      typescript({ tsconfig: './tsconfig.json' }),
-      nodeResolve({
-        extensions: ['.ts', '.tsx'],
-      }),
-      babel({
-        babelHelpers: 'bundled',
-        presets: ['@babel/preset-react'],
-        extensions: ['.js', '.jsx'],
-      }),
-      commonJs(),
-      postcss(),
-      terser(),
-    ],
-  },
-]
+export default {
+  input: 'src/index.ts',
+  output: [
+    {
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: true,
+      name: 'asjuanguilherme-react-ui',
+    },
+    {
+      file: pkg.module,
+      format: 'esm',
+      sourcemap: true,
+    },
+  ],
+  plugins: [
+    peerDepsExternal(),
+    typescript({ tsconfig: './tsconfig.json' }),
+    nodeResolve({
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    }),
+    commonJs(),
+    babel({
+      babelHelpers: 'bundled',
+      presets: ['@babel/preset-react', '@babel/preset-typescript'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      plugins: [
+        ['babel-plugin-styled-components', { ssr: false, displayName: true }],
+        // Adicione quaisquer outros plugins Babel necessários aqui
+      ],
+    }),
+    postcss({
+      extract: true,
+      modules: true,
+      extensions: ['.css'],
+    }),
+    terser(),
+  ],
+}
