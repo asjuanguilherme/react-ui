@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react'
 import { DEFAULT_THEME, getThemeCookie, saveThemeCookie } from './utils'
-import { Theme, themes, GlobalStyles } from 'styles'
+import { Theme, themes } from 'styles'
 import { ThemeObject } from 'types'
 import { ThemeProvider } from 'styled-components'
 
@@ -61,10 +61,7 @@ export const GlobalThemeProvider = ({
 
   return (
     <GlobalThemeContext.Provider value={{ ...selectedThemeData, themeToggle }}>
-      <ThemeProvider theme={selectedThemeData}>
-        <GlobalStyles />
-        {children}
-      </ThemeProvider>
+      <ThemeProvider theme={selectedThemeData}>{children}</ThemeProvider>
     </GlobalThemeContext.Provider>
   )
 }
