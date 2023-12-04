@@ -1,31 +1,18 @@
 {
   "name": "@asjuanguilherme/react-ui",
   "version": "0.1.0",
-  "description": "A react ui kit built with typescript and styled components with customizable style",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
-  "scripts": {
-    "clean": "rm -rf ./dist",
-    "build": "yarn clean && rollup -c",
-    "dev": "rollup -c -w",
-    "type:check": "tsc --noEmit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/asjuanguilherme/react-ui.git"
-  },
+  "description": "A React UI components library built with TypeScript and styled-components with customizable styles",
   "keywords": [
     "react",
     "ui",
-    "kit",
     "design",
-    "system",
-    "components",
-    "library"
+    "styled-components",
+    "typescript",
+    "component-library",
+    "component-kit",
+    "user-interface",
+    "frontend",
+    "web-development"
   ],
   "author": {
     "name": "Juan Guilherme",
@@ -33,23 +20,37 @@
     "url": "https://juanguilher.me"
   },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asjuanguilherme/react-ui.git"
+  },
   "bugs": {
     "url": "https://github.com/asjuanguilherme/react-ui/issues"
   },
   "homepage": "https://github.com/asjuanguilherme/react-ui#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "type:check": "tsc --noEmit"
+  },
   "devDependencies": {
     "@asjuanguilherme/prettier-config": "^1.0.0",
-    "@asjuanguilherme/tsconfig": "^0.1.0",
+    "@asjuanguilherme/tsconfig": "^0.2.1",
+    "@asjuanguilherme/js-utils": "^0.1.3",
     "@babel/core": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
-    "@types/lodash": "^4.14.202",
-    "@types/react": "^18.2.40",
-    "@types/react-dom": "^18.2.17",
     "babel-plugin-styled-components": "^2.1.4",
     "lodash": "^4.17.21",
     "next": "^13.5.4",
@@ -59,12 +60,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^4.6.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "styled-components": "^6.1.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.2"
+    "styled-components": "^6.1.1"
   },
   "prettier": "@asjuanguilherme/prettier-config",
   "publishConfig": {
@@ -72,11 +72,10 @@
   },
   "peerDependencies": {
     "next": "^13.5.4",
+    "nookies": "^2.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.1.1"
-  },
-  "dependencies": {
+    "styled-components": "^6.1.1",
     "@asjuanguilherme/js-utils": "^0.1.3",
     "polished": "^4.2.2"
   }

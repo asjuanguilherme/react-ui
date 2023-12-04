@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "declaration": false,
-    "declarationMap": false
+    "noEmit": true,
+    "outDir": "."
   },
   "extends": "@asjuanguilherme/tsconfig/react-library.json",
   "include": [".", "src/assets"],
