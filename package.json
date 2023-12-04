@@ -37,7 +37,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "type:check": "tsc --noEmit"
+    "type:check": "tsc --noEmit",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@asjuanguilherme/js-utils": "^0.2.2",
