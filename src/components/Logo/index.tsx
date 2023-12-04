@@ -1,5 +1,5 @@
 import { colors } from 'styles/tokens'
-import React from 'react'
+
 import { HTMLStyleAttributes } from '../../types'
 
 export type LogoVariants =

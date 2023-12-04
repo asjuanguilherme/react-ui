@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 import * as S from './styles'
 import { SupportedHTMLElements } from 'styled-components'
 import { HTMLStyleAttributes } from 'types'

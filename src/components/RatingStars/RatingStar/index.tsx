@@ -1,6 +1,5 @@
 import { LayerIndex } from 'types'
 import * as S from './styles'
-import React from 'react'
 
 export type RatingStarProps = {
   onMouseOver: VoidFunction

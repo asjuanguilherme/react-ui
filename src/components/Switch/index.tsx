@@ -1,5 +1,5 @@
 import * as S from './styles'
-import React, { ChangeEventHandler } from 'react'
+import { ChangeEventHandler } from 'react'
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 
 export type SwitchProps = {

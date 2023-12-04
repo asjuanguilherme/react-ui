@@ -1,5 +1,4 @@
 import { createIconComponent } from './createIconComponent'
-import React from 'react'
 
 export const CalculatorSimpleIcon = createIconComponent({
   content: (

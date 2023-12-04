@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './styles'
 import { fieldSizes } from 'styles/tokens'
 import { ButtonBaseProps } from 'components/ButtonBase'

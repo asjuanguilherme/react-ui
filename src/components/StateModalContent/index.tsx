@@ -9,7 +9,6 @@ import {
   Spinner,
   Button,
 } from 'components'
-import React from 'react'
 
 export type StateType = 'info' | 'error' | 'loading' | 'warning' | 'success'
 

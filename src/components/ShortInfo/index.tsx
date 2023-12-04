@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import React, { ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react'
 
 import { HTMLStyleAttributes } from 'types'
 import _uniqueId from 'lodash/uniqueId'

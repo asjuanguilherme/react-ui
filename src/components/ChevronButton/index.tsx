@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, MutableRefObject } from 'react'
+import { MouseEventHandler, MutableRefObject } from 'react'
 import { IconComponent, Chevron, ChevronDirection } from 'components'
 import * as S from './styles'
 import { LayerIndex } from 'types'

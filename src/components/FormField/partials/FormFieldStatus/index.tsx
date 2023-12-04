@@ -4,7 +4,7 @@ import {
   CheckIcon,
   InfoCircleIcon,
 } from 'components/icons'
-import React from 'react'
+
 import * as S from './styles'
 
 export type FormFieldStatusType = 'info' | 'error' | 'success'

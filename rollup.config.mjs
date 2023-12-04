@@ -9,6 +9,25 @@ import pkg from './package.json' assert { type: 'json' }
 import url from '@rollup/plugin-url'
 import copy from 'rollup-plugin-copy'
 
+const commonPlugins = [
+  url(),
+  peerDepsExternal(),
+  nodeResolve({
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  }),
+  commonJs({ sourceMap: false }),
+  typescript({ tsconfig: './tsconfig.json' }),
+  postcss(),
+  copy({
+    targets: [
+      {
+        src: 'src/fonts/assets/*',
+        dest: 'dist/fonts/assets/',
+      },
+    ],
+  }),
+]
+
 export default [
   {
     input: 'src/index.ts',
@@ -17,24 +36,39 @@ export default [
         file: pkg.main,
         format: 'cjs',
         sourcemap: true,
-        name: 'asjuanguilherme-react-ui',
         interop: 'auto',
+        globals: {
+          react: 'React',
+        },
       },
       {
         file: pkg.module,
         format: 'esm',
         sourcemap: true,
         interop: 'auto',
+        globals: {
+          react: 'React',
+        },
+      },
+    ],
+    plugins: [...commonPlugins],
+  },
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        file: 'dist/index.min.js',
+        format: 'cjs',
+        sourcemap: true,
+        name: 'asjuanguilherme-react-ui',
+        interop: 'auto',
+        globals: {
+          react: 'React',
+        },
       },
     ],
     plugins: [
-      url(),
-      peerDepsExternal(),
-      nodeResolve({
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      }),
-      commonJs({ sourceMap: false }),
-      typescript({ tsconfig: './tsconfig.json' }),
+      ...commonPlugins,
       babel({
         babelHelpers: 'bundled',
         exclude: ['node_modules'],
@@ -44,16 +78,7 @@ export default [
           ['babel-plugin-styled-components', { ssr: false, displayName: true }],
         ],
       }),
-      postcss(),
       terser(),
-      copy({
-        targets: [
-          {
-            src: 'src/fonts/assets/*',
-            dest: 'dist/fonts/assets/',
-          },
-        ],
-      }),
     ],
   },
 ]

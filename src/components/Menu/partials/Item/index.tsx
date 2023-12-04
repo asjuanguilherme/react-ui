@@ -1,5 +1,5 @@
 import { IconComponent } from 'components/icons'
-import React, { MouseEventHandler, MutableRefObject } from 'react'
+import { MouseEventHandler, MutableRefObject } from 'react'
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 import * as S from './styles'
 

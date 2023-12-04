@@ -1,5 +1,5 @@
 export * from './utils'
-import React, {
+import {
   createContext,
   ReactNode,
   useContext,

@@ -1,5 +1,5 @@
 import * as S from './styles'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { LayerIndex } from 'types'
 import { Button, XmarkIcon } from 'components'
 

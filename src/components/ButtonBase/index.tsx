@@ -1,5 +1,5 @@
 import * as S from './styles'
-import React from 'react'
+
 import { MouseEvent, MutableRefObject, ReactNode } from 'react'
 import { colors } from 'styles/tokens'
 import { HTMLStyleAttributes, LayerIndex } from 'types'

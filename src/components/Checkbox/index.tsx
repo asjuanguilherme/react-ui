@@ -1,6 +1,6 @@
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 import * as S from './styles'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { CheckIcon } from 'components/icons'
 
 export type CheckboxProps = {

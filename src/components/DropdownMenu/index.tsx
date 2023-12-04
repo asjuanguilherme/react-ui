@@ -1,4 +1,3 @@
-import React from 'react'
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 import { IconComponent } from 'components'
 import _uniqueId from 'lodash/uniqueId'

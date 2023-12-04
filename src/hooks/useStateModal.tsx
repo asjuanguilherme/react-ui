@@ -1,6 +1,5 @@
 import { ModalContextItemProps, useModal } from 'contexts/Modal'
 import { ButtonProps, StateModalContent } from 'components'
-import React from 'react'
 
 type StateModalProps = {
   title?: string

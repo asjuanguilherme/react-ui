@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import React from 'react'
+
 import { createElement, CSSProperties, ReactNode } from 'react'
 
 export type IconProps = {

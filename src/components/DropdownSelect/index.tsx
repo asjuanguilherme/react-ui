@@ -1,9 +1,4 @@
-import React, {
-  CSSProperties,
-  ChangeEventHandler,
-  useMemo,
-  useState,
-} from 'react'
+import { CSSProperties, ChangeEventHandler, useMemo, useState } from 'react'
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 import {
   IconComponent,

@@ -1,5 +1,5 @@
 import * as S from './styles'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { IconComponent, Spinner } from 'components'
 import { ButtonBaseProps } from 'components/ButtonBase'
 import { fieldSizes } from 'styles/tokens'

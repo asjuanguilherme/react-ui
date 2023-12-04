@@ -1,6 +1,6 @@
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 import * as S from './styles'
-import React, {
+import {
   MouseEventHandler,
   ReactNode,
   useEffect,

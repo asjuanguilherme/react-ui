@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 import { IconComponent, Menu, Accordion } from 'components'
 
