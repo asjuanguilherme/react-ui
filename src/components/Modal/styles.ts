@@ -10,7 +10,7 @@ import {
 } from 'styles/tokens'
 import { ModalVariant } from '.'
 import { LayerIndex } from 'types'
-import { fontFamily } from 'styles'
+import { fontFamily } from 'fonts'
 
 export const BoxContent = styled.div`
   flex: 1;
@@ -28,7 +28,7 @@ export const BoxContent = styled.div`
 export const Title = styled.h2`
   color: ${props => props.theme.colors.content.text};
   font-size: ${font.sizes.medium};
-  font-weight: ${fontFamily.montserrat.weight.medium};
+  font-weight: ${fontFamily.poppins.weights.medium};
   margin-bottom: 0;
 `
 

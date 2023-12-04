@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components'
 import { StateType } from '.'
 import { opacify } from 'polished'
 import { spacing, font, transition } from 'styles/tokens'
-import { fontFamily } from 'styles'
+import { fontFamily } from 'fonts'
 
 export const ActionButtons = styled.div`
   margin-top: ${spacing.sections.small};
@@ -19,7 +19,7 @@ export const Message = styled.div`
 
 export const Title = styled.span`
   font-size: ${font.sizes.medium};
-  font-weight: ${fontFamily.montserrat.weight};
+  font-weight: ${fontFamily.poppins.weights};
   line-height: 1.3em;
   margin-bottom: ${spacing.components.medium};
 `

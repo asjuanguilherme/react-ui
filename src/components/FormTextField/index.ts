@@ -7,7 +7,7 @@ import {
 } from 'styles/tokens'
 import { mix } from 'polished'
 import styled, { css } from 'styled-components'
-import { fontFamily } from 'styles'
+import { fontFamily } from 'fonts'
 import { LayerIndex } from 'types'
 
 export type TextFieldSharedStyleProps = {
@@ -22,12 +22,12 @@ export type TextFieldSharedStyleProps = {
 const textFieldSharedStyle = css`
   width: 100%;
   font-size: ${font.sizes.medium};
-  font-weight: ${fontFamily.montserrat.weight.regular};
+  font-weight: ${fontFamily.poppins.weights.regular};
   background: transparent;
   color: ${props => props.theme.colors.content.title};
 
   &::placeholder {
-    font-weight: ${fontFamily.montserrat.weight.regular};
+    font-weight: ${fontFamily.poppins.weights.regular};
     color: ${props => props.theme.colors.content.detail};
   }
 `

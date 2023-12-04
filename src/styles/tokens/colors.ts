@@ -30,3 +30,5 @@ export const colors = {
     dark: '#1A66B2',
   },
 }
+
+export type Colors = keyof typeof colors

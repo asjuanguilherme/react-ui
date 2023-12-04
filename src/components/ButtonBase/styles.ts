@@ -3,7 +3,8 @@ import { colors, spacing, transition, borderRadius } from 'styles/tokens'
 import { ButtonVariant } from '.'
 import { readableColor, grayscale } from 'polished'
 import { LayerIndex } from 'types'
-import { fontFamily, themes } from 'styles'
+import { themes } from 'styles'
+import { fontFamily } from 'fonts'
 
 export const Wrapper = styled.button<{
   $variant: ButtonVariant
@@ -20,7 +21,7 @@ export const Wrapper = styled.button<{
   line-height: 1em;
   align-items: center;
   justify-content: center;
-  font-weight: ${fontFamily.montserrat.weight.medium};
+  font-weight: ${fontFamily.poppins.weights.medium};
   gap: ${spacing.components.small};
   transition-duration: ${transition.fast};
   transition-property: background;

@@ -1,7 +1,7 @@
 import { borderRadius, font, spacing, transition } from 'styles/tokens'
 import { CardBase } from 'components/CardBase'
 import styled, { css } from 'styled-components'
-import { fontFamily } from 'styles'
+import { fontFamily } from 'fonts'
 
 export const Slug = styled.span`
   position: absolute;
@@ -14,7 +14,7 @@ export const Slug = styled.span`
   overflow: hidden;
 
   b {
-    font-weight: ${fontFamily.montserrat.weight.bold};
+    font-weight: ${fontFamily.poppins.weights.bold};
     color: ${props => props.theme.colors.main.primary.normal};
   }
 `
