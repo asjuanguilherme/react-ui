@@ -3,7 +3,7 @@ import {
   CircleExclamationIcon,
   CheckIcon,
   InfoCircleIcon,
-} from 'components/icons'
+} from 'icons'
 
 import * as S from './styles'
 

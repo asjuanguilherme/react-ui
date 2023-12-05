@@ -40,7 +40,6 @@ export * from './TriangleExclamation'
 export * from './Trophy'
 export * from './TruckFast'
 export * from './User'
-export * from './utils'
 export * from './WhatsApp'
 export * from './Xmark'
 // @endindex

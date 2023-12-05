@@ -1,8 +1,9 @@
 import { MouseEventHandler, MutableRefObject } from 'react'
-import { IconComponent, Chevron, ChevronDirection } from 'components'
+import { Chevron, ChevronDirection } from 'components'
 import * as S from './styles'
 import { LayerIndex } from 'types'
 import { fieldSizes } from 'styles/tokens'
+import { IconComponent } from 'icons'
 
 export type ChevronButtonProps = {
   [key: string]: any

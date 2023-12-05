@@ -1,6 +1,7 @@
 import { MouseEventHandler } from 'react'
 import { HTMLStyleAttributes, LayerIndex } from 'types'
-import { IconComponent, Menu, Accordion } from 'components'
+import { Menu, Accordion } from 'components'
+import { IconComponent } from 'icons'
 
 export type AccordionMenuItemProps = {
   title: string

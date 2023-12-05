@@ -1,5 +1,5 @@
 import { HTMLStyleAttributes, LayerIndex } from 'types'
-import { IconComponent } from 'components'
+import { IconComponent } from 'icons'
 import _uniqueId from 'lodash/uniqueId'
 import { ChevronButton, Popover, Menu } from 'components'
 import { MenuItemProps } from 'components/Menu/partials'

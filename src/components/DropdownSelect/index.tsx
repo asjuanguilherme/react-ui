@@ -1,15 +1,14 @@
-import { CSSProperties, ChangeEventHandler, useMemo, useState } from 'react'
+import { ChangeEventHandler, useMemo, useState } from 'react'
 import { HTMLStyleAttributes, LayerIndex } from 'types'
 import {
-  IconComponent,
   FormField,
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
-  MagIcon,
   TextInput,
 } from 'components'
 import _uniqueId from 'lodash/uniqueId'
 import { ChevronButton, Popover, Menu } from 'components'
+import { IconComponent, MagIcon } from 'icons'
 
 export type DropdownSelectSearchProps = {
   enabled: boolean

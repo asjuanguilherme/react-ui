@@ -1,8 +1,9 @@
 import * as S from './styles'
 import { ReactNode } from 'react'
-import { IconComponent, Spinner } from 'components'
+import { Spinner } from 'components'
 import { ButtonBaseProps } from 'components/ButtonBase'
 import { fieldSizes } from 'styles/tokens'
+import { IconComponent } from 'icons'
 
 export type ButtonProps = ButtonBaseProps & {
   children?: never

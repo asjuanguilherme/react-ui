@@ -3,7 +3,7 @@ import { rem } from 'polished'
 import styled, { css } from 'styled-components'
 import { LayerIndex } from 'types'
 import { CheckboxProps } from '.'
-import { CheckIcon } from 'components/icons'
+import { CheckIcon } from 'icons'
 
 export const Text = styled.span`
   text-align: left;

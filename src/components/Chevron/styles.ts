@@ -1,6 +1,6 @@
 import { transition } from 'styles/tokens'
 import styled from 'styled-components'
-import { ChevronDownIcon } from 'components/icons'
+import { ChevronDownIcon } from 'icons'
 import { ChevronDirection } from '.'
 
 const angleByDirection = {

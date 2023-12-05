@@ -8,7 +8,8 @@ import {
   useState,
 } from 'react'
 import _uniqueId from 'lodash/uniqueId'
-import { ChevronButton, IconComponent } from 'components'
+import { ChevronButton } from 'components'
+import { IconComponent } from 'icons'
 
 export type AccordionSize = 'small' | 'medium'
 

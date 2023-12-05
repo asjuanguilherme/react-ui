@@ -1,7 +1,8 @@
 import * as S from './styles'
 import { ReactNode } from 'react'
 import { LayerIndex } from 'types'
-import { Button, XmarkIcon } from 'components'
+import { Button } from 'components'
+import { XmarkIcon } from 'icons'
 
 export type ModalVariant = 'default' | 'discret'
 

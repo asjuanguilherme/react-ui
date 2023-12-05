@@ -1,14 +1,7 @@
 import * as S from './styles'
 import { ReactNode, useMemo } from 'react'
-import {
-  InfoIcon,
-  XmarkIcon,
-  CheckIcon,
-  TriangleExclamationIcon,
-  ButtonProps,
-  Spinner,
-  Button,
-} from 'components'
+import { ButtonProps, Spinner, Button } from 'components'
+import { TriangleExclamationIcon, XmarkIcon, CheckIcon, InfoIcon } from 'icons'
 
 export type StateType = 'info' | 'error' | 'loading' | 'warning' | 'success'
 

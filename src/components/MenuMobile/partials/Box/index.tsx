@@ -1,6 +1,6 @@
 import * as S from './styles'
 import { MenuMobileRootCallbackProps } from '../Root'
-import { HeartIcon } from 'components/icons'
+import { HeartIcon } from 'icons'
 import { ReactNode } from 'react'
 
 export type MenuMobileBoxProps = MenuMobileRootCallbackProps & {

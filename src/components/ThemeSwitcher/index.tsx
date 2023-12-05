@@ -1,5 +1,5 @@
 import { IconButton } from 'components/IconButton'
-import { IconComponent, MoonIcon, SunIcon } from 'components/icons'
+import { IconComponent, MoonIcon, SunIcon } from 'icons'
 import { useGlobalTheme } from 'contexts'
 import { ThemeObject } from 'types'
 

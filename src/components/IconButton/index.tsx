@@ -1,7 +1,8 @@
 import * as S from './styles'
 import { fieldSizes } from 'styles/tokens'
 import { ButtonBaseProps } from 'components/ButtonBase'
-import { Spinner, IconComponent } from 'components'
+import { Spinner } from 'components'
+import { IconComponent } from 'icons'
 
 export type BackgroundImagePositionY = 'top' | 'center' | 'bottom'
 export type BackgroundImagePositionX = 'left' | 'center' | 'right'

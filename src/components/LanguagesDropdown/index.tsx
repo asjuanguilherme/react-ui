@@ -1,9 +1,5 @@
-import {
-  DropdownMenu,
-  BRFlagIcon,
-  USAFlagIcon,
-  DropdownMenuProps,
-} from 'components'
+import { DropdownMenu, DropdownMenuProps } from 'components'
+import { BRFlagIcon, USAFlagIcon } from 'icons'
 
 export type ValidLocales = 'pt-BR' | 'en'
 

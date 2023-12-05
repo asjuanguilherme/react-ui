@@ -3,7 +3,7 @@ import * as S from './styles'
 import { MutableRefObject, ReactNode } from 'react'
 
 import { HTMLStyleAttributes } from 'types'
-import { IconComponent } from 'components/icons'
+import { IconComponent } from 'icons'
 import { colors } from 'styles/tokens'
 
 type Color = keyof typeof colors
