@@ -19,6 +19,7 @@ export const Wrapper = styled.span<{
   border-radius: ${borderRadius.circle};
   overflow: hidden;
   font-weight: ${fontFamily.poppins.weights.bold};
+  flex-shrink: 0;
 
   ${({ $size }) => css`
     width: ${$size}px;

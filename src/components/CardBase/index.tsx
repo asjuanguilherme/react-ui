@@ -7,6 +7,7 @@ export type CardBaseProps = {
   hoverable?: boolean
   children?: ReactNode
   roundedCorners?: 'small' | 'medium' | 'large' | 'none'
+  tag?: keyof HTMLElementTagNameMap
 } & HTMLAttributes<HTMLDivElement>
 
 export const CardBase = ({
@@ -14,11 +15,13 @@ export const CardBase = ({
   hoverable = false,
   children,
   roundedCorners = 'medium',
+  tag,
   ...props
 }: CardBaseProps) => {
   return (
     <S.Wrapper
       {...props}
+      as={tag}
       $layer={layer}
       $hoverable={hoverable}
       $roundedCorners={roundedCorners}
