@@ -3,14 +3,14 @@ import { GetServerSidePropsContext } from 'next'
 import { Theme } from 'lib/theming'
 import { objectKeys } from '@asjuanguilherme/js-utils'
 
-type ThemeCookieOptions<T extends Record<string, Theme>> = {
+export type SaveThemeCookieParams<T extends Record<string, Theme>> = {
   ctx?: GetServerSidePropsContext
   themeCookieKey?: string
   theme: keyof T
   themes: T
 }
 
-const isValidTheme = <T extends Record<string, Theme>>(
+export const isValidTheme = <T extends Record<string, Theme>>(
   newTheme: keyof T,
   themes: T,
 ): boolean => {
@@ -23,7 +23,7 @@ export const saveThemeCookie = <T extends Record<string, Theme>>({
   ctx,
   themeCookieKey = 'theme',
   themes,
-}: ThemeCookieOptions<T>): keyof T => {
+}: SaveThemeCookieParams<T>): keyof T => {
   if (!isValidTheme(theme, themes)) {
     const defaultTheme = objectKeys(themes)[0] as keyof T
     console.warn(
@@ -41,7 +41,7 @@ export const saveThemeCookie = <T extends Record<string, Theme>>({
   return theme
 }
 
-type GetThemeCookieOptions<T extends Record<string, Theme>> = {
+export type GetThemeCookieParams<T extends Record<string, Theme>> = {
   ctx?: GetServerSidePropsContext
   themeCookieKey?: string
   themes: T
@@ -51,7 +51,7 @@ export const getThemeCookie = <T extends Record<string, Theme>>({
   ctx,
   themeCookieKey = 'theme',
   themes,
-}: GetThemeCookieOptions<T>): keyof T => {
+}: GetThemeCookieParams<T>): keyof T => {
   const cookies = parseCookies(ctx)
   const savedThemeCookie = cookies[themeCookieKey]
 

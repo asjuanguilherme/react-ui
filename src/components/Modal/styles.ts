@@ -12,7 +12,7 @@ export const BoxContent = styled.div`
   line-height: 1.8em;
   font-size: ${props => props.theme.fontSizes.small};
 
-  ${screens.tablet_Up} {
+  ${screens.tablet} {
     font-size: ${props => props.theme.fontSizes.medium};
   }
 `

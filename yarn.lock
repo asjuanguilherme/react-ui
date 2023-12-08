@@ -10,10 +10,12 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@asjuanguilherme/js-utils@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@asjuanguilherme/js-utils/-/js-utils-0.3.1.tgz#9df7b11ebae02dde698bdd78433932444c6eccf6"
-  integrity sha512-lQIEXw9rXaot1ALIHe1BYzfgZt6Y3/dWosQw16YfkK0lc55/ou62eXz2zkZbwNNNimXq5OlmD2RnqZZgnAEl1w==
+"@asjuanguilherme/js-utils@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@asjuanguilherme/js-utils/-/js-utils-0.4.0.tgz#2046c217152d3848c499195f5eb5e1067ba096d7"
+  integrity sha512-0Z1X1+j0hC8aA1NL+3mk7H3HZj4nsYSzvjXPiVHRatY/ob0QU9m0A6wfa+LDhBKqgIx34i24SEwApW//+KY4gQ==
+  dependencies:
+    express-useragent "^1.0.15"
 
 "@asjuanguilherme/prettier-config@^1.0.0":
   version "1.0.0"
@@ -1089,6 +1091,11 @@ eventemitter3@^4.0.4:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
+
+express-useragent@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/express-useragent/-/express-useragent-1.0.15.tgz#cefda5fa4904345d51d3368b117a8dd4124985d9"
+  integrity sha512-eq5xMiYCYwFPoekffMjvEIk+NWdlQY9Y38OsTyl13IvA728vKT+q/CSERYWzcw93HGBJcIqMIsZC5CZGARPVdg==
 
 fast-glob@^3.0.3:
   version "3.3.2"

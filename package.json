@@ -41,7 +41,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@asjuanguilherme/js-utils": "^0.3.1",
+    "@asjuanguilherme/js-utils": "^0.4.0",
     "@asjuanguilherme/prettier-config": "^1.0.0",
     "@asjuanguilherme/tsconfig": "^0.2.1",
     "@babel/core": "^7.23.5",

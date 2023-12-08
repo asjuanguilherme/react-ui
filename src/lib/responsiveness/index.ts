@@ -18,14 +18,14 @@ const breakpointUp = (value: number) =>
   `@media screen and (min-width: ${value}px)`
 
 export const screens = {
-  mobileS_Up: breakpointUp(breakpoints.mobileS),
-  mobileM_Up: breakpointUp(breakpoints.mobileM),
-  mobileL_Up: breakpointUp(breakpoints.mobileL),
-  tabletS_Up: breakpointUp(breakpoints.tabletS),
-  tablet_Up: breakpointUp(breakpoints.tablet),
-  laptop_Up: breakpointUp(breakpoints.laptop),
-  desktop_Up: breakpointUp(breakpoints.desktop),
-  desktopL_Up: breakpointUp(breakpoints.desktopL),
+  mobileS: breakpointUp(breakpoints.mobileS),
+  mobileM: breakpointUp(breakpoints.mobileM),
+  mobileL: breakpointUp(breakpoints.mobileL),
+  tabletS: breakpointUp(breakpoints.tabletS),
+  tablet: breakpointUp(breakpoints.tablet),
+  laptop: breakpointUp(breakpoints.laptop),
+  desktop: breakpointUp(breakpoints.desktop),
+  desktopL: breakpointUp(breakpoints.desktopL),
 } as const
 
 export const screenUp = (breakpoint: keyof typeof breakpoints | number) => {

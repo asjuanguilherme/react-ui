@@ -9,7 +9,7 @@ export const ContentWrapper = styled.div<{ $enableContentPadding: boolean }>`
   transition-duration: ${props => props.theme.transition.default};
   transition-property: background;
 
-  ${screens.tabletS_Up} {
+  ${screens.tabletS} {
     font-size: ${props => props.theme.fontSizes.medium};
   }
 

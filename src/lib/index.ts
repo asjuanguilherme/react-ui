@@ -1,3 +1,3 @@
-export * as fontLib from './font'
-export * as responsivenessLib from './responsiveness'
-export * as themingLib from './theming'
+export * from './font'
+export * from './responsiveness'
+export * from './theming'
