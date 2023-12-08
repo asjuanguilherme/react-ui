@@ -1,13 +1,10 @@
-export const colors = {
+import { ThemePalleteColors } from './'
+
+export const defaultThemePallete: ThemePalleteColors = {
   primary: {
     light: '#E7D9FF',
     normal: '#9F4DFF',
     dark: '#5D25B2',
-  },
-  secondary: {
-    light: '#AED4E6',
-    normal: '#5E99B2',
-    dark: '#3A6078',
   },
   error: {
     light: '#FFD8D8',
@@ -30,5 +27,3 @@ export const colors = {
     dark: '#1A66B2',
   },
 }
-
-export type Colors = keyof typeof colors

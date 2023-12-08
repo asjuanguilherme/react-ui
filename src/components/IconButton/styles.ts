@@ -1,4 +1,3 @@
-import { fieldSizes, font } from 'styles/tokens'
 import { ButtonBase } from 'components/ButtonBase'
 import styled, { css } from 'styled-components'
 import {
@@ -6,9 +5,10 @@ import {
   BackgroundImagePositionX,
   BackgroundImagePositionY,
 } from '.'
+import { FieldSizesToken } from 'lib/theming'
 
 export const Wrapper = styled(ButtonBase)<{
-  $size: keyof typeof fieldSizes
+  $size: keyof FieldSizesToken
   $imageSrc?: string
   $imagePositionX?: BackgroundImagePositionX
   $imagePositionY?: BackgroundImagePositionY
@@ -27,21 +27,21 @@ export const Wrapper = styled(ButtonBase)<{
     switch ($size) {
       case 'small':
         return css`
-          height: ${fieldSizes.small};
-          width: ${fieldSizes.small};
-          font-size: ${font.sizes.small};
+          height: ${props => props.theme.fieldSizes.small};
+          width: ${props => props.theme.fieldSizes.small};
+          font-size: ${props => props.theme.fontSizes.small};
         `
       case 'medium':
         return css`
-          height: ${fieldSizes.medium};
-          width: ${fieldSizes.medium};
-          font-size: ${font.sizes.medium};
+          height: ${props => props.theme.fieldSizes.medium};
+          width: ${props => props.theme.fieldSizes.medium};
+          font-size: ${props => props.theme.fontSizes.medium};
         `
       case 'large':
         return css`
-          height: ${fieldSizes.large};
-          width: ${fieldSizes.large};
-          font-size: ${font.sizes.large};
+          height: ${props => props.theme.fieldSizes.large};
+          width: ${props => props.theme.fieldSizes.large};
+          font-size: ${props => props.theme.fontSizes.large};
         `
     }
   }}

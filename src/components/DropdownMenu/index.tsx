@@ -1,14 +1,15 @@
-import { HTMLStyleAttributes, LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import { IconComponent } from 'icons'
 import _uniqueId from 'lodash/uniqueId'
 import { ChevronButton, Popover, Menu } from 'components'
 import { MenuItemProps } from 'components/Menu/partials'
+import { HTMLStyleAttributes } from 'types'
 
 export type DropdownMenuItem = MenuItemProps
 
 export type DropdownMenuProps = {
   title?: string
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   fillWidth?: boolean
   disabled?: boolean
   loading?: boolean

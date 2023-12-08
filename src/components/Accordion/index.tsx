@@ -1,4 +1,4 @@
-import { HTMLStyleAttributes, LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import * as S from './styles'
 import {
   MouseEventHandler,
@@ -10,6 +10,7 @@ import {
 import _uniqueId from 'lodash/uniqueId'
 import { ChevronButton } from 'components'
 import { IconComponent } from 'icons'
+import { HTMLStyleAttributes } from 'types'
 
 export type AccordionSize = 'small' | 'medium'
 
@@ -17,7 +18,7 @@ export type AccordionProps = {
   title?: string
   icon?: IconComponent
   children?: ReactNode
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   startsOpened?: boolean
   opened?: boolean
   onClick?: MouseEventHandler

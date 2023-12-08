@@ -1,29 +1,30 @@
 import styled, { css } from 'styled-components'
-import { font, screens, spacing, transition } from 'styles/tokens'
+
 import { CardBase } from 'components/CardBase'
+import { screens } from 'lib/responsiveness'
 
 export const ContentWrapper = styled.div<{ $enableContentPadding: boolean }>`
-  font-size: ${font.sizes.small};
+  font-size: ${props => props.theme.fontSizes.small};
   box-sizing: content-box;
-  transition-duration: ${transition.default};
+  transition-duration: ${props => props.theme.transition.default};
   transition-property: background;
 
   ${screens.tabletS_Up} {
-    font-size: ${font.sizes.medium};
+    font-size: ${props => props.theme.fontSizes.medium};
   }
 
   ${({ $enableContentPadding }) =>
     $enableContentPadding &&
     css`
       padding-top: 0;
-      padding: ${spacing.components.medium};
+      padding: ${props => props.theme.spacing.components.medium};
     `}
 `
 
 export const Body = styled.div<{ $opened: boolean; $maxHeight: number }>`
   overflow: hidden;
   max-height: 0px;
-  transition-duration: ${transition.default};
+  transition-duration: ${props => props.theme.transition.default};
   transition-property: max-height;
   transition-timing-function: ease;
 
@@ -38,7 +39,7 @@ export const Body = styled.div<{ $opened: boolean; $maxHeight: number }>`
 
 export const Title = styled.span`
   svg {
-    margin-right: ${spacing.components.small};
+    margin-right: ${props => props.theme.spacing.components.small};
   }
 `
 

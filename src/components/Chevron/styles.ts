@@ -1,4 +1,3 @@
-import { transition } from 'styles/tokens'
 import styled from 'styled-components'
 import { ChevronDownIcon } from 'icons'
 import { ChevronDirection } from '.'
@@ -13,7 +12,7 @@ const angleByDirection = {
 export const ChevronIcon = styled(ChevronDownIcon)<{
   $direction: ChevronDirection
 }>`
-  transition-duration: ${transition.default};
+  transition-duration: ${props => props.theme.transition.default};
   transition-property: transform;
   transform: rotate(${({ $direction }) => angleByDirection[$direction]}deg);
 `

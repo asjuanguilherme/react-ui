@@ -1,17 +1,10 @@
-import {
-  borderRadius,
-  layout,
-  spacing,
-  transition,
-  zIndex,
-} from 'styles/tokens'
 import styled, { css } from 'styled-components'
 
 export const IconBar = styled.span`
   height: 2px;
   width: 100%;
-  border-radius: ${borderRadius.pill};
-  transition: ${transition.slow};
+  border-radius: ${props => props.theme.borderRadius.pill};
+  transition: ${props => props.theme.transition.slow};
   transition-property: all;
   position: absolute;
   left: 50%;
@@ -39,27 +32,33 @@ export const Wrapper = styled.button<{
   height: 1.8rem;
   width: 1.8rem;
   flex-direction: column;
-  gap: ${spacing.components.smaller};
+  gap: ${props => props.theme.spacing.components.xsmall};
   background: unset;
   cursor: pointer;
   position: fixed;
-  right: ${layout.gutter};
+  right: ${props => props.theme.container.padding};
   top: ${props => props.$navbarHeight / 2}px;
   transform: translateY(-50%);
-  transition: ${transition.slow};
-  z-index: ${zIndex.menuMobileToggle};
+  transition: ${props => props.theme.transition.slow};
+  z-index: ${props => props.theme.zIndex.menuMobileToggle};
 
   &:hover {
-    color: ${props => props.theme.colors.main.primary.normal};
+    color: ${props => props.theme.colors.pallete.primary.normal};
   }
 
   ${({ $opened, theme }) =>
     $opened &&
     css`
       transform: unset;
-      top: calc(${layout.gutter} + ${spacing.components.medium});
-      right: calc(${layout.gutter} + ${spacing.components.medium});
-      color: ${theme.colors.main.primary.normal};
+      top: calc(
+        ${props => props.theme.container.padding} +
+          ${props => props.theme.spacing.components.medium}
+      );
+      right: calc(
+        ${props => props.theme.container.padding} +
+          ${props => props.theme.spacing.components.medium}
+      );
+      color: ${theme.colors.pallete.primary.normal};
 
       ${TopBar} {
         top: 50%;

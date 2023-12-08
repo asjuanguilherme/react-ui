@@ -1,4 +1,3 @@
-import { borderRadius, font, transition } from 'styles/tokens'
 import { opacify, rem } from 'polished'
 import styled from 'styled-components'
 
@@ -13,11 +12,11 @@ export const IconCircle = styled.span`
   width: ${rem(48)};
   background-color: ${props => props.theme.colors.layers};
   background: ${props => opacify(-0.9, props.theme.colors.content.title)};
-  border-radius: ${borderRadius.circle};
-  transition: ${transition.fast} transform;
+  border-radius: ${props => props.theme.borderRadius.circle};
+  transition: ${props => props.theme.transition.fast} transform;
 
   svg {
-    font-size: ${font.sizes.larger};
+    font-size: ${props => props.theme.fontSizes.xlarge};
   }
 `
 
@@ -28,23 +27,23 @@ export const Box = styled.span<{ $borderDashed: boolean }>`
   height: 100%;
   width: 100%;
 
-  font-size: ${font.sizes.small};
+  font-size: ${props => props.theme.fontSizes.small};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: ${font.sizes.small};
+  gap: ${props => props.theme.fontSizes.small};
   border-width: 1px;
   border-style: ${props => (props.$borderDashed ? 'dashed' : 'solid')};
   border-color: ${props => props.theme.colors.layers[1].border};
   background: transparent;
-  border-radius: ${borderRadius.medium};
-  transition: ${transition.fast};
+  border-radius: ${props => props.theme.borderRadius.medium};
+  transition: ${props => props.theme.transition.fast};
 
   &:hover,
   &:active {
     background-color: ${props => props.theme.colors.layers[1].background};
-    color: ${props => props.theme.colors.main.primary.normal};
+    color: ${props => props.theme.colors.pallete.primary.normal};
     cursor: pointer;
 
     ${IconCircle} {

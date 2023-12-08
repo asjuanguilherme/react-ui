@@ -1,8 +1,9 @@
 import * as S from './styles'
 
 import { MouseEvent, MutableRefObject, ReactNode } from 'react'
-import { colors } from 'styles/tokens'
-import { HTMLStyleAttributes, LayerIndex } from 'types'
+
+import { ThemeLayerIndex, ThemePalleteColors } from 'lib/theming'
+import { HTMLStyleAttributes } from 'types'
 
 export type ButtonVariant = 'filled' | 'outlined' | 'layerBased'
 
@@ -25,7 +26,7 @@ export type ButtonBaseCommonProps = {
 export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
   variant: 'layerBased'
   color?: never
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   borderLess?: boolean
   transparent?: boolean
   active?: boolean
@@ -33,7 +34,7 @@ export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
 
 export type ButtonBaseEitherVariantsProps = ButtonBaseCommonProps & {
   variant?: ButtonVariant
-  color?: keyof typeof colors
+  color?: keyof ThemePalleteColors
   layer?: never
   borderLess?: never
   transparent?: never

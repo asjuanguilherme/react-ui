@@ -1,21 +1,20 @@
-import { borderRadius, font, spacing, transition } from 'styles/tokens'
 import styled, { css } from 'styled-components'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 
 export const Button = styled.button<{
   $active: boolean
-  $layer: LayerIndex
+  $layer: ThemeLayerIndex
   $size: 'small' | 'medium'
 }>`
   width: 100%;
-  border-radius: ${borderRadius.medium};
+  border-radius: ${props => props.theme.borderRadius.medium};
   cursor: pointer;
   display: inline-flex;
-  gap: ${spacing.components.small};
+  gap: ${props => props.theme.spacing.components.small};
   align-items: center;
   color: ${props => props.theme.colors.content.text};
   background: transparent;
-  transition-duration: ${transition.default};
+  transition-duration: ${props => props.theme.transition.default};
   transition-property: background;
   text-decoration: none;
 
@@ -23,13 +22,15 @@ export const Button = styled.button<{
     switch ($size) {
       case 'small':
         return css`
-          font-size: ${font.sizes.smaller};
-          padding: ${spacing.components.small} ${spacing.components.small};
+          font-size: ${props => props.theme.fontSizes.xsmall};
+          padding: ${props => props.theme.spacing.components.small}
+            ${props => props.theme.spacing.components.small};
         `
       case 'medium':
         return css`
-          font-size: ${font.sizes.small};
-          padding: ${spacing.components.small} ${spacing.components.medium};
+          font-size: ${props => props.theme.fontSizes.small};
+          padding: ${props => props.theme.spacing.components.small}
+            ${props => props.theme.spacing.components.medium};
         `
     }
   }}
@@ -38,7 +39,7 @@ export const Button = styled.button<{
     $active
       ? css`
           color: white;
-          background-color: ${theme.colors.main.primary.normal};
+          background-color: ${theme.colors.pallete.primary.normal};
         `
       : css`
           &:hover {

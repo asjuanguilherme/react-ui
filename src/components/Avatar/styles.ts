@@ -1,4 +1,3 @@
-import { borderRadius } from 'styles/tokens'
 import { generateColorFromString } from '@asjuanguilherme/js-utils'
 import { readableColor } from 'polished'
 import styled, { css } from 'styled-components'
@@ -16,7 +15,7 @@ export const Wrapper = styled.span<{
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: ${borderRadius.circle};
+  border-radius: ${props => props.theme.borderRadius.circle};
   overflow: hidden;
   font-weight: ${fontFamily.poppins.weights.bold};
   flex-shrink: 0;

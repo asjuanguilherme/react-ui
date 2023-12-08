@@ -1,8 +1,8 @@
 import { MouseEventHandler, MutableRefObject } from 'react'
 import { Chevron, ChevronDirection } from 'components'
 import * as S from './styles'
-import { LayerIndex } from 'types'
-import { fieldSizes } from 'styles/tokens'
+import { FieldSizesToken, ThemeLayerIndex } from 'lib/theming'
+
 import { IconComponent } from 'icons'
 
 export type ChevronButtonProps = {
@@ -13,12 +13,12 @@ export type ChevronButtonProps = {
   setRef?: MutableRefObject<HTMLButtonElement | HTMLAnchorElement | null>
   disabled?: boolean
   loading?: boolean
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   active?: boolean
   onClick?: MouseEventHandler
   chevronActiveDirection?: ChevronDirection
   chevronDefaultDirection?: ChevronDirection
-  size?: keyof typeof fieldSizes
+  size?: keyof FieldSizesToken
   fillWidth?: boolean
   showChevron?: boolean
   borderLess?: boolean

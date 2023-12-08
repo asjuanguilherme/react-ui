@@ -1,5 +1,5 @@
 import { AnchorColor, AnchorHoverColor } from '.'
-import { colors, spacing, transition } from 'styles/tokens'
+
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.a<{
@@ -7,10 +7,10 @@ export const Wrapper = styled.a<{
   $hoverColor: AnchorHoverColor
 }>`
   display: inline-flex;
-  gap: ${spacing.components.smaller};
+  gap: ${props => props.theme.spacing.components.xsmall};
   align-items: center;
   color: inherit;
-  transition: ${transition.default};
+  transition: ${props => props.theme.transition.default};
   font-size: inherit;
   text-decoration: none;
 
@@ -18,10 +18,10 @@ export const Wrapper = styled.a<{
     flex-shrink: 0;
   }
 
-  ${({ $color }) => {
-    if (Object.keys(colors).some(color => color === $color))
+  ${({ $color, theme }) => {
+    if (Object.keys(theme.colors.pallete).some(color => color === $color))
       return css`
-        color: ${colors[$color as 'primary'].normal};
+        color: ${theme.colors.pallete[$color as 'primary'].normal};
       `
 
     return css`
@@ -30,16 +30,18 @@ export const Wrapper = styled.a<{
   }}
 
   &:hover {
-    ${({ $hoverColor, $color }) => {
-      if (Object.keys(colors).some(color => color === $hoverColor)) {
+    ${({ $hoverColor, $color, theme }) => {
+      if (
+        Object.keys(theme.colors.pallete).some(color => color === $hoverColor)
+      ) {
         if ($hoverColor === $color)
           return css`
-            color: ${colors[$hoverColor as 'primary'].dark};
+            color: ${theme.colors.pallete[$hoverColor as 'primary'].dark};
             color: red;
           `
 
         return css`
-          color: ${colors[$hoverColor as 'primary'].normal};
+          color: ${theme.colors.pallete[$hoverColor as 'primary'].normal};
         `
       }
 

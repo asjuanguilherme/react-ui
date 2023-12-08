@@ -1,8 +1,8 @@
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import * as S from './styles'
 
 export type MenuDividerProps = {
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
 }
 
 export const MenuDivider = ({ layer = 1 }: MenuDividerProps) => {

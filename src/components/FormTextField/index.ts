@@ -1,17 +1,10 @@
-import {
-  borderRadius,
-  fieldSizes,
-  font,
-  spacing,
-  transition,
-} from 'styles/tokens'
 import { mix } from 'polished'
 import styled, { css } from 'styled-components'
 import { fontFamily } from 'fonts'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 
 export type TextFieldSharedStyleProps = {
-  $layer: LayerIndex
+  $layer: ThemeLayerIndex
   $focused: boolean
   $hasError: boolean
   $hasSuccess: boolean
@@ -21,7 +14,7 @@ export type TextFieldSharedStyleProps = {
 
 const textFieldSharedStyle = css`
   width: 100%;
-  font-size: ${font.sizes.medium};
+  font-size: ${props => props.theme.fontSizes.medium};
   font-weight: ${fontFamily.poppins.weights.regular};
   background: transparent;
   color: ${props => props.theme.colors.content.title};
@@ -34,13 +27,13 @@ const textFieldSharedStyle = css`
 
 const TextArea = styled.textarea`
   ${textFieldSharedStyle}
-  padding: ${spacing.components.medium};
+  padding: ${props => props.theme.spacing.components.medium};
   resize: none;
 `
 
 const Input = styled.input`
   ${textFieldSharedStyle}
-  height: ${fieldSizes.medium};
+  height: ${props => props.theme.fieldSizes.medium};
 `
 
 const Wrapper = styled.span<TextFieldSharedStyleProps>`
@@ -50,9 +43,9 @@ const Wrapper = styled.span<TextFieldSharedStyleProps>`
   background-color: ${props =>
     props.theme.colors.layers[props.$layer].background};
   border: 1px solid ${props => props.theme.colors.layers[props.$layer].border};
-  border-radius: ${borderRadius.medium};
+  border-radius: ${props => props.theme.borderRadius.medium};
   overflow: hidden;
-  transition: ${transition.fast};
+  transition: ${props => props.theme.transition.fast};
   transition-property: border-color background;
   position: relative;
 
@@ -70,7 +63,7 @@ const Wrapper = styled.span<TextFieldSharedStyleProps>`
     css`
       border-color: ${mix(
         0.3,
-        theme.colors.main.primary.normal,
+        theme.colors.pallete.primary.normal,
         theme.colors.layers[$layer].border,
       )};
     `}
@@ -78,13 +71,13 @@ const Wrapper = styled.span<TextFieldSharedStyleProps>`
   ${({ theme, $hasError }) =>
     $hasError &&
     css`
-      border-color: ${theme.colors.main.error.normal};
+      border-color: ${theme.colors.pallete.error.normal};
     `}
 
   ${({ theme, $hasSuccess }) =>
     $hasSuccess &&
     css`
-      border-color: ${theme.colors.main.success.normal};
+      border-color: ${theme.colors.pallete.success.normal};
     `}
 
   ${({ theme, $disabled, $layer }) =>

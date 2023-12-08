@@ -1,35 +1,34 @@
 import styled, { css } from 'styled-components'
-import { LayerIndex } from 'types'
-import { borderRadius, transition } from 'styles/tokens'
+import { ThemeLayerIndex } from 'lib/theming'
+
 import { CardBaseProps } from '.'
 
 export const Wrapper = styled.div<{
-  $layer: LayerIndex
+  $layer: ThemeLayerIndex
   $hoverable: boolean
   $roundedCorners?: CardBaseProps['roundedCorners']
 }>`
   background-color: ${props =>
     props.theme.colors.layers[props.$layer].background};
   border: 1px solid ${props => props.theme.colors.layers[props.$layer].border};
-  border-radius: ${borderRadius.medium};
+  border-radius: ${props => props.theme.borderRadius.medium};
 
-  ${props =>
-    props.$hoverable &&
+  ${({ $hoverable, theme, $layer }) =>
+    $hoverable &&
     css`
-      transition: ${transition.default} background;
+      transition: ${theme.transition.default} background;
       &:hover {
-        background-color: ${props.theme.colors.layers[props.$layer]
-          .hoveredBackground};
+        background-color: ${theme.colors.layers[$layer].hoveredBackground};
       }
     `}
 
-  border-radius: ${({ $roundedCorners }) => {
+  border-radius: ${({ $roundedCorners, theme }) => {
     switch ($roundedCorners) {
       case 'none':
         return 'initial'
       default:
-        if ($roundedCorners) return borderRadius[$roundedCorners]
-        else return borderRadius.medium
+        if ($roundedCorners) return theme.borderRadius[$roundedCorners]
+        else return theme.borderRadius.medium
     }
   }}
 `

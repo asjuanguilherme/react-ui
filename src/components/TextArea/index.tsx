@@ -6,18 +6,19 @@ import {
   useEffect,
   useState,
 } from 'react'
-import { HTMLStyleAttributes, LayerIndex } from 'types'
 import {
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
   FormTextField,
   FormField,
 } from 'components'
+import { ThemeLayerIndex } from 'lib/theming'
+import { HTMLStyleAttributes } from 'types'
 
 export type TextAreaProps = {
   label?: string
   fillWidth?: boolean
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   name?: string
   placeholder?: string
   value?: string

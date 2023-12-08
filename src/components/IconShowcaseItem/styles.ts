@@ -1,13 +1,12 @@
-import { borderRadius, font, spacing, transition } from 'styles/tokens'
 import { CardBase } from 'components/CardBase'
 import styled, { css } from 'styled-components'
 import { fontFamily } from 'fonts'
 
 export const Slug = styled.span`
   position: absolute;
-  font-size: ${font.sizes.smaller};
-  left: ${spacing.components.small};
-  bottom: ${spacing.components.small};
+  font-size: ${props => props.theme.fontSizes.xsmall};
+  left: ${props => props.theme.spacing.components.small};
+  bottom: ${props => props.theme.spacing.components.small};
   width: 90%;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -15,7 +14,7 @@ export const Slug = styled.span`
 
   b {
     font-weight: ${fontFamily.poppins.weights.bold};
-    color: ${props => props.theme.colors.main.primary.normal};
+    color: ${props => props.theme.colors.pallete.primary.normal};
   }
 `
 
@@ -25,9 +24,9 @@ export const Wrapper = styled(CardBase)<{
   text-decoration: none;
   width: 100%;
   padding-top: 100%;
-  border-radius: ${borderRadius.medium};
+  border-radius: ${props => props.theme.borderRadius.medium};
   position: relative;
-  transition: ${transition.fast};
+  transition: ${props => props.theme.transition.fast};
   transition-property: background, color, border;
 
   & > svg {
@@ -37,15 +36,15 @@ export const Wrapper = styled(CardBase)<{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: ${transition.fast};
+    transition: ${props => props.theme.transition.fast};
     transition-property: transform;
   }
 
   ${({ $active, theme }) =>
     $active
       ? css`
-          color: ${theme.colors.main.primary.normal};
-          border-color: ${theme.colors.main.primary.normal};
+          color: ${theme.colors.pallete.primary.normal};
+          border-color: ${theme.colors.pallete.primary.normal};
 
           svg {
             transform: translate(-50%, -50%) scale(1.15);

@@ -1,33 +1,25 @@
 import styled, { css, keyframes } from 'styled-components'
-import {
-  borderRadius,
-  spacing,
-  font,
-  zIndex,
-  layout,
-  transition,
-  screens,
-} from 'styles/tokens'
 import { ModalVariant } from '.'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import { fontFamily } from 'fonts'
+import { screens } from 'lib/responsiveness'
 
 export const BoxContent = styled.div`
   flex: 1;
   overflow: auto;
-  padding: ${spacing.components.medium};
+  padding: ${props => props.theme.spacing.components.medium};
   padding-top: 0;
   line-height: 1.8em;
-  font-size: ${font.sizes.small};
+  font-size: ${props => props.theme.fontSizes.small};
 
   ${screens.tablet_Up} {
-    font-size: ${font.sizes.medium};
+    font-size: ${props => props.theme.fontSizes.medium};
   }
 `
 
 export const Title = styled.h2`
   color: ${props => props.theme.colors.content.text};
-  font-size: ${font.sizes.medium};
+  font-size: ${props => props.theme.fontSizes.medium};
   font-weight: ${fontFamily.poppins.weights.medium};
   margin-bottom: 0;
 `
@@ -35,19 +27,19 @@ export const Title = styled.h2`
 export const CloseButton = styled.button`
   background: transparent;
   display: inline-flex;
-  padding: ${spacing.components.small};
-  font-size: ${font.sizes.large};
+  padding: ${props => props.theme.spacing.components.small};
+  font-size: ${props => props.theme.fontSizes.large};
   transition: 0.2s;
   transition-property: color;
   cursor: pointer;
   position: absolute;
   z-index: 2;
-  right: ${spacing.components.small};
-  top: ${spacing.components.small};
+  right: ${props => props.theme.spacing.components.small};
+  top: ${props => props.theme.spacing.components.small};
   color: ${props => props.theme.colors.content.title};
 
   &:hover {
-    color: ${props => props.theme.colors.main.primary.normal};
+    color: ${props => props.theme.colors.pallete.primary.normal};
   }
 `
 
@@ -57,7 +49,7 @@ export const BoxHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${spacing.components.medium};
+  padding: ${props => props.theme.spacing.components.medium};
 `
 
 const appearBoxKeyframes = keyframes`
@@ -74,7 +66,7 @@ export const Box = styled.div<{
   $width: number
   $hasTitle: boolean
   $positionY: string
-  $layer: LayerIndex
+  $layer: ThemeLayerIndex
 }>`
   position: relative;
   width: 100%;
@@ -82,13 +74,15 @@ export const Box = styled.div<{
   max-width: ${props => props.$width}px;
   background: ${props => props.theme.colors.layers[1].background};
   border: 1px solid ${props => props.theme.colors.layers[1].border};
-  border-radius: ${borderRadius.medium};
+  border-radius: ${props => props.theme.borderRadius.medium};
   overflow: hidden;
   animation: ${appearBoxKeyframes} 0.3s ease-out;
   display: flex;
   flex-direction: column;
   padding-top: ${props =>
-    props.$hasTitle ? 'initial' : spacing.components.medium};
+    props.$hasTitle
+      ? 'initial'
+      : props => props.theme.spacing.components.medium};
   transition: 0.15s;
   top: ${props => props.$positionY};
 `
@@ -99,10 +93,10 @@ const wrapperAppearKeyframes = keyframes`from {
 
 export const Wrapper = styled.div<{ $opened: boolean; $variant: ModalVariant }>`
   position: fixed;
-  z-index: ${zIndex.modals};
+  z-index: ${props => props.theme.zIndex.modals};
   height: 100%;
   width: 100vw;
-  padding: ${layout.gutter};
+  padding: ${props => props.theme.container.padding};
   display: flex;
 
   ${({ $variant, $opened, theme }) => {
@@ -131,7 +125,7 @@ export const Wrapper = styled.div<{ $opened: boolean; $variant: ModalVariant }>`
           align-items: center;
           justify-content: center;
           animation: ${wrapperAppearKeyframes} 0.2s ease;
-          transition: ${transition.fast};
+          transition: ${props => props.theme.transition.fast};
           transition-property: backdrop-filter, background, visibility;
           backdrop-filter: blur(6px);
           background: rgba(

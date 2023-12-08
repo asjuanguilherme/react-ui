@@ -13,7 +13,7 @@ export const customScrollbar = css`
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     ${props => props.theme.colors.layers[0].background};
-    background: ${props => props.theme.colors.main.primary.normal};
+    background: ${props => props.theme.colors.pallete.primary.normal};
     cursor: default;
   }
 `

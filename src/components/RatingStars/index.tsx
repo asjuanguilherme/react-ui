@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { useState } from 'react'
 import { RatingStar } from './RatingStar'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 
 const rateNumbers = [1, 2, 3, 4, 5]
 
@@ -9,7 +9,7 @@ export type RatingStarsProps = {
   value?: number | null
   setValue?: (number: number) => void
   readOnly?: boolean
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
 }
 
 export const RatingStars = ({

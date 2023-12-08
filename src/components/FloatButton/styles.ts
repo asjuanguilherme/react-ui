@@ -1,4 +1,3 @@
-import { layout, zIndex } from 'styles/tokens'
 import { IconButton } from 'components/IconButton'
 import { opacify } from 'polished'
 import styled, { css } from 'styled-components'
@@ -23,7 +22,7 @@ export const Wrapper = styled(IconButton)<{
       `
 
     return css`
-      bottom: ${layout.gutter};
+      bottom: ${props => props.theme.container.padding};
     `
   }}
 
@@ -38,7 +37,7 @@ export const Wrapper = styled(IconButton)<{
       `
 
     return css`
-      right: ${layout.gutter};
+      right: ${props => props.theme.container.padding};
     `
   }}
 
@@ -46,7 +45,7 @@ export const Wrapper = styled(IconButton)<{
     const shadowColor = theme.colors.content.title
 
     return css`
-      z-index: ${$zIndex || zIndex.floatButtons};
+      z-index: ${$zIndex || theme.zIndex.floatButtons};
       box-shadow: 0 6px 16px 0 ${opacify(-0.92, shadowColor)},
         0 3px 6px -4px ${opacify(-0.88, shadowColor)},
         0 9px 28px 8px ${opacify(-0.95, shadowColor)};

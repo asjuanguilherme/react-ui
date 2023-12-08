@@ -1,9 +1,15 @@
-import { breakpoints, layout, transition, zIndex } from 'styles/tokens'
 import { CardBase } from 'components/CardBase'
+import { breakpoints } from 'lib/responsiveness'
+import { ThemeLayerIndex } from 'lib/theming'
 import styled, { css } from 'styled-components'
-import { LayerIndex } from 'types'
+import { PopoverBoxHorizontalAlignment, PopoverBoxVerticalAlignment } from '.'
 
-export const Box = styled(CardBase)<{ $visible: boolean; $layer: LayerIndex }>`
+export const Box = styled(CardBase)<{
+  $visible: boolean
+  $layer: ThemeLayerIndex
+  $horizontalAlignment: PopoverBoxHorizontalAlignment
+  $verticalAlignment: PopoverBoxVerticalAlignment
+}>`
   @media screen and (max-width: ${breakpoints.tablet}px) {
     width: 100%;
     max-width: 100%;
@@ -21,16 +27,55 @@ export const Box = styled(CardBase)<{ $visible: boolean; $layer: LayerIndex }>`
   position: absolute;
   z-index: 10;
   width: 100%;
-  transition: ${transition.default};
-  transition-property: background, border, transform, opacity;
+  transition: ${props => props.theme.transition.default};
+  transition-property: background, border, transform, opacity, top;
+  top: 100%;
 
   ${({ $visible }) =>
     !$visible &&
     css`
-      transform: translateY(-2rem);
+      top: calc(100% - 2rem);
       opacity: 0;
       pointer-events: none;
-    `}
+    `};
+
+  ${({ $horizontalAlignment }) => {
+    switch ($horizontalAlignment) {
+      default:
+      case 'center':
+        return css`
+          left: 50%;
+          transform: translateX(-50%);
+        `
+      case 'right':
+        return css`
+          right: 0;
+        `
+      case 'left':
+        return css`
+          left: 0;
+        `
+    }
+  }};
+
+  ${({ $horizontalAlignment }) => {
+    switch ($horizontalAlignment) {
+      default:
+      case 'center':
+        return css`
+          left: 50%;
+          transform: translateX(-50%);
+        `
+      case 'right':
+        return css`
+          right: 0;
+        `
+      case 'left':
+        return css`
+          left: 0;
+        `
+    }
+  }};
 `
 
 export const Wrapper = styled.div<{ $visible: boolean }>`
@@ -42,11 +87,11 @@ export const Wrapper = styled.div<{ $visible: boolean }>`
     position: fixed;
     left: 0;
     top: 0;
-    z-index: ${zIndex.modals};
-    padding: ${layout.gutter};
+    z-index: ${props => props.theme.zIndex.modals};
+    padding: ${props => props.theme.container.padding};
     display: flex;
     align-items: flex-end;
-    transition-duration: ${transition.default};
+    transition-duration: ${props => props.theme.transition.default};
     transition-property: opacity;
 
     ${({ $visible }) =>

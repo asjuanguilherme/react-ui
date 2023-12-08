@@ -1,12 +1,13 @@
 import { IconComponent } from 'icons'
 import { MouseEventHandler, MutableRefObject } from 'react'
-import { HTMLStyleAttributes, LayerIndex } from 'types'
 import * as S from './styles'
+import { ThemeLayerIndex } from 'lib/theming'
+import { HTMLStyleAttributes } from 'types'
 
 type MenuItemCommonProps = {
   title?: string
   liTag?: boolean
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   onClick?: MouseEventHandler
   active?: boolean
   icon?: IconComponent

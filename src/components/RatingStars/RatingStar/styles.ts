@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components'
-import { spacing } from 'styles/tokens'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 
-export const Svg = styled.svg<{ $filled: boolean; $layer: LayerIndex }>`
+export const Svg = styled.svg<{ $filled: boolean; $layer: ThemeLayerIndex }>`
   ${({ $filled, $layer, theme }) =>
     $filled
       ? css`
-          fill: ${theme.colors.main.primary.normal};
+          fill: ${theme.colors.pallete.primary.normal};
         `
       : css`
           fill: ${theme.colors.layers[$layer].background};
@@ -22,5 +21,5 @@ export const Wrapper = styled.div<{ $readOnly?: boolean }>`
       cursor: pointer;
     `}
 
-  padding: ${spacing.components.smaller};
+  padding: ${props => props.theme.spacing.components.xsmall};
 `

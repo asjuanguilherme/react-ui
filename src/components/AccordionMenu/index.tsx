@@ -1,7 +1,8 @@
 import { MouseEventHandler } from 'react'
-import { HTMLStyleAttributes, LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import { Menu, Accordion } from 'components'
 import { IconComponent } from 'icons'
+import { HTMLStyleAttributes } from 'types'
 
 export type AccordionMenuItemProps = {
   title: string
@@ -18,7 +19,7 @@ export type AccordionMenuProps = {
   onClick?: MouseEventHandler
   href?: string
   items?: AccordionMenuItemProps[]
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   icon?: IconComponent
   anchorComponent?: any
   size?: 'small' | 'medium'

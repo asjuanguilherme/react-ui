@@ -1,8 +1,13 @@
-import { font, spacing } from 'styles/tokens'
+import styled, { css } from 'styled-components'
 
-import styled from 'styled-components'
-
-export const Content = styled.span``
+export const Content = styled.span<{ $highlightContent: boolean }>`
+  ${({ $highlightContent }) =>
+    $highlightContent &&
+    css`
+      font-size: ${props => props.theme.fontSizes.small};
+      font-weight: ${props => props.theme.fontWeight.semibold};
+    `}
+`
 
 export const Title = styled.span`
   color: ${props => props.theme.colors.content.detail};
@@ -11,6 +16,6 @@ export const Title = styled.span`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing.components.smaller};
-  font-size: ${font.sizes.smaller};
+  gap: ${props => props.theme.spacing.components.xsmall};
+  font-size: ${props => props.theme.fontSizes.xsmall};
 `

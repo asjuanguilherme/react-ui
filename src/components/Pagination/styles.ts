@@ -1,4 +1,3 @@
-import { borderRadius, spacing, transition } from 'styles/tokens'
 import { opacify } from 'polished'
 import styled, { css } from 'styled-components'
 
@@ -9,32 +8,33 @@ export const Button = styled.button<{ $active?: boolean }>`
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border-radius: ${borderRadius.circle};
-  color: ${props => props.theme.colors.main.primary.normal};
+  border-radius: ${props => props.theme.borderRadius.circle};
+  color: ${props => props.theme.colors.pallete.primary.normal};
   background: transparent;
-  transition: ${transition.default} background-color;
+  transition: ${props => props.theme.transition.default} background-color;
 
   ${props =>
     props.$active
       ? css`
           cursor: default;
           pointer-events: none;
-          background-color: ${props => props.theme.colors.main.primary.normal};
+          background-color: ${props =>
+            props.theme.colors.pallete.primary.normal};
           color: white;
         `
       : css`
           &:hover {
             cursor: pointer;
             background-color: ${props =>
-              opacify(-0.7, props.theme.colors.main.primary.normal)};
+              opacify(-0.7, props.theme.colors.pallete.primary.normal)};
           }
         `}
 `
 
 export const Wrapper = styled.nav`
   display: flex;
-  gap: ${spacing.components.small};
+  gap: ${props => props.theme.spacing.components.small};
   width: 100%;
   justify-content: center;
-  padding: ${spacing.components.medium};
+  padding: ${props => props.theme.spacing.components.medium};
 `

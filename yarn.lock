@@ -10,10 +10,10 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@asjuanguilherme/js-utils@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@asjuanguilherme/js-utils/-/js-utils-0.2.2.tgz#bba6db91aed8afe79c2a5a82859b7527344b64e1"
-  integrity sha512-MHNLY7ebTMjhpbt8NekGKu6ghATd3kImyiyUyMBuawpo0NYTUF54KurxmB3lnWQY0tyNuhWySJk0Ci815jlZVQ==
+"@asjuanguilherme/js-utils@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@asjuanguilherme/js-utils/-/js-utils-0.3.1.tgz#9df7b11ebae02dde698bdd78433932444c6eccf6"
+  integrity sha512-lQIEXw9rXaot1ALIHe1BYzfgZt6Y3/dWosQw16YfkK0lc55/ou62eXz2zkZbwNNNimXq5OlmD2RnqZZgnAEl1w==
 
 "@asjuanguilherme/prettier-config@^1.0.0":
   version "1.0.0"

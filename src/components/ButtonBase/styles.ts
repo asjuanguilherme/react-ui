@@ -1,15 +1,14 @@
 import styled, { css } from 'styled-components'
-import { colors, spacing, transition, borderRadius } from 'styles/tokens'
+
 import { ButtonVariant } from '.'
 import { readableColor, grayscale } from 'polished'
-import { LayerIndex } from 'types'
-import { themes } from 'styles'
+import { ThemeLayerIndex, ThemePalleteColors } from 'lib/theming'
 import { fontFamily } from 'fonts'
 
 export const Wrapper = styled.button<{
   $variant: ButtonVariant
-  $color: keyof typeof colors
-  $layer: LayerIndex
+  $color: keyof ThemePalleteColors
+  $layer: ThemeLayerIndex
   $loading: boolean
   $shape: 'pill' | 'rounded'
   $transparent: boolean
@@ -22,8 +21,8 @@ export const Wrapper = styled.button<{
   align-items: center;
   justify-content: center;
   font-weight: ${fontFamily.poppins.weights.medium};
-  gap: ${spacing.components.small};
-  transition-duration: ${transition.fast};
+  gap: ${props => props.theme.spacing.components.small};
+  transition-duration: ${props => props.theme.transition.fast};
   transition-property: background;
   text-transform: capitalize;
   text-decoration: none;
@@ -38,11 +37,11 @@ export const Wrapper = styled.button<{
     switch ($shape) {
       case 'pill':
         return css`
-          border-radius: ${borderRadius.pill};
+          border-radius: ${props => props.theme.borderRadius.pill};
         `
       case 'rounded':
         return css`
-          border-radius: ${borderRadius.medium};
+          border-radius: ${props => props.theme.borderRadius.medium};
         `
     }
   }}
@@ -57,12 +56,12 @@ export const Wrapper = styled.button<{
     switch ($variant) {
       case 'filled':
         return css`
-          background: ${theme.colors.main[$color].normal};
+          background: ${theme.colors.pallete[$color].normal};
           color: ${() => {
             if ($color === 'primary') return 'white'
 
             return readableColor(
-              theme.colors.main[$color].normal,
+              theme.colors.pallete[$color].normal,
               '#000000',
               '#ffffff',
             )
@@ -70,16 +69,16 @@ export const Wrapper = styled.button<{
 
           &:disabled {
             opacity: 0.8;
-            background: ${grayscale(theme.colors.main[$color].light)};
+            background: ${grayscale(theme.colors.pallete[$color].light)};
           }
 
           &:not(:disabled) {
             &:hover {
-              background: ${theme.colors.main[$color].light};
+              background: ${theme.colors.pallete[$color].light};
             }
 
             &:active {
-              background: ${theme.colors.main[$color].dark};
+              background: ${theme.colors.pallete[$color].dark};
             }
           }
         `
@@ -95,33 +94,33 @@ export const Wrapper = styled.button<{
 
           &:not(:disabled) {
             &:hover {
-              color: ${theme.colors.main[$color].normal};
-              border-color: ${theme.colors.main[$color].light}40;
+              color: ${theme.colors.pallete[$color].normal};
+              border-color: ${theme.colors.pallete[$color].light}40;
             }
           }
 
-          transition-duration: ${transition.default};
+          transition-duration: ${props => props.theme.transition.default};
           transition-property: color, background, border;
 
           ${$active &&
           css`
-            color: ${theme.colors.main[$color].normal};
-            border-color: ${theme.colors.main[$color].light}40;
+            color: ${theme.colors.pallete[$color].normal};
+            border-color: ${theme.colors.pallete[$color].light}40;
             background-color: ${theme.colors.layers[$layer].hoveredBackground};
           `}
         `
       case 'outlined':
         return css`
           background: transparent;
-          color: ${theme.colors.main[$color].normal};
+          color: ${theme.colors.pallete[$color].normal};
           border: 1px solid currentColor;
 
           &:hover {
-            background-color: ${theme.colors.main[$color].normal};
+            background-color: ${theme.colors.pallete[$color].normal};
             color: ${readableColor(
-              $color,
-              themes.light.colors.content.title,
-              themes.dark.colors.content.title,
+              theme.colors.pallete[$color].normal,
+              'black',
+              'white',
             )};
           }
         `

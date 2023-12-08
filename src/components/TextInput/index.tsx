@@ -8,20 +8,21 @@ import {
   useState,
 } from 'react'
 import * as S from './styles'
-import { HTMLStyleAttributes, LayerIndex } from 'types'
 import { ButtonProps, FormField } from 'components'
 import {
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
 } from 'components/FormField/utils/handleFormFieldStatus'
 import { FormTextField } from 'components'
+import { HTMLStyleAttributes } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 
 export type TextInputProps = {
   label?: string
   suffix?: ReactNode
   prefix?: ReactNode
   fillWidth?: boolean
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   type?: 'text' | 'email' | 'password' | 'phone'
   placeholder?: string
   button?: ButtonProps

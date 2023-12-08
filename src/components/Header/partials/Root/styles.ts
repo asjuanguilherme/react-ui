@@ -1,4 +1,3 @@
-import { zIndex } from 'styles/tokens'
 import { opacify } from 'polished'
 import styled, { css } from 'styled-components'
 import { Container as DefaultContainer } from 'components'
@@ -15,7 +14,7 @@ export const Wrapper = styled.header<{
     $sticky &&
     css`
       position: fixed;
-      z-index: ${zIndex.navbar};
+      z-index: ${props => props.theme.zIndex.navbar};
       left: 0;
       top: 0;
     `}

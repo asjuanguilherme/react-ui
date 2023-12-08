@@ -1,12 +1,10 @@
 import * as S from './styles'
-
 import { MutableRefObject, ReactNode } from 'react'
-
 import { HTMLStyleAttributes } from 'types'
 import { IconComponent } from 'icons'
-import { colors } from 'styles/tokens'
+import { ThemePalleteColors } from 'lib/theming'
 
-type Color = keyof typeof colors
+type Color = keyof ThemePalleteColors
 
 export type AnchorColor = 'inherit' | Color
 

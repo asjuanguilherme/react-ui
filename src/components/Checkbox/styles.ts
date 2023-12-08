@@ -1,7 +1,6 @@
-import { borderRadius, spacing, transition } from 'styles/tokens'
 import { rem } from 'polished'
 import styled, { css } from 'styled-components'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import { CheckboxProps } from '.'
 import { CheckIcon } from 'icons'
 
@@ -9,31 +8,31 @@ export const Text = styled.span`
   text-align: left;
 `
 
-export const Mark = styled(CheckIcon)<{ $layer: LayerIndex }>`
+export const Mark = styled(CheckIcon)<{ $layer: ThemeLayerIndex }>`
   opacity: 0;
   transform: scaleX(0.5) rotate(-40deg);
-  transition-duration: ${transition.default};
+  transition-duration: ${props => props.theme.transition.default};
   color: ${props => props.theme.colors.layers[props.$layer].background};
 `
 
-export const Box = styled.span<{ $layer: LayerIndex }>`
+export const Box = styled.span<{ $layer: ThemeLayerIndex }>`
   flex-shrink: 0;
   display: inline-flex;
   width: ${rem(18)};
   height: ${rem(18)};
   border: 1px solid ${props => props.theme.colors.layers[props.$layer].border};
   background: ${props => props.theme.colors.layers[props.$layer].border};
-  border-radius: ${borderRadius.small};
+  border-radius: ${props => props.theme.borderRadius.small};
   position: relative;
-  transition-duration: ${transition.default};
+  transition-duration: ${props => props.theme.transition.default};
 `
 
 export const Wrapper = styled.label<{
-  $layer: LayerIndex
+  $layer: ThemeLayerIndex
   $alignment: CheckboxProps['alignment']
 }>`
   display: flex;
-  gap: ${spacing.components.small};
+  gap: ${props => props.theme.spacing.components.small};
   cursor: pointer;
 
   ${({ $alignment }) => {
@@ -59,7 +58,7 @@ export const Wrapper = styled.label<{
   }
 
   input:checked ~ ${Box} {
-    background-color: ${props => props.theme.colors.main.primary.normal};
+    background-color: ${props => props.theme.colors.pallete.primary.normal};
 
     ${Mark} {
       opacity: 1;

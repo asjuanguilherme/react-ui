@@ -1,4 +1,4 @@
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import * as S from './styles'
 
 export type RatingStarProps = {
@@ -7,7 +7,7 @@ export type RatingStarProps = {
   onClick: VoidFunction
   filled?: boolean
   readOnly?: boolean
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
 }
 
 export const RatingStar = ({

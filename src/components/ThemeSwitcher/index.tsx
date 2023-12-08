@@ -1,9 +1,9 @@
 import { IconButton } from 'components/IconButton'
 import { IconComponent, MoonIcon, SunIcon } from 'icons'
 import { useGlobalTheme } from 'contexts'
-import { ThemeObject } from 'types'
+import { ThemeType } from 'lib/theming'
 
-const iconByTheme: Record<ThemeObject['type'], IconComponent> = {
+const iconByTheme: Record<ThemeType, IconComponent> = {
   dark: MoonIcon,
   light: SunIcon,
 }

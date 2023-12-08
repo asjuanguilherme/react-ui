@@ -1,9 +1,9 @@
 import { HTMLAttributes, ReactNode } from 'react'
 import * as S from './styles'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 
 export type CardBaseProps = {
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   hoverable?: boolean
   children?: ReactNode
   roundedCorners?: 'small' | 'medium' | 'large' | 'none'

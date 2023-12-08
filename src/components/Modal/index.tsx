@@ -1,6 +1,6 @@
 import * as S from './styles'
 import { ReactNode } from 'react'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import { Button } from 'components'
 import { XmarkIcon } from 'icons'
 
@@ -17,7 +17,7 @@ export type ModalComponentProps = {
   showX?: boolean
   closeOnBlur?: boolean
   variant?: ModalVariant
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
 }
 
 export const Modal = ({

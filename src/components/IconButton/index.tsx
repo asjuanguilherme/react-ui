@@ -1,8 +1,9 @@
 import * as S from './styles'
-import { fieldSizes } from 'styles/tokens'
+
 import { ButtonBaseProps } from 'components/ButtonBase'
 import { Spinner } from 'components'
 import { IconComponent } from 'icons'
+import { FieldSizesToken } from 'lib/theming'
 
 export type BackgroundImagePositionY = 'top' | 'center' | 'bottom'
 export type BackgroundImagePositionX = 'left' | 'center' | 'right'
@@ -17,7 +18,7 @@ export type IconButtonImagePropertyProps = {
 
 type IconButtonCommonProps = ButtonBaseProps & {
   image?: IconButtonImagePropertyProps
-  size?: keyof typeof fieldSizes
+  size?: keyof FieldSizesToken
 }
 
 type IconButtonWithIconProps = IconButtonCommonProps & {

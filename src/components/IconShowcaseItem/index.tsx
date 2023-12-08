@@ -1,6 +1,6 @@
 import { IconComponent } from 'icons'
 import { HTMLAttributes, MouseEventHandler, useMemo } from 'react'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import * as S from './styles'
 
 export type IconShowcaseItemProps = {
@@ -9,7 +9,7 @@ export type IconShowcaseItemProps = {
   searchTermHightlight?: string | RegExp | null
   active?: boolean
   onClick?: MouseEventHandler
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
 } & HTMLAttributes<HTMLDivElement>
 
 export const IconShowcaseItem = ({

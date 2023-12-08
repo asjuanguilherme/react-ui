@@ -1,13 +1,12 @@
-import { font, layout, spacing, transition, zIndex } from 'styles/tokens'
 import { CardBase } from 'components/CardBase'
 import styled, { css } from 'styled-components'
 import { fontFamily } from 'fonts'
 
 export const Title = styled.span`
-  font-size: ${font.sizes.large};
+  font-size: ${props => props.theme.fontSizes.large};
   font-weight: ${fontFamily.poppins.weights.bold};
   text-transform: uppercase;
-  color: ${props => props.theme.colors.main.primary.normal};
+  color: ${props => props.theme.colors.pallete.primary.normal};
 `
 
 export const PoweredByText = styled.span`
@@ -15,16 +14,16 @@ export const PoweredByText = styled.span`
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: ${props => props.theme.colors.main.primary.normal};
+  color: ${props => props.theme.colors.pallete.primary.normal};
 
   svg {
-    margin-left: ${spacing.components.small};
-    margin-right: ${spacing.components.small};
+    margin-left: ${props => props.theme.spacing.components.small};
+    margin-right: ${props => props.theme.spacing.components.small};
   }
 `
 
 export const Footer = styled.div`
-  padding-top: ${spacing.components.larger};
+  padding-top: ${props => props.theme.spacing.components.xlarge};
 `
 
 export const Body = styled.div`
@@ -33,11 +32,11 @@ export const Body = styled.div`
 `
 
 export const Header = styled.div`
-  padding-bottom: ${spacing.components.larger};
+  padding-bottom: ${props => props.theme.spacing.components.xlarge};
 `
 
 export const Box = styled(CardBase)`
-  padding: ${spacing.components.medium};
+  padding: ${props => props.theme.spacing.components.medium};
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -45,14 +44,14 @@ export const Box = styled(CardBase)`
 
 export const Wrapper = styled.div<{ $opened: boolean }>`
   position: fixed;
-  z-index: ${zIndex.menuMobile};
+  z-index: ${props => props.theme.zIndex.menuMobile};
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
   max-height: 100%;
-  padding: ${layout.gutter};
-  transition: ${transition.slow};
+  padding: ${props => props.theme.container.padding};
+  transition: ${props => props.theme.transition.slow};
 
   ${({ $opened }) =>
     $opened

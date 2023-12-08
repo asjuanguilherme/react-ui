@@ -1,4 +1,3 @@
-import { spacing } from 'styles/tokens'
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.ul<{
@@ -9,13 +8,13 @@ export const Wrapper = styled.ul<{
   list-style: none;
   display: flex;
   flex-direction: ${({ $direction }) => $direction};
-  gap: ${spacing.components.smaller};
+  gap: ${props => props.theme.spacing.components.xsmall};
   overflow-y: auto;
   max-height: ${({ $maxHeight }) => $maxHeight + 'px'};
 
   ${({ $noPadding }) =>
     !$noPadding &&
     css`
-      padding: ${spacing.components.small};
+      padding: ${props => props.theme.spacing.components.small};
     `}
 `

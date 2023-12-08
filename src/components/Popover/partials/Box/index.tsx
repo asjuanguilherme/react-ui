@@ -1,13 +1,19 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
-import { LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
+
+export type PopoverBoxHorizontalAlignment = 'right' | 'center' | 'left'
+
+export type PopoverBoxVerticalAlignment = 'top' | 'bottom'
 
 export type PopoverBoxProps = {
   visible?: boolean
   maxHeight?: number
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   children?: ReactNode
+  horizontalAlignment?: PopoverBoxHorizontalAlignment
+  verticalAlignment?: PopoverBoxVerticalAlignment
 } & HTMLStyleAttributes
 
 export const PopoverBox = ({
@@ -15,11 +21,18 @@ export const PopoverBox = ({
   visible = false,
   layer = 1,
   maxHeight = 300,
+  horizontalAlignment = 'center',
+  verticalAlignment = 'top',
   ...props
 }: PopoverBoxProps) => {
   return (
     <S.Wrapper $visible={visible} {...props}>
-      <S.Box $visible={visible} $layer={layer}>
+      <S.Box
+        $visible={visible}
+        $layer={layer}
+        $horizontalAlignment={horizontalAlignment}
+        $verticalAlignment={verticalAlignment}
+      >
         {children}
       </S.Box>
     </S.Wrapper>

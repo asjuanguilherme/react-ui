@@ -1,5 +1,5 @@
 import {} from 'styled-components'
-import { ThemeObject } from '../src/types/ThemeObject'
+import { Theme } from './lib/theming'
 declare module 'styled-components' {
-  export interface DefaultTheme extends ThemeObject {}
+  export interface DefaultTheme extends Theme {}
 }

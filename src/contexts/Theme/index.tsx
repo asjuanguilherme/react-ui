@@ -1,4 +1,3 @@
-export * from './utils'
 import {
   createContext,
   ReactNode,
@@ -7,18 +6,19 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { DEFAULT_THEME, getThemeCookie, saveThemeCookie } from './utils'
-import { Theme, themes } from 'styles'
-import { ThemeObject } from 'types'
 import { ThemeProvider } from 'styled-components'
+import { saveThemeCookie, getThemeCookie } from './utils'
+import { Theme } from 'lib/theming'
 
-export type GlobalThemeContextProps = ThemeObject & {
+export type GlobalThemeContextProps = Theme & {
   themeToggle: () => void
 }
 
-export type GlobalThemeProviderProps = {
+export type GlobalThemeProviderProps<T extends Record<string, Theme>> = {
   children: ReactNode
-  themeCookie?: Theme
+  themeCookieKey?: string
+  themes: T
+  selectedTheme: keyof T
 }
 
 export const GlobalThemeContext = createContext<GlobalThemeContextProps>(
@@ -28,36 +28,53 @@ export const GlobalThemeContext = createContext<GlobalThemeContextProps>(
 export const useGlobalTheme = () => {
   const context = useContext(GlobalThemeContext)
 
-  if (!context)
+  if (!context) {
     throw new Error(
       'useGlobalTheme hook must be used inside the GlobalThemeProvider.',
     )
+  }
 
   return context
 }
 
-export const GlobalThemeProvider = ({
+export const GlobalThemeProvider = <T extends Record<string, Theme>>({
   children,
-  themeCookie,
-}: GlobalThemeProviderProps) => {
-  const [selectedTheme, setSelectedTheme] = useState<Theme>(
-    themeCookie || DEFAULT_THEME,
-  )
+  themeCookieKey = 'theme',
+  themes,
+  selectedTheme,
+}: GlobalThemeProviderProps<T>) => {
+  const [currentTheme, setCurrentTheme] = useState<keyof T>(selectedTheme)
 
   const themeToggle = () => {
-    const newTheme = selectedTheme === 'dark' ? 'light' : 'dark'
-    setSelectedTheme(newTheme)
-    saveThemeCookie(newTheme)
+    const themeKeys = Object.keys(themes) as Array<keyof T>
+    const currentIndex = themeKeys.indexOf(currentTheme)
+    const nextIndex = currentIndex < themeKeys.length - 1 ? currentIndex + 1 : 0
+
+    const newTheme = themeKeys[nextIndex] as keyof T
+
+    setCurrentTheme(newTheme)
+    saveThemeCookie({
+      theme: newTheme,
+      ctx: undefined,
+      themeCookieKey,
+      themes,
+    })
   }
 
   const selectedThemeData = useMemo(
-    () => themes[selectedTheme || DEFAULT_THEME],
-    [selectedTheme],
+    () => themes[currentTheme],
+    [currentTheme, themes],
   )
 
   useEffect(() => {
-    setSelectedTheme(getThemeCookie())
-  }, [])
+    setCurrentTheme(
+      getThemeCookie({
+        ctx: undefined,
+        themeCookieKey,
+        themes,
+      }),
+    )
+  }, [themeCookieKey, themes])
 
   return (
     <GlobalThemeContext.Provider value={{ ...selectedThemeData, themeToggle }}>

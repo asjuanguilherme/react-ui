@@ -1,5 +1,5 @@
+import { HTMLStyleAttributes } from 'types'
 import * as S from './styles'
-import { HTMLStyleAttributes } from '../../types'
 
 export type SpinnerSize =
   | 'extra-small'

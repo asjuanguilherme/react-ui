@@ -1,5 +1,5 @@
 import { ChangeEventHandler, useMemo, useState } from 'react'
-import { HTMLStyleAttributes, LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import {
   FormField,
   HandleFormFieldStatusParams,
@@ -9,6 +9,7 @@ import {
 import _uniqueId from 'lodash/uniqueId'
 import { ChevronButton, Popover, Menu } from 'components'
 import { IconComponent, MagIcon } from 'icons'
+import { HTMLStyleAttributes } from 'types'
 
 export type DropdownSelectSearchProps = {
   enabled: boolean
@@ -28,7 +29,7 @@ export type DropdownSelectCommonProps = {
   label?: string
   placeholder?: string
   initialValue?: string
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   fillWidth?: boolean
   disabled?: boolean
   loading?: boolean

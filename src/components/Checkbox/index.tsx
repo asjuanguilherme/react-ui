@@ -1,14 +1,14 @@
-import { HTMLStyleAttributes, LayerIndex } from 'types'
+import { ThemeLayerIndex } from 'lib/theming'
 import * as S from './styles'
 import { ReactNode } from 'react'
-import { CheckIcon } from 'icons'
+import { HTMLStyleAttributes } from 'types'
 
 export type CheckboxProps = {
   name?: string
   value?: string
   onChange?: (e: any) => void
   checked?: boolean
-  layer?: LayerIndex
+  layer?: ThemeLayerIndex
   text?: ReactNode
   alignment?: 'top' | 'center' | 'bottom'
 } & HTMLStyleAttributes

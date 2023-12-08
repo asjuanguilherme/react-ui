@@ -1,27 +1,26 @@
 import styled, { css, keyframes } from 'styled-components'
 import { StateType } from '.'
 import { opacify } from 'polished'
-import { spacing, font, transition } from 'styles/tokens'
 import { fontFamily } from 'fonts'
 
 export const ActionButtons = styled.div`
-  margin-top: ${spacing.sections.small};
+  margin-top: ${props => props.theme.spacing.sections.small};
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${spacing.components.small};
+  gap: ${props => props.theme.spacing.components.small};
 `
 
 export const Message = styled.div`
-  font-size: ${font.sizes.small};
+  font-size: ${props => props.theme.fontSizes.small};
   line-height: 1.5em;
 `
 
 export const Title = styled.span`
-  font-size: ${font.sizes.medium};
+  font-size: ${props => props.theme.fontSizes.medium};
   font-weight: ${fontFamily.poppins.weights};
   line-height: 1.3em;
-  margin-bottom: ${spacing.components.medium};
+  margin-bottom: ${props => props.theme.spacing.components.medium};
 `
 
 const iconAppearKeyframes = keyframes`
@@ -41,9 +40,10 @@ export const Icon = styled.div<{ $type: StateType }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: ${iconAppearKeyframes} ${transition.default} ease;
+  animation: ${iconAppearKeyframes} ${props => props.theme.transition.default}
+    ease;
   color: ${props => props.theme.colors.content.title};
-  margin-bottom: ${spacing.components.medium};
+  margin-bottom: ${props => props.theme.spacing.components.medium};
 
   ${({ $type }) =>
     $type !== 'loading' &&
@@ -57,16 +57,16 @@ export const Icon = styled.div<{ $type: StateType }>`
       case 'error':
       case 'warning':
         return css`
-          background: ${theme.colors.main.primary.normal};
+          background: ${theme.colors.pallete.primary.normal};
         `
       case 'success':
         return css`
-          background: ${theme.colors.main.success.normal};
+          background: ${theme.colors.pallete.success.normal};
         `
       case 'loading':
         return css`
           background: transparent;
-          color: ${props => props.theme.colors.main.primary.normal};
+          color: ${props => props.theme.colors.pallete.primary.normal};
         `
       default:
         return css`
@@ -82,5 +82,5 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: ${spacing.components.large};
+  padding: ${props => props.theme.spacing.components.large};
 `
