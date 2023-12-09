@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { IconButton } from 'components/IconButton'
-import { IconComponent, MoonIcon, SunIcon } from 'icons'
 import { useGlobalTheme } from 'contexts'
+import { IconComponent, MoonIcon, SunIcon } from 'icons'
 import { ThemeType } from 'lib/theming'
 
 const iconByTheme: Record<ThemeType, IconComponent> = {

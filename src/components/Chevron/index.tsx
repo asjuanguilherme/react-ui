@@ -1,5 +1,8 @@
-import { HTMLStyleAttributes } from 'types'
+import React from 'react'
+
 import * as S from './styles'
+
+import { HTMLStyleAttributes } from 'types'
 
 export type ChevronDirection = 'top' | 'right' | 'down' | 'left'
 

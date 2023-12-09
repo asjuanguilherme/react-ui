@@ -1,5 +1,7 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import React, { HTMLAttributes, ReactNode } from 'react'
+
 import * as S from './styles'
+
 import { ThemeLayerIndex } from 'lib/theming'
 
 export type CardBaseProps = {

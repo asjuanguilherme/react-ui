@@ -1,8 +1,9 @@
+import { CheckIcon } from 'icons'
+import { ThemeLayerIndex } from 'lib/theming'
 import { rem } from 'polished'
 import styled, { css } from 'styled-components'
-import { ThemeLayerIndex } from 'lib/theming'
+
 import { CheckboxProps } from '.'
-import { CheckIcon } from 'icons'
 
 export const Text = styled.span`
   text-align: left;
@@ -58,7 +59,7 @@ export const Wrapper = styled.label<{
   }
 
   input:checked ~ ${Box} {
-    background-color: ${props => props.theme.colors.pallete.primary.normal};
+    background-color: ${props => props.theme.colors.palette.primary.normal};
 
     ${Mark} {
       opacity: 1;

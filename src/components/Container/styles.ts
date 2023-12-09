@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import { ContainerProps } from '.'
 import { breakpoints } from 'lib/responsiveness'
+import styled from 'styled-components'
+
+import { ContainerProps } from '.'
 
 export const Wrapper = styled.div<{ $variant: ContainerProps['variant'] }>`
   max-width: ${props =>

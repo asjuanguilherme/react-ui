@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components'
-import { ButtonBase } from '../ButtonBase'
 import { FieldSizesToken } from 'lib/theming'
+import styled, { css } from 'styled-components'
+
+import { ButtonBase } from '../ButtonBase'
 
 const horizontalPadding = (size: string) => css`
   padding-left: ${size};

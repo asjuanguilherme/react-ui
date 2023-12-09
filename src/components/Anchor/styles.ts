@@ -1,6 +1,6 @@
-import { AnchorColor, AnchorHoverColor } from '.'
-
 import styled, { css } from 'styled-components'
+
+import { AnchorColor, AnchorHoverColor } from '.'
 
 export const Wrapper = styled.a<{
   $color: AnchorColor
@@ -19,9 +19,9 @@ export const Wrapper = styled.a<{
   }
 
   ${({ $color, theme }) => {
-    if (Object.keys(theme.colors.pallete).some(color => color === $color))
+    if (Object.keys(theme.colors.palette).some(color => color === $color))
       return css`
-        color: ${theme.colors.pallete[$color as 'primary'].normal};
+        color: ${theme.colors.palette[$color as 'primary'].normal};
       `
 
     return css`
@@ -32,16 +32,16 @@ export const Wrapper = styled.a<{
   &:hover {
     ${({ $hoverColor, $color, theme }) => {
       if (
-        Object.keys(theme.colors.pallete).some(color => color === $hoverColor)
+        Object.keys(theme.colors.palette).some(color => color === $hoverColor)
       ) {
         if ($hoverColor === $color)
           return css`
-            color: ${theme.colors.pallete[$hoverColor as 'primary'].dark};
+            color: ${theme.colors.palette[$hoverColor as 'primary'].dark};
             color: red;
           `
 
         return css`
-          color: ${theme.colors.pallete[$hoverColor as 'primary'].normal};
+          color: ${theme.colors.palette[$hoverColor as 'primary'].normal};
         `
       }
 

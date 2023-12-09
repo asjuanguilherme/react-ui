@@ -1,7 +1,9 @@
+import React, { ReactNode, useMemo } from 'react'
+
 import * as S from './styles'
-import { ReactNode, useMemo } from 'react'
-import { ButtonProps, Spinner, Button } from 'components'
-import { TriangleExclamationIcon, XmarkIcon, CheckIcon, InfoIcon } from 'icons'
+
+import { Button, ButtonProps, Spinner } from 'components'
+import { CheckIcon, InfoIcon, TriangleExclamationIcon, XmarkIcon } from 'icons'
 
 export type StateType = 'info' | 'error' | 'loading' | 'warning' | 'success'
 
@@ -43,6 +45,7 @@ export const StateModalContent = ({
           {buttons.map((button, index) => {
             if (button?.customRender) return button.customRender
 
+            // eslint-disable-next-line react/react-in-jsx-scope
             return <Button key={index} {...button} />
           })}
         </S.ActionButtons>

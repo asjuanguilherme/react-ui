@@ -1,6 +1,6 @@
 import { CardBase } from 'components/CardBase'
-import styled, { css } from 'styled-components'
 import { fontFamily } from 'fonts'
+import styled, { css } from 'styled-components'
 
 export const Slug = styled.span`
   position: absolute;
@@ -14,7 +14,7 @@ export const Slug = styled.span`
 
   b {
     font-weight: ${fontFamily.poppins.weights.bold};
-    color: ${props => props.theme.colors.pallete.primary.normal};
+    color: ${props => props.theme.colors.palette.primary.normal};
   }
 `
 
@@ -43,8 +43,8 @@ export const Wrapper = styled(CardBase)<{
   ${({ $active, theme }) =>
     $active
       ? css`
-          color: ${theme.colors.pallete.primary.normal};
-          border-color: ${theme.colors.pallete.primary.normal};
+          color: ${theme.colors.palette.primary.normal};
+          border-color: ${theme.colors.palette.primary.normal};
 
           svg {
             transform: translate(-50%, -50%) scale(1.15);

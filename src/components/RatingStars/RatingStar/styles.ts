@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
 import { ThemeLayerIndex } from 'lib/theming'
+import styled, { css } from 'styled-components'
 
 export const Svg = styled.svg<{ $filled: boolean; $layer: ThemeLayerIndex }>`
   ${({ $filled, $layer, theme }) =>
     $filled
       ? css`
-          fill: ${theme.colors.pallete.primary.normal};
+          fill: ${theme.colors.palette.primary.normal};
         `
       : css`
           fill: ${theme.colors.layers[$layer].background};

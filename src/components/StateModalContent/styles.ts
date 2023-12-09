@@ -1,7 +1,8 @@
-import styled, { css, keyframes } from 'styled-components'
-import { StateType } from '.'
-import { opacify } from 'polished'
 import { fontFamily } from 'fonts'
+import { opacify } from 'polished'
+import styled, { css, keyframes } from 'styled-components'
+
+import { StateType } from '.'
 
 export const ActionButtons = styled.div`
   margin-top: ${props => props.theme.spacing.sections.small};
@@ -57,16 +58,16 @@ export const Icon = styled.div<{ $type: StateType }>`
       case 'error':
       case 'warning':
         return css`
-          background: ${theme.colors.pallete.primary.normal};
+          background: ${theme.colors.palette.primary.normal};
         `
       case 'success':
         return css`
-          background: ${theme.colors.pallete.success.normal};
+          background: ${theme.colors.palette.success.normal};
         `
       case 'loading':
         return css`
           background: transparent;
-          color: ${props => props.theme.colors.pallete.primary.normal};
+          color: ${props => props.theme.colors.palette.primary.normal};
         `
       default:
         return css`

@@ -43,7 +43,7 @@ export const Box = styled.span<{ $borderDashed: boolean }>`
   &:hover,
   &:active {
     background-color: ${props => props.theme.colors.layers[1].background};
-    color: ${props => props.theme.colors.pallete.primary.normal};
+    color: ${props => props.theme.colors.palette.primary.normal};
     cursor: pointer;
 
     ${IconCircle} {

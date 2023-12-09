@@ -1,7 +1,9 @@
+import React from 'react'
+
 import * as S from './styles'
 
-import { ButtonBaseProps } from 'components/ButtonBase'
 import { Spinner } from 'components'
+import { ButtonBaseProps } from 'components/ButtonBase'
 import { IconComponent } from 'icons'
 import { FieldSizesToken } from 'lib/theming'
 

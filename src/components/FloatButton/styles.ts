@@ -46,7 +46,8 @@ export const Wrapper = styled(IconButton)<{
 
     return css`
       z-index: ${$zIndex || theme.zIndex.floatButtons};
-      box-shadow: 0 6px 16px 0 ${opacify(-0.92, shadowColor)},
+      box-shadow:
+        0 6px 16px 0 ${opacify(-0.92, shadowColor)},
         0 3px 6px -4px ${opacify(-0.88, shadowColor)},
         0 9px 28px 8px ${opacify(-0.95, shadowColor)};
     `

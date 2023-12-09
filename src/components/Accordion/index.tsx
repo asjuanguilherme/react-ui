@@ -1,15 +1,17 @@
-import { ThemeLayerIndex } from 'lib/theming'
-import * as S from './styles'
-import {
+import React, {
   MouseEventHandler,
   ReactNode,
   useEffect,
   useRef,
   useState,
 } from 'react'
-import _uniqueId from 'lodash/uniqueId'
+
+import * as S from './styles'
+
 import { ChevronButton } from 'components'
 import { IconComponent } from 'icons'
+import { ThemeLayerIndex } from 'lib/theming'
+import _uniqueId from 'lodash/uniqueId'
 import { HTMLStyleAttributes } from 'types'
 
 export type AccordionSize = 'small' | 'medium'

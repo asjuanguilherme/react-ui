@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 import { FormFieldStatusType } from '.'
 
 export const Wrapper = styled.span<{ $type: FormFieldStatusType }>`
@@ -13,11 +14,11 @@ export const Wrapper = styled.span<{ $type: FormFieldStatusType }>`
     switch (props.$type) {
       case 'error':
         return css`
-          color: ${props => props.theme.colors.pallete.error.light};
+          color: ${props => props.theme.colors.palette.error.light};
         `
       case 'success':
         return css`
-          color: ${props => props.theme.colors.pallete.success.normal};
+          color: ${props => props.theme.colors.palette.success.normal};
         `
       case 'info':
         css`

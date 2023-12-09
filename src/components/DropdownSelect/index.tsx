@@ -1,14 +1,15 @@
+import React from 'react'
 import { ChangeEventHandler, useMemo, useState } from 'react'
-import { ThemeLayerIndex } from 'lib/theming'
+
 import {
   FormField,
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
   TextInput,
 } from 'components'
-import _uniqueId from 'lodash/uniqueId'
 import { ChevronButton, Popover, Menu } from 'components'
 import { IconComponent, MagIcon } from 'icons'
+import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 
 export type DropdownSelectSearchProps = {
@@ -155,7 +156,7 @@ export const DropdownSelect = ({
                   icon={item.icon}
                   title={item.label}
                   layer={layer}
-                  onClick={e => {
+                  onClick={() => {
                     setInternalSelectedValue(item.value)
                     onChange && onChange(item.value)
 

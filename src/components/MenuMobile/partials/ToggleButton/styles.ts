@@ -43,7 +43,7 @@ export const Wrapper = styled.button<{
   z-index: ${props => props.theme.zIndex.menuMobileToggle};
 
   &:hover {
-    color: ${props => props.theme.colors.pallete.primary.normal};
+    color: ${props => props.theme.colors.palette.primary.normal};
   }
 
   ${({ $opened, theme }) =>
@@ -58,7 +58,7 @@ export const Wrapper = styled.button<{
         ${props => props.theme.container.padding} +
           ${props => props.theme.spacing.components.medium}
       );
-      color: ${theme.colors.pallete.primary.normal};
+      color: ${theme.colors.palette.primary.normal};
 
       ${TopBar} {
         top: 50%;

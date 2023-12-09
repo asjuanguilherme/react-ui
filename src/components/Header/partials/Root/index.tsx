@@ -1,4 +1,6 @@
+import React from 'react'
 import { ReactNode, useEffect, useRef, useState } from 'react'
+
 import * as S from './styles'
 
 export type HeaderRootProps = {

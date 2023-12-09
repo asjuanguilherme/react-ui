@@ -1,5 +1,5 @@
 export * from './utils'
-import {
+import React, {
   createContext,
   ReactNode,
   useContext,
@@ -7,9 +7,11 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { ThemeProvider } from 'styled-components'
-import { saveThemeCookie, getThemeCookie } from './utils'
+
 import { Theme } from 'lib/theming'
+import { ThemeProvider } from 'styled-components'
+
+import { getThemeCookie, saveThemeCookie } from './utils'
 
 export type GlobalThemeContextProps = Theme & {
   themeToggle: () => void

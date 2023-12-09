@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
 import { ThemeLayerIndex } from 'lib/theming'
+import styled, { css } from 'styled-components'
 
 export const Button = styled.button<{
   $active: boolean
@@ -39,7 +39,7 @@ export const Button = styled.button<{
     $active
       ? css`
           color: white;
-          background-color: ${theme.colors.pallete.primary.normal};
+          background-color: ${theme.colors.palette.primary.normal};
         `
       : css`
           &:hover {

@@ -1,5 +1,8 @@
-import * as S from './styles'
+import React from 'react'
 import { MutableRefObject } from 'react'
+
+import * as S from './styles'
+
 import { getInitialsFromName } from '@asjuanguilherme/js-utils'
 import { HTMLStyleAttributes } from 'types'
 

@@ -1,5 +1,8 @@
-import { ThemeLayerIndex } from 'lib/theming'
+import React from 'react'
+
 import * as S from './styles'
+
+import { ThemeLayerIndex } from 'lib/theming'
 
 export type RatingStarProps = {
   onMouseOver: VoidFunction

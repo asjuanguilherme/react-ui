@@ -1,5 +1,7 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
+
 import * as S from './styles'
+
 import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 
@@ -20,7 +22,7 @@ export const PopoverBox = ({
   children,
   visible = false,
   layer = 1,
-  maxHeight = 300,
+  maxHeight,
   horizontalAlignment = 'center',
   verticalAlignment = 'top',
   ...props
@@ -32,6 +34,7 @@ export const PopoverBox = ({
         $layer={layer}
         $horizontalAlignment={horizontalAlignment}
         $verticalAlignment={verticalAlignment}
+        $maxHeight={maxHeight}
       >
         {children}
       </S.Box>

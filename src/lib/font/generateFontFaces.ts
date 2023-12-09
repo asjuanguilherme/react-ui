@@ -21,8 +21,8 @@ export const generateFontFaces = (fontFamily: FontFamily): string => {
           src: local('${fontFamily.name} ${capitalizeFirstLetter(weight)}'),
             url(
               ./fonts/assets/${fontFamily.filePrefix}${weightValue}${
-        fontFamily.fileExtension
-      }
+                fontFamily.fileExtension
+              }
             )
               format('${fontFamily.format}');
         }

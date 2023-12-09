@@ -1,6 +1,6 @@
-import { ThemePalleteColors } from './'
+import { ThemePaletteColors } from '.'
 
-export const defaultThemePallete: ThemePalleteColors = {
+export const defaultThemePalette: ThemePaletteColors = {
   primary: {
     light: '#E7D9FF',
     normal: '#9F4DFF',

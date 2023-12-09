@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { createIconComponent } from './createIconComponent'
 export const MinusIcon = createIconComponent({
   content: (

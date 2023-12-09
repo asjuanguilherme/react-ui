@@ -6,7 +6,7 @@ export const Count = styled.span<{ $limitExceeded: boolean }>`
   ${({ $limitExceeded }) =>
     $limitExceeded &&
     css`
-      color: ${props => props.theme.colors.pallete.error.normal};
+      color: ${props => props.theme.colors.palette.error.normal};
     `}
 `
 

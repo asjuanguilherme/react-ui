@@ -1,6 +1,4 @@
-/* eslint-disable react/display-name */
-
-import { createElement, CSSProperties, ReactNode } from 'react'
+import React, { createElement, CSSProperties, ReactNode } from 'react'
 
 export type IconProps = {
   color?: string
@@ -18,9 +16,15 @@ export type CreateIconComponentProps = {
   color?: string
 }
 
-export const createIconComponent =
-  ({ content, viewBox }: CreateIconComponentProps): IconComponent =>
-  ({ size = '1em', color = 'currentColor', ...componentProps }: IconProps) => {
+export const createIconComponent = ({
+  content,
+  viewBox,
+}: CreateIconComponentProps): IconComponent => {
+  const createIcon = ({
+    size = '1em',
+    color = 'currentColor',
+    ...componentProps
+  }: IconProps) => {
     const props = {
       height: size,
       width: size,
@@ -40,3 +44,6 @@ export const createIconComponent =
       ),
     )
   }
+
+  return createIcon
+}

@@ -1,6 +1,9 @@
-import { IconComponent } from 'icons'
+import React from 'react'
 import { MouseEventHandler, MutableRefObject } from 'react'
+
 import * as S from './styles'
+
+import { IconComponent } from 'icons'
 import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 

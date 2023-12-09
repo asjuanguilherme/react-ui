@@ -1,7 +1,8 @@
-import { MouseEventHandler } from 'react'
-import { ThemeLayerIndex } from 'lib/theming'
-import { Menu, Accordion } from 'components'
+import React, { FC, MouseEventHandler } from 'react'
+
+import { Accordion, Menu } from 'components'
 import { IconComponent } from 'icons'
+import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 
 export type AccordionMenuItemProps = {
@@ -21,12 +22,11 @@ export type AccordionMenuProps = {
   items?: AccordionMenuItemProps[]
   layer?: ThemeLayerIndex
   icon?: IconComponent
-  anchorComponent?: any
+  anchorComponent?: FC<object>
   size?: 'small' | 'medium'
 } & HTMLStyleAttributes
 
 export const AccordionMenu = ({
-  href,
   items,
   anchorComponent,
   size = 'small',

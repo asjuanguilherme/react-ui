@@ -1,8 +1,9 @@
-import styled, { css, keyframes } from 'styled-components'
-import { ModalVariant } from '.'
-import { ThemeLayerIndex } from 'lib/theming'
 import { fontFamily } from 'fonts'
 import { screens } from 'lib/responsiveness'
+import { ThemeLayerIndex } from 'lib/theming'
+import styled, { css, keyframes } from 'styled-components'
+
+import { ModalVariant } from '.'
 
 export const BoxContent = styled.div`
   flex: 1;
@@ -39,7 +40,7 @@ export const CloseButton = styled.button`
   color: ${props => props.theme.colors.content.title};
 
   &:hover {
-    color: ${props => props.theme.colors.pallete.primary.normal};
+    color: ${props => props.theme.colors.palette.primary.normal};
   }
 `
 

@@ -1,4 +1,5 @@
 import * as Partials from './partials'
+export * from './partials'
 
 export const Menu = {
   List: Partials.MenuList,

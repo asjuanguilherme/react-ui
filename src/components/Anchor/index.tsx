@@ -1,10 +1,13 @@
-import * as S from './styles'
-import { MutableRefObject, ReactNode } from 'react'
-import { HTMLStyleAttributes } from 'types'
-import { IconComponent } from 'icons'
-import { ThemePalleteColors } from 'lib/theming'
+import React, { MutableRefObject, ReactNode } from 'react'
 
-type Color = keyof ThemePalleteColors
+import * as S from './styles'
+
+import { IconComponent } from 'icons'
+import { ThemePaletteColors } from 'lib/theming'
+import { WebTarget } from 'styled-components'
+import { HTMLStyleAttributes } from 'types'
+
+type Color = keyof ThemePaletteColors
 
 export type AnchorColor = 'inherit' | Color
 
@@ -14,7 +17,7 @@ export type AnchorProps = {
   href: string
   icon?: IconComponent
   title?: ReactNode
-  as?: any
+  as?: WebTarget
   color?: AnchorColor
   hoverColor?: AnchorHoverColor
   setRef?: MutableRefObject<HTMLAnchorElement | null>

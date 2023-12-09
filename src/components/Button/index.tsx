@@ -1,5 +1,8 @@
-import * as S from './styles'
+import React from 'react'
 import { ReactNode } from 'react'
+
+import * as S from './styles'
+
 import { Spinner } from 'components'
 import { ButtonBaseProps } from 'components/ButtonBase'
 import { IconComponent } from 'icons'

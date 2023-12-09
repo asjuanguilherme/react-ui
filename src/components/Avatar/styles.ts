@@ -1,7 +1,7 @@
 import { generateColorFromString } from '@asjuanguilherme/js-utils'
+import { fontFamily } from 'fonts'
 import { readableColor } from 'polished'
 import styled, { css } from 'styled-components'
-import { fontFamily } from 'fonts'
 
 export const Image = styled.img`
   width: 100%;

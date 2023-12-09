@@ -1,4 +1,4 @@
-import {
+import React, {
   Dispatch,
   MutableRefObject,
   ReactNode,
@@ -7,18 +7,22 @@ import {
   useRef,
   useState,
 } from 'react'
+
 import * as S from './styles'
+
 import _uniqueId from 'lodash/uniqueId'
 
-export type PopoverRootChildrenCallbackProps = {
+export type PopoverRootChildrenCallbackProps<T extends HTMLElement | null> = {
   popoverId: string
   isActive: boolean
   setIsActive: Dispatch<SetStateAction<boolean>>
-  triggerRef: MutableRefObject<HTMLElement | any>
+  triggerRef: MutableRefObject<T>
 }
 
 export type PopoverRootProps = {
-  children?: (props: PopoverRootChildrenCallbackProps) => ReactNode
+  children?: <T extends HTMLElement | null>(
+    props: PopoverRootChildrenCallbackProps<T>,
+  ) => ReactNode
   triggerOn?: 'hover' | 'click'
 }
 
@@ -37,7 +41,7 @@ export const PopoverRoot = ({
 
       const bodyEl = document.querySelector('body')
 
-      const mouseoverHandler: EventListener = e => {
+      const mouseoverHandler: EventListener = () => {
         setIsActive(true)
       }
 

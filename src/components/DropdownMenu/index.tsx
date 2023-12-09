@@ -1,8 +1,9 @@
-import { ThemeLayerIndex } from 'lib/theming'
-import { IconComponent } from 'icons'
-import _uniqueId from 'lodash/uniqueId'
-import { ChevronButton, Popover, Menu } from 'components'
+import React from 'react'
+
+import { ChevronButton, Menu, Popover } from 'components'
 import { MenuItemProps } from 'components/Menu/partials'
+import { IconComponent } from 'icons'
+import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 
 export type DropdownMenuItem = MenuItemProps

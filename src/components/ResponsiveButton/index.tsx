@@ -1,7 +1,9 @@
-import { MouseEventHandler } from 'react'
+import React, { MouseEventHandler } from 'react'
+
 import * as S from './styles'
-import { SupportedHTMLElements } from 'styled-components'
+
 import { IconComponent } from 'icons'
+import { SupportedHTMLElements } from 'styled-components'
 import { HTMLStyleAttributes } from 'types'
 
 export type ResponsiveButtonProps = {
@@ -11,7 +13,7 @@ export type ResponsiveButtonProps = {
   title: string
   onClick?: MouseEventHandler
   borderDashed?: boolean
-  as?: SupportedHTMLElements | any
+  as?: SupportedHTMLElements | unknown
 } & HTMLStyleAttributes
 
 export const ResponsiveButton = ({

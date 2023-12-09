@@ -1,4 +1,5 @@
 import { ReactNode, useCallback, useState } from 'react'
+
 import _uniqueId from 'lodash/uniqueId'
 
 export type AccordionsContextCallbackProps = {

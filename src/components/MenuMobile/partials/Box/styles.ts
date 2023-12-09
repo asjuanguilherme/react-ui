@@ -1,12 +1,12 @@
 import { CardBase } from 'components/CardBase'
-import styled, { css } from 'styled-components'
 import { fontFamily } from 'fonts'
+import styled, { css } from 'styled-components'
 
 export const Title = styled.span`
   font-size: ${props => props.theme.fontSizes.large};
   font-weight: ${fontFamily.poppins.weights.bold};
   text-transform: uppercase;
-  color: ${props => props.theme.colors.pallete.primary.normal};
+  color: ${props => props.theme.colors.palette.primary.normal};
 `
 
 export const PoweredByText = styled.span`
@@ -14,7 +14,7 @@ export const PoweredByText = styled.span`
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: ${props => props.theme.colors.pallete.primary.normal};
+  color: ${props => props.theme.colors.palette.primary.normal};
 
   svg {
     margin-left: ${props => props.theme.spacing.components.small};

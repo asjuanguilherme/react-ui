@@ -1,20 +1,20 @@
 import { darken, lighten } from 'polished'
 
-export type GenerateThemeColorPalleteItemParams = {
+export type GenerateThemeColorPaletteItemParams = {
   baseColor: string
   increment?: number
 }
 
-export type ThemeColorPalleteItem = {
+export type ThemeColorPaletteItem = {
   light: string
   normal: string
   dark: string
 }
 
-export const generateThemeColorPalleteItem = ({
+export const generateThemeColorPaletteItem = ({
   baseColor,
   increment = 0.1,
-}: GenerateThemeColorPalleteItemParams): ThemeColorPalleteItem => {
+}: GenerateThemeColorPaletteItemParams): ThemeColorPaletteItem => {
   const light = lighten(increment, baseColor)
   const dark = darken(increment, baseColor)
 

@@ -1,4 +1,4 @@
-import {
+import React, {
   ChangeEventHandler,
   FocusEventHandler,
   MouseEventHandler,
@@ -7,15 +7,16 @@ import {
   useEffect,
   useState,
 } from 'react'
+
 import * as S from './styles'
-import { ButtonProps, FormField } from 'components'
+
+import { ButtonProps, FormField, FormTextField } from 'components'
 import {
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
 } from 'components/FormField/utils/handleFormFieldStatus'
-import { FormTextField } from 'components'
-import { HTMLStyleAttributes } from 'types'
 import { ThemeLayerIndex } from 'lib/theming'
+import { HTMLStyleAttributes } from 'types'
 
 export type TextInputProps = {
   label?: string
@@ -23,7 +24,7 @@ export type TextInputProps = {
   prefix?: ReactNode
   fillWidth?: boolean
   layer?: ThemeLayerIndex
-  type?: 'text' | 'email' | 'password' | 'phone'
+  type?: 'text' | 'email' | 'password' | 'tel'
   placeholder?: string
   button?: ButtonProps
   value?: string

@@ -1,7 +1,9 @@
-import * as S from './styles'
-import { MenuMobileRootCallbackProps } from '../Root'
-import { HeartIcon } from 'icons'
+import React from 'react'
 import { ReactNode } from 'react'
+
+import * as S from './styles'
+
+import { MenuMobileRootCallbackProps } from '../Root'
 
 export type MenuMobileBoxProps = MenuMobileRootCallbackProps & {
   title: string
@@ -13,7 +15,6 @@ export const MenuMobileBox = ({
   opened,
   htmlIDPrefix,
   title,
-  locale,
   children,
 }: MenuMobileBoxProps) => {
   return (
@@ -21,7 +22,7 @@ export const MenuMobileBox = ({
       aria-hidden={!opened}
       id={htmlIDPrefix + 'box'}
       $opened={opened}
-      onClick={e => setOpened(false)}
+      onClick={() => setOpened(false)}
     >
       <S.Box onClick={e => e.stopPropagation()} roundedCorners="large">
         <S.Header>

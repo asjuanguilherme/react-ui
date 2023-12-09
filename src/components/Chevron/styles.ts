@@ -1,5 +1,6 @@
-import styled from 'styled-components'
 import { ChevronDownIcon } from 'icons'
+import styled from 'styled-components'
+
 import { ChevronDirection } from '.'
 
 const angleByDirection = {

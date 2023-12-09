@@ -43,7 +43,7 @@ export const Wrapper = styled.span<{ $layer: ThemeLayerIndex }>`
   }
 
   input:checked ~ ${SwitchTrack} {
-    background: ${props => props.theme.colors.pallete.primary.normal};
+    background: ${props => props.theme.colors.palette.primary.normal};
 
     ${SwitchDot} {
       left: 100%;

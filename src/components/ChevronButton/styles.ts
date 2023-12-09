@@ -7,6 +7,6 @@ export const Wrapper = styled(DefaultButton)<{ $active: boolean }>`
   ${({ $active }) =>
     $active &&
     css`
-      color: ${props => props.theme.colors.pallete.primary.normal};
+      color: ${props => props.theme.colors.palette.primary.normal};
     `}
 `

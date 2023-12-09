@@ -1,12 +1,15 @@
-import { ThemeLayerIndex } from 'lib/theming'
-import * as S from './styles'
+import React, { ChangeEventHandler } from 'react'
 import { ReactNode } from 'react'
+
+import * as S from './styles'
+
+import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 
 export type CheckboxProps = {
   name?: string
   value?: string
-  onChange?: (e: any) => void
+  onChange?: ChangeEventHandler
   checked?: boolean
   layer?: ThemeLayerIndex
   text?: ReactNode

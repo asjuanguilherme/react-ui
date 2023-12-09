@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { Button as DefaultButton } from 'components'
+import styled from 'styled-components'
 
 export const Button = styled(DefaultButton)``
 

@@ -2,6 +2,7 @@ import { CardBase } from 'components/CardBase'
 import { breakpoints } from 'lib/responsiveness'
 import { ThemeLayerIndex } from 'lib/theming'
 import styled, { css } from 'styled-components'
+
 import { PopoverBoxHorizontalAlignment, PopoverBoxVerticalAlignment } from '.'
 
 export const Box = styled(CardBase)<{
@@ -9,6 +10,7 @@ export const Box = styled(CardBase)<{
   $layer: ThemeLayerIndex
   $horizontalAlignment: PopoverBoxHorizontalAlignment
   $verticalAlignment: PopoverBoxVerticalAlignment
+  $maxHeight?: number
 }>`
   @media screen and (max-width: ${breakpoints.tablet}px) {
     width: 100%;
@@ -30,6 +32,12 @@ export const Box = styled(CardBase)<{
   transition: ${props => props.theme.transition.default};
   transition-property: background, border, transform, opacity, top;
   top: 100%;
+
+  ${({ $maxHeight }) =>
+    $maxHeight &&
+    css`
+      max-height: ${$maxHeight}px;
+    `}
 
   ${({ $visible }) =>
     !$visible &&

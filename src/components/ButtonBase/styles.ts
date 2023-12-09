@@ -1,13 +1,13 @@
+import { fontFamily } from 'fonts'
+import { ThemeLayerIndex, ThemePaletteColors } from 'lib/theming'
+import { grayscale, readableColor } from 'polished'
 import styled, { css } from 'styled-components'
 
 import { ButtonVariant } from '.'
-import { readableColor, grayscale } from 'polished'
-import { ThemeLayerIndex, ThemePalleteColors } from 'lib/theming'
-import { fontFamily } from 'fonts'
 
 export const Wrapper = styled.button<{
   $variant: ButtonVariant
-  $color: keyof ThemePalleteColors
+  $color: keyof ThemePaletteColors
   $layer: ThemeLayerIndex
   $loading: boolean
   $shape: 'pill' | 'rounded'
@@ -56,12 +56,12 @@ export const Wrapper = styled.button<{
     switch ($variant) {
       case 'filled':
         return css`
-          background: ${theme.colors.pallete[$color].normal};
+          background: ${theme.colors.palette[$color].normal};
           color: ${() => {
             if ($color === 'primary') return 'white'
 
             return readableColor(
-              theme.colors.pallete[$color].normal,
+              theme.colors.palette[$color].normal,
               '#000000',
               '#ffffff',
             )
@@ -69,16 +69,16 @@ export const Wrapper = styled.button<{
 
           &:disabled {
             opacity: 0.8;
-            background: ${grayscale(theme.colors.pallete[$color].light)};
+            background: ${grayscale(theme.colors.palette[$color].light)};
           }
 
           &:not(:disabled) {
             &:hover {
-              background: ${theme.colors.pallete[$color].light};
+              background: ${theme.colors.palette[$color].light};
             }
 
             &:active {
-              background: ${theme.colors.pallete[$color].dark};
+              background: ${theme.colors.palette[$color].dark};
             }
           }
         `
@@ -94,8 +94,8 @@ export const Wrapper = styled.button<{
 
           &:not(:disabled) {
             &:hover {
-              color: ${theme.colors.pallete[$color].normal};
-              border-color: ${theme.colors.pallete[$color].light}40;
+              color: ${theme.colors.palette[$color].normal};
+              border-color: ${theme.colors.palette[$color].light}40;
             }
           }
 
@@ -104,21 +104,21 @@ export const Wrapper = styled.button<{
 
           ${$active &&
           css`
-            color: ${theme.colors.pallete[$color].normal};
-            border-color: ${theme.colors.pallete[$color].light}40;
+            color: ${theme.colors.palette[$color].normal};
+            border-color: ${theme.colors.palette[$color].light}40;
             background-color: ${theme.colors.layers[$layer].hoveredBackground};
           `}
         `
       case 'outlined':
         return css`
           background: transparent;
-          color: ${theme.colors.pallete[$color].normal};
+          color: ${theme.colors.palette[$color].normal};
           border: 1px solid currentColor;
 
           &:hover {
-            background-color: ${theme.colors.pallete[$color].normal};
+            background-color: ${theme.colors.palette[$color].normal};
             color: ${readableColor(
-              theme.colors.pallete[$color].normal,
+              theme.colors.palette[$color].normal,
               'black',
               'white',
             )};

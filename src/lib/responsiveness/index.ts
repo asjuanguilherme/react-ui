@@ -1,4 +1,3 @@
-import { css, Interpolation } from 'styled-components'
 import { objectKeys } from '@asjuanguilherme/js-utils'
 
 export const breakpoints = {
@@ -27,30 +26,3 @@ export const screens = {
   desktop: breakpointUp(breakpoints.desktop),
   desktopL: breakpointUp(breakpoints.desktopL),
 } as const
-
-export const screenUp = (breakpoint: keyof typeof breakpoints | number) => {
-  const breakpointValue = (() => {
-    if (typeof breakpoint === 'number') return breakpoint
-
-    if (
-      validBreakpointNames.some(
-        validBreakpoint => validBreakpoint === breakpoint,
-      )
-    )
-      return breakpoints[breakpoint]
-
-    throw new Error(
-      `Insert a valid breakpoint on "breakpointUp" function. Valid breakpoints are: ${validBreakpointNames.join(
-        ', ',
-      )} or number value.`,
-    )
-  })()
-
-  return (cssStyle: Interpolation<any>) => {
-    return css`
-      ${breakpointUp(breakpointValue)} {
-        ${cssStyle}
-      }
-    `
-  }
-}

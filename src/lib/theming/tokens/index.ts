@@ -1,4 +1,5 @@
 // @index('./*', f => `export * from '${f.path}'`)
+export * from './ZIndex'
 export * from './blurRadiusToken'
 export * from './borderRadius'
 export * from './constructThemeTokens'
@@ -10,4 +11,3 @@ export * from './fontWeights'
 export * from './spacing'
 export * from './tokens'
 export * from './transition'
-export * from './ZIndex'

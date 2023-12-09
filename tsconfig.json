@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "./dist"
+    "jsx": "react"
   },
   "extends": "@asjuanguilherme/tsconfig/react-library.json",
   "include": [".", "src/assets", "styled.d.ts"],

@@ -9,7 +9,7 @@ export const Button = styled.button<{ $active?: boolean }>`
   justify-content: center;
   text-decoration: none;
   border-radius: ${props => props.theme.borderRadius.circle};
-  color: ${props => props.theme.colors.pallete.primary.normal};
+  color: ${props => props.theme.colors.palette.primary.normal};
   background: transparent;
   transition: ${props => props.theme.transition.default} background-color;
 
@@ -19,14 +19,14 @@ export const Button = styled.button<{ $active?: boolean }>`
           cursor: default;
           pointer-events: none;
           background-color: ${props =>
-            props.theme.colors.pallete.primary.normal};
+            props.theme.colors.palette.primary.normal};
           color: white;
         `
       : css`
           &:hover {
             cursor: pointer;
             background-color: ${props =>
-              opacify(-0.7, props.theme.colors.pallete.primary.normal)};
+              opacify(-0.7, props.theme.colors.palette.primary.normal)};
           }
         `}
 `

@@ -1,5 +1,6 @@
+import React, { CSSProperties } from 'react'
+
 import * as S from './styles'
-import { CSSProperties } from 'react'
 
 export type PaginationProps = {
   pagesCount?: number

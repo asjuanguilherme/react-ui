@@ -1,7 +1,10 @@
-import { IconComponent } from 'icons'
+import React from 'react'
 import { HTMLAttributes, MouseEventHandler, useMemo } from 'react'
-import { ThemeLayerIndex } from 'lib/theming'
+
 import * as S from './styles'
+
+import { IconComponent } from 'icons'
+import { ThemeLayerIndex } from 'lib/theming'
 
 export type IconShowcaseItemProps = {
   title: string

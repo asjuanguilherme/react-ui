@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { DropdownMenu, DropdownMenuProps } from 'components'
 import { BRFlagIcon, USAFlagIcon } from 'icons'
 

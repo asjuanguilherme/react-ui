@@ -1,6 +1,7 @@
-import styled, { keyframes } from 'styled-components'
-import { Button as DefaultButton } from '..'
 import { FormTextField } from 'components/FormTextField'
+import styled, { keyframes } from 'styled-components'
+
+import { Button as DefaultButton } from '..'
 
 const appearButtonKeyframes = keyframes`
   from {

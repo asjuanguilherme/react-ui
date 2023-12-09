@@ -1,6 +1,9 @@
-import { breakpoints } from 'lib/responsiveness'
-import * as S from './styles'
+import React from 'react'
 import { ReactNode } from 'react'
+
+import * as S from './styles'
+
+import { breakpoints } from 'lib/responsiveness'
 import { HTMLStyleAttributes } from 'types'
 
 export type ContainerProps = {

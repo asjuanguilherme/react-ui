@@ -1,4 +1,7 @@
+import React from 'react'
+
 import * as S from './styles'
+
 import { HTMLStyleAttributes } from 'types'
 
 export type FormFieldCharsLimitProps = {

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
 import { ThemeLayerIndex } from 'lib/theming'
+import styled, { css } from 'styled-components'
 
 import { CardBaseProps } from '.'
 

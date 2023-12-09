@@ -1,2 +1,2 @@
-export * from './Root'
 export * from './NavBar'
+export * from './Root'

@@ -1,10 +1,12 @@
+import { poppinsFontFamily } from 'fonts/poppins'
+
+import { defaultThemePalette } from './defaultThemePalette'
+import { ThemeColorPaletteItem } from './generateColorPaletteItem'
 import {
   GenerateThemeContentColorsParams,
   GenerateThemeLayersColorsParams,
-  ThemeColorPalleteItem,
   ThemeContentColor,
   ThemeLayersColors,
-  defaultThemePallete,
   generateThemeContentColors,
   generateThemeLayersColors,
 } from './index'
@@ -12,23 +14,24 @@ import { ThemeTokens, constructThemeTokens } from './tokens'
 
 export type ThemeType = 'dark' | 'light'
 
-export type ThemePalleteColors = {
-  primary: ThemeColorPalleteItem
-  error: ThemeColorPalleteItem
-  success: ThemeColorPalleteItem
-  warning: ThemeColorPalleteItem
-  info: ThemeColorPalleteItem
-  [key: string]: ThemeColorPalleteItem
+export type ThemePaletteColors = {
+  primary: ThemeColorPaletteItem
+  error: ThemeColorPaletteItem
+  success: ThemeColorPaletteItem
+  warning: ThemeColorPaletteItem
+  info: ThemeColorPaletteItem
+  [key: string]: ThemeColorPaletteItem
 }
 
 export type ConstructThemeParams = {
   type: ThemeType
   name: string
   colors: {
-    pallete?: ThemePalleteColors
+    palette?: ThemePaletteColors
     content: GenerateThemeContentColorsParams
     layers: GenerateThemeLayersColorsParams
   }
+  fontFamily?: string
   tokens?: ThemeTokens
 }
 
@@ -38,8 +41,9 @@ export type Theme = {
   colors: {
     content: ThemeContentColor
     layers: ThemeLayersColors
-    pallete: ThemePalleteColors
+    palette: ThemePaletteColors
   }
+  fontFamily: string
 } & ThemeTokens
 
 export const constructTheme = (args: ConstructThemeParams): Theme => {
@@ -47,10 +51,11 @@ export const constructTheme = (args: ConstructThemeParams): Theme => {
     type: args.type,
     name: args.name,
     colors: {
-      pallete: args.colors.pallete || defaultThemePallete,
+      palette: args.colors.palette || defaultThemePalette,
       content: generateThemeContentColors(args.colors.content),
       layers: generateThemeLayersColors(args.colors.layers),
     },
+    fontFamily: poppinsFontFamily.name,
     ...constructThemeTokens(args.tokens),
   }
 }

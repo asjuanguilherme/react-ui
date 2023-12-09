@@ -1,7 +1,7 @@
-import { mix } from 'polished'
-import styled, { css } from 'styled-components'
 import { fontFamily } from 'fonts'
 import { ThemeLayerIndex } from 'lib/theming'
+import { mix } from 'polished'
+import styled, { css } from 'styled-components'
 
 export type TextFieldSharedStyleProps = {
   $layer: ThemeLayerIndex
@@ -63,7 +63,7 @@ const Wrapper = styled.span<TextFieldSharedStyleProps>`
     css`
       border-color: ${mix(
         0.3,
-        theme.colors.pallete.primary.normal,
+        theme.colors.palette.primary.normal,
         theme.colors.layers[$layer].border,
       )};
     `}
@@ -71,13 +71,13 @@ const Wrapper = styled.span<TextFieldSharedStyleProps>`
   ${({ theme, $hasError }) =>
     $hasError &&
     css`
-      border-color: ${theme.colors.pallete.error.normal};
+      border-color: ${theme.colors.palette.error.normal};
     `}
 
   ${({ theme, $hasSuccess }) =>
     $hasSuccess &&
     css`
-      border-color: ${theme.colors.pallete.success.normal};
+      border-color: ${theme.colors.palette.success.normal};
     `}
 
   ${({ theme, $disabled, $layer }) =>

@@ -1,11 +1,12 @@
 import { ButtonBase } from 'components/ButtonBase'
+import { FieldSizesToken } from 'lib/theming'
 import styled, { css } from 'styled-components'
+
 import {
   BackgroundImageFit,
   BackgroundImagePositionX,
   BackgroundImagePositionY,
 } from '.'
-import { FieldSizesToken } from 'lib/theming'
 
 export const Wrapper = styled(ButtonBase)<{
   $size: keyof FieldSizesToken

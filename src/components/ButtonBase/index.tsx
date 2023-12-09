@@ -1,17 +1,19 @@
-import * as S from './styles'
-
+import React from 'react'
 import { MouseEvent, MutableRefObject, ReactNode } from 'react'
 
-import { ThemeLayerIndex, ThemePalleteColors } from 'lib/theming'
+import * as S from './styles'
+
+import { ThemeLayerIndex, ThemePaletteColors } from 'lib/theming'
+import { WebTarget } from 'styled-components'
 import { HTMLStyleAttributes } from 'types'
 
 export type ButtonVariant = 'filled' | 'outlined' | 'layerBased'
 
 export type ButtonBaseCommonProps = {
-  [key: string]: any
+  [key: string]: unknown
 } & {
   children?: ReactNode
-  setRef?: MutableRefObject<HTMLButtonElement | HTMLAnchorElement | null>
+  setRef?: MutableRefObject<HTMLElement | null>
   type?: 'button' | 'submit'
   disabled?: boolean
   loading?: boolean
@@ -19,7 +21,7 @@ export type ButtonBaseCommonProps = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void
   isExternal?: boolean
   href?: string
-  linkComponent?: any
+  linkComponent?: WebTarget
   shape?: 'pill' | 'rounded'
 } & HTMLStyleAttributes
 
@@ -34,7 +36,7 @@ export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
 
 export type ButtonBaseEitherVariantsProps = ButtonBaseCommonProps & {
   variant?: ButtonVariant
-  color?: keyof ThemePalleteColors
+  color?: keyof ThemePaletteColors
   layer?: never
   borderLess?: never
   transparent?: never
@@ -67,6 +69,7 @@ export const ButtonBase = ({
       ref={setRef}
       target={props.href && isExternal ? '_blank' : '_self'}
       rel={props.href && isExternal ? 'noopener noreferrer' : undefined}
+      type={type}
       {...props}
       $layer={layer}
       $variant={variant}

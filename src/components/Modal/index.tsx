@@ -1,8 +1,10 @@
+import React, { ReactNode } from 'react'
+
 import * as S from './styles'
-import { ReactNode } from 'react'
-import { ThemeLayerIndex } from 'lib/theming'
+
 import { Button } from 'components'
 import { XmarkIcon } from 'icons'
+import { ThemeLayerIndex } from 'lib/theming'
 
 export type ModalVariant = 'default' | 'discret'
 

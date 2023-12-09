@@ -1,10 +1,12 @@
-import { ThemeLayerIndex } from 'lib/theming'
+import React, { ChangeEventHandler } from 'react'
+
 import * as S from './styles'
-import { ChangeEventHandler } from 'react'
+
+import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 
 export type SwitchProps = {
-  onChange?: ChangeEventHandler
+  onChange?: ChangeEventHandler<HTMLInputElement>
   checked?: boolean
   label?: string
   labelPosition?: 'start' | 'end'

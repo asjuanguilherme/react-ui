@@ -1,7 +1,10 @@
+import React, { useState } from 'react'
+
 import * as S from './styles'
-import { useState } from 'react'
-import { RatingStar } from './RatingStar'
+
 import { ThemeLayerIndex } from 'lib/theming'
+
+import { RatingStar } from './RatingStar'
 
 const rateNumbers = [1, 2, 3, 4, 5]
 
