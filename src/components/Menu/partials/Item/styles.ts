@@ -14,7 +14,7 @@ export const Button = styled.button<{
   align-items: center;
   color: ${props => props.theme.colors.content.text};
   background: transparent;
-  transition-duration: ${props => props.theme.transition.default};
+  transition-duration: ${props => props.theme.transitionDurations.default};
   transition-property: background;
   text-decoration: none;
 

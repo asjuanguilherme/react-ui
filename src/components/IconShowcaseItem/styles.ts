@@ -26,7 +26,7 @@ export const Wrapper = styled(CardBase)<{
   padding-top: 100%;
   border-radius: ${props => props.theme.borderRadius.medium};
   position: relative;
-  transition: ${props => props.theme.transition.fast};
+  transition: ${props => props.theme.transitionDurations.fast};
   transition-property: background, color, border;
 
   & > svg {
@@ -36,7 +36,7 @@ export const Wrapper = styled(CardBase)<{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: ${props => props.theme.transition.fast};
+    transition: ${props => props.theme.transitionDurations.fast};
     transition-property: transform;
   }
 

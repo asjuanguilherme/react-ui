@@ -11,7 +11,8 @@ export const Button = styled.button<{ $active?: boolean }>`
   border-radius: ${props => props.theme.borderRadius.circle};
   color: ${props => props.theme.colors.palette.primary.normal};
   background: transparent;
-  transition: ${props => props.theme.transition.default} background-color;
+  transition: ${props => props.theme.transitionDurations.default}
+    background-color;
 
   ${props =>
     props.$active

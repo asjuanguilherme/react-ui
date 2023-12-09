@@ -10,7 +10,7 @@ export const Wrapper = styled.a<{
   gap: ${props => props.theme.spacing.components.xsmall};
   align-items: center;
   color: inherit;
-  transition: ${props => props.theme.transition.default};
+  transition: ${props => props.theme.transitionDurations.default};
   font-size: inherit;
   text-decoration: none;
 

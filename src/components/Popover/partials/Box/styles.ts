@@ -29,7 +29,7 @@ export const Box = styled(CardBase)<{
   position: absolute;
   z-index: 10;
   width: 100%;
-  transition: ${props => props.theme.transition.default};
+  transition: ${props => props.theme.transitionDurations.default};
   transition-property: background, border, transform, opacity, top;
   top: 100%;
 
@@ -99,7 +99,7 @@ export const Wrapper = styled.div<{ $visible: boolean }>`
     padding: ${props => props.theme.container.padding};
     display: flex;
     align-items: flex-end;
-    transition-duration: ${props => props.theme.transition.default};
+    transition-duration: ${props => props.theme.transitionDurations.default};
     transition-property: opacity;
 
     ${({ $visible }) =>

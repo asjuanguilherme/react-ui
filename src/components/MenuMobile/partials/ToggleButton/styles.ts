@@ -4,7 +4,7 @@ export const IconBar = styled.span`
   height: 2px;
   width: 100%;
   border-radius: ${props => props.theme.borderRadius.pill};
-  transition: ${props => props.theme.transition.slow};
+  transition: ${props => props.theme.transitionDurations.slow};
   transition-property: all;
   position: absolute;
   left: 50%;
@@ -39,7 +39,7 @@ export const Wrapper = styled.button<{
   right: ${props => props.theme.container.padding};
   top: ${props => props.$navbarHeight / 2}px;
   transform: translateY(-50%);
-  transition: ${props => props.theme.transition.slow};
+  transition: ${props => props.theme.transitionDurations.slow};
   z-index: ${props => props.theme.zIndex.menuMobileToggle};
 
   &:hover {

@@ -16,7 +16,7 @@ export const Wrapper = styled.div<{
   ${({ $hoverable, theme, $layer }) =>
     $hoverable &&
     css`
-      transition: ${theme.transition.default} background;
+      transition: ${theme.transitionDurations.default} background;
       &:hover {
         background-color: ${theme.colors.layers[$layer].hoveredBackground};
       }

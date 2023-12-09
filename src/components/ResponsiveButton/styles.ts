@@ -13,7 +13,7 @@ export const IconCircle = styled.span`
   background-color: ${props => props.theme.colors.layers};
   background: ${props => opacify(-0.9, props.theme.colors.content.title)};
   border-radius: ${props => props.theme.borderRadius.circle};
-  transition: ${props => props.theme.transition.fast} transform;
+  transition: ${props => props.theme.transitionDurations.fast} transform;
 
   svg {
     font-size: ${props => props.theme.fontSizes.xlarge};
@@ -38,7 +38,7 @@ export const Box = styled.span<{ $borderDashed: boolean }>`
   border-color: ${props => props.theme.colors.layers[1].border};
   background: transparent;
   border-radius: ${props => props.theme.borderRadius.medium};
-  transition: ${props => props.theme.transition.fast};
+  transition: ${props => props.theme.transitionDurations.fast};
 
   &:hover,
   &:active {

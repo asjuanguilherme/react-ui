@@ -41,8 +41,8 @@ export const Icon = styled.div<{ $type: StateType }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: ${iconAppearKeyframes} ${props => props.theme.transition.default}
-    ease;
+  animation: ${iconAppearKeyframes}
+    ${props => props.theme.transitionDurations.default} ease;
   color: ${props => props.theme.colors.content.title};
   margin-bottom: ${props => props.theme.spacing.components.medium};
 

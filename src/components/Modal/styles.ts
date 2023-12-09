@@ -126,7 +126,7 @@ export const Wrapper = styled.div<{ $opened: boolean; $variant: ModalVariant }>`
           align-items: center;
           justify-content: center;
           animation: ${wrapperAppearKeyframes} 0.2s ease;
-          transition: ${props => props.theme.transition.fast};
+          transition: ${props => props.theme.transitionDurations.fast};
           transition-property: backdrop-filter, background, visibility;
           backdrop-filter: blur(6px);
           background: rgba(

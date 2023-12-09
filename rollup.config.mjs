@@ -19,6 +19,7 @@ export default [
       },
     ],
     plugins: [
+      peerDepsExternal(),
       dts({
         tsconfig: './tsconfig.json',
         compilerOptions: {

@@ -18,7 +18,7 @@ export type GlobalThemeContextProps = Theme & {
 }
 
 export type GlobalThemeProviderProps<T extends Record<string, Theme>> = {
-  children: ReactNode
+  children: (theme: Theme) => ReactNode
   themeCookieKey?: string
   themes: T
   selectedTheme: keyof T
@@ -81,7 +81,9 @@ export const GlobalThemeProvider = <T extends Record<string, Theme>>({
 
   return (
     <GlobalThemeContext.Provider value={{ ...selectedThemeData, themeToggle }}>
-      <ThemeProvider theme={selectedThemeData}>{children}</ThemeProvider>
+      <ThemeProvider theme={selectedThemeData}>
+        {children(selectedThemeData)}
+      </ThemeProvider>
     </GlobalThemeContext.Provider>
   )
 }

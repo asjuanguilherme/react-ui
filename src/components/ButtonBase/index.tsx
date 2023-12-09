@@ -9,6 +9,8 @@ import { HTMLStyleAttributes } from 'types'
 
 export type ButtonVariant = 'filled' | 'outlined' | 'layerBased'
 
+export type ButtonColors = string | keyof ThemePaletteColors
+
 export type ButtonBaseCommonProps = {
   [key: string]: unknown
 } & {
@@ -36,7 +38,7 @@ export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
 
 export type ButtonBaseEitherVariantsProps = ButtonBaseCommonProps & {
   variant?: ButtonVariant
-  color?: keyof ThemePaletteColors
+  color?: ButtonColors
   layer?: never
   borderLess?: never
   transparent?: never

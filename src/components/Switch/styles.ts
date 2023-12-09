@@ -7,7 +7,7 @@ export const SwitchDot = styled.div`
   width: 1.3rem;
   border-radius: ${props => props.theme.borderRadius.circle};
   background-color: white;
-  transition: ${props => props.theme.transition.default};
+  transition: ${props => props.theme.transitionDurations.default};
   position: absolute;
   left: 5%;
   top: 50%;
@@ -32,7 +32,7 @@ export const Wrapper = styled.span<{ $layer: ThemeLayerIndex }>`
     display: flex;
     position: relative;
     flex-shrink: 0;
-    transition: ${props => props.theme.transition.fast};
+    transition: ${props => props.theme.transitionDurations.fast};
   }
 
   &:hover {

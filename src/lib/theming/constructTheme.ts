@@ -1,4 +1,5 @@
 import { poppinsFontFamily } from 'fonts/poppins'
+import { DefaultTheme } from 'styled-components'
 
 import { defaultThemePalette } from './defaultThemePalette'
 import { ThemeColorPaletteItem } from './generateColorPaletteItem'
@@ -35,7 +36,7 @@ export type ConstructThemeParams = {
   tokens?: ThemeTokens
 }
 
-export type Theme = {
+export type Theme = DefaultTheme & {
   type: ThemeType
   name: string
   colors: {

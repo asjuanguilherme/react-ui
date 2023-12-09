@@ -14,7 +14,7 @@ const appearButtonKeyframes = keyframes`
 
 export const Button = styled(DefaultButton)`
   animation: ${appearButtonKeyframes} ease;
-  animation-duration: ${props => props.theme.transition.fast};
+  animation-duration: ${props => props.theme.transitionDurations.fast};
   flex-shrink: 0;
 `
 

@@ -13,7 +13,7 @@ const angleByDirection = {
 export const ChevronIcon = styled(ChevronDownIcon)<{
   $direction: ChevronDirection
 }>`
-  transition-duration: ${props => props.theme.transition.default};
+  transition-duration: ${props => props.theme.transitionDurations.default};
   transition-property: transform;
   transform: rotate(${({ $direction }) => angleByDirection[$direction]}deg);
 `

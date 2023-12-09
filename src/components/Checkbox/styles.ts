@@ -12,7 +12,7 @@ export const Text = styled.span`
 export const Mark = styled(CheckIcon)<{ $layer: ThemeLayerIndex }>`
   opacity: 0;
   transform: scaleX(0.5) rotate(-40deg);
-  transition-duration: ${props => props.theme.transition.default};
+  transition-duration: ${props => props.theme.transitionDurations.default};
   color: ${props => props.theme.colors.layers[props.$layer].background};
 `
 
@@ -25,7 +25,7 @@ export const Box = styled.span<{ $layer: ThemeLayerIndex }>`
   background: ${props => props.theme.colors.layers[props.$layer].border};
   border-radius: ${props => props.theme.borderRadius.small};
   position: relative;
-  transition-duration: ${props => props.theme.transition.default};
+  transition-duration: ${props => props.theme.transitionDurations.default};
 `
 
 export const Wrapper = styled.label<{

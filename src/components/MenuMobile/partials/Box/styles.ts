@@ -51,7 +51,7 @@ export const Wrapper = styled.div<{ $opened: boolean }>`
   height: 100vh;
   max-height: 100%;
   padding: ${props => props.theme.container.padding};
-  transition: ${props => props.theme.transition.slow};
+  transition: ${props => props.theme.transitionDurations.slow};
 
   ${({ $opened }) =>
     $opened

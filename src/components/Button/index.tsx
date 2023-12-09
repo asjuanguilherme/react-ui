@@ -22,10 +22,11 @@ export const Button = ({
   size = 'medium',
   suffix,
   prefix,
+  fillWidth,
   ...props
 }: ButtonProps) => {
   return (
-    <S.Wrapper $fillWidth={props.fillWidth} $size={size} {...props}>
+    <S.Wrapper $fillWidth={fillWidth} $size={size} {...props}>
       {prefix}
       {props.icon && <props.icon />}
       {props.label}
