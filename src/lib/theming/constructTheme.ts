@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 import { poppinsFontFamily } from 'fonts/poppins'
 
 import { defaultThemePalette } from './defaultThemePalette'
@@ -44,7 +42,7 @@ export type ConstructThemeParams = {
   field?: Partial<FieldConfigToken>
 }
 
-export type Theme = DefaultTheme & {
+export type Theme = {
   type: ThemeType
   name: string
   colors: {

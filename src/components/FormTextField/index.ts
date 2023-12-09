@@ -45,7 +45,7 @@ const Wrapper = styled.span<TextFieldSharedStyleProps>`
   background-color: ${props =>
     props.theme.colors.layers[props.$layer].background};
   border: 1px solid ${props => props.theme.colors.layers[props.$layer].border};
-  border-radius: ${props => props.theme.borderRadius.medium};
+  border-radius: ${props => props.theme.field.borderRadius};
   overflow: hidden;
   transition: ${props => props.theme.transitionDurations.fast};
   transition-property: border-color background;

@@ -4,6 +4,6 @@
     "jsx": "react"
   },
   "extends": "@asjuanguilherme/tsconfig/react-library.json",
-  "include": ["src/**/*.tsx", "src/**/*.ts", "./styled.d.ts"],
+  "include": ["src/**/*.tsx", "src/**/*.ts", "styled.d.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }
