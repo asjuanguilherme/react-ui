@@ -1,9 +1,9 @@
 import { rem } from 'polished'
+import styled, { css } from 'styled-components'
 
 import { ThemeLayerIndex } from 'lib/theming'
 
 import { CheckIcon } from 'icons'
-import styled, { css } from 'styled-components'
 
 import { CheckboxProps } from '.'
 

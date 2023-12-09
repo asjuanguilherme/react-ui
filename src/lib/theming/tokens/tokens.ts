@@ -1,7 +1,8 @@
 import { BlurRadiusToken } from './blurRadiusToken'
 import { BorderRadiusToken } from './borderRadius'
+import { ButtonConfigToken } from './buttonConfig'
 import { ContainerToken } from './container'
-import { FieldSizesToken } from './fieldSizes'
+import { FieldConfigToken } from './fieldConfig'
 import { FontSizesToken } from './fontSizes'
 import { FontWeightsToken } from './fontWeights'
 import { SpacingToken } from './spacing'
@@ -12,7 +13,8 @@ export type ThemeTokens = {
   blurRadius: BlurRadiusToken
   borderRadius: BorderRadiusToken
   container: ContainerToken
-  fieldSizes: FieldSizesToken
+  button: ButtonConfigToken
+  field: FieldConfigToken
   fontSizes: FontSizesToken
   fontWeights: FontWeightsToken
   spacing: SpacingToken

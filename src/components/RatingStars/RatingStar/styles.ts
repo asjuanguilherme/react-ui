@@ -1,6 +1,6 @@
-import { ThemeLayerIndex } from 'lib/theming'
-
 import styled, { css } from 'styled-components'
+
+import { ThemeLayerIndex } from 'lib/theming'
 
 export const Svg = styled.svg<{ $filled: boolean; $layer: ThemeLayerIndex }>`
   ${({ $filled, $layer, theme }) =>

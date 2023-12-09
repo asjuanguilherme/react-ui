@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FieldSizesToken } from 'lib/theming'
+import { ButtonConfigToken } from 'lib'
 
 import { Spinner } from 'components'
 import { ButtonBaseProps } from 'components/ButtonBase'
@@ -21,7 +21,7 @@ export type IconButtonImagePropertyProps = {
 
 type IconButtonCommonProps = ButtonBaseProps & {
   image?: IconButtonImagePropertyProps
-  size?: keyof FieldSizesToken
+  size?: keyof ButtonConfigToken['height']
 }
 
 type IconButtonWithIconProps = IconButtonCommonProps & {

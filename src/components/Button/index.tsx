@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactNode } from 'react'
 
-import { FieldSizesToken } from 'lib/theming'
+import { FieldHeightToken } from 'lib'
 
 import { Spinner } from 'components'
 import { ButtonBaseProps } from 'components/ButtonBase'
@@ -16,7 +16,7 @@ export type ButtonProps = ButtonBaseProps & {
   suffix?: ReactNode
   fillWidth?: boolean
   icon?: IconComponent
-  size?: keyof FieldSizesToken
+  size?: FieldHeightToken
 }
 
 export const Button = ({

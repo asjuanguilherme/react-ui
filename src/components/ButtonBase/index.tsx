@@ -1,11 +1,11 @@
 import React from 'react'
 import { MouseEvent, MutableRefObject, ReactNode } from 'react'
 
+import { WebTarget } from 'styled-components'
+
 import { HTMLStyleAttributes } from 'types'
 
 import { ThemeLayerIndex, ThemePaletteColors } from 'lib/theming'
-
-import { WebTarget } from 'styled-components'
 
 import * as S from './styles'
 

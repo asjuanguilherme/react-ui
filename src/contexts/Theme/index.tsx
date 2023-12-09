@@ -8,9 +8,9 @@ import React, {
   useState,
 } from 'react'
 
-import { Theme } from 'lib/theming'
-
 import { ThemeProvider } from 'styled-components'
+
+import { Theme } from 'lib/theming'
 
 import { getThemeCookie, saveThemeCookie } from './utils'
 

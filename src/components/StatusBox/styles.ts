@@ -1,8 +1,7 @@
 import { mix } from 'polished'
+import styled, { css, keyframes } from 'styled-components'
 
 import { ThemeLayerIndex } from 'lib'
-
-import styled, { css, keyframes } from 'styled-components'
 
 import { StatusBoxTypes } from '.'
 

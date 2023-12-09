@@ -1,8 +1,9 @@
+import styled, { css } from 'styled-components'
+
 import { breakpoints } from 'lib/responsiveness'
 import { ThemeLayerIndex } from 'lib/theming'
 
 import { CardBase } from 'components/CardBase'
-import styled, { css } from 'styled-components'
 
 import { PopoverBoxHorizontalAlignment, PopoverBoxVerticalAlignment } from '.'
 

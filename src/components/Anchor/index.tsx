@@ -1,11 +1,12 @@
 import React, { MutableRefObject, ReactNode } from 'react'
 
+import { WebTarget } from 'styled-components'
+
 import { HTMLStyleAttributes } from 'types'
 
 import { ThemePaletteColors } from 'lib/theming'
 
 import { IconComponent } from 'icons'
-import { WebTarget } from 'styled-components'
 
 import * as S from './styles'
 

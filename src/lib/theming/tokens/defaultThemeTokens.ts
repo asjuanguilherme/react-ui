@@ -10,7 +10,18 @@ export const defaultThemeTokens: ThemeTokens = {
     circle: '50%',
   },
   container: { defaultWidth: '1200px', padding: '1.5rem' },
-  fieldSizes: { small: '2.375rem', medium: '3rem', large: '3.375rem' },
+  field: {
+    height: '3rem',
+    borderRadius: '0.4rem',
+  },
+  button: {
+    height: {
+      small: '2.375rem',
+      medium: '3rem',
+      large: '3.375rem',
+    },
+    borderRadius: '0.4rem',
+  },
   fontSizes: {
     xxsmall: '0.4rem',
     xsmall: '0.6rem',

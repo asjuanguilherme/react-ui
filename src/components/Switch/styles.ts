@@ -1,6 +1,6 @@
-import { ThemeLayerIndex } from 'lib/theming'
-
 import styled from 'styled-components'
+
+import { ThemeLayerIndex } from 'lib/theming'
 
 export const SwitchDot = styled.div`
   display: inline-block;

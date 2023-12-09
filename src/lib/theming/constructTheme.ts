@@ -1,6 +1,6 @@
-import { poppinsFontFamily } from 'fonts/poppins'
-
 import { DefaultTheme } from 'styled-components'
+
+import { poppinsFontFamily } from 'fonts/poppins'
 
 import { defaultThemePalette } from './defaultThemePalette'
 import { ThemeColorPaletteItem } from './generateColorPaletteItem'
@@ -12,7 +12,12 @@ import {
   generateThemeContentColors,
   generateThemeLayersColors,
 } from './index'
-import { ThemeTokens, constructThemeTokens } from './tokens'
+import {
+  ButtonConfigToken,
+  FieldConfigToken,
+  ThemeTokens,
+  constructThemeTokens,
+} from './tokens'
 
 export type ThemeType = 'dark' | 'light'
 
@@ -35,6 +40,8 @@ export type ConstructThemeParams = {
   }
   fontFamily?: string
   tokens?: ThemeTokens
+  button?: Partial<ButtonConfigToken>
+  field?: Partial<FieldConfigToken>
 }
 
 export type Theme = DefaultTheme & {
@@ -46,6 +53,8 @@ export type Theme = DefaultTheme & {
     palette: ThemePaletteColors
   }
   fontFamily: string
+  button: ButtonConfigToken
+  field: FieldConfigToken
 } & ThemeTokens
 
 export const constructTheme = (args: ConstructThemeParams): Theme => {

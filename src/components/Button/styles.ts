@@ -1,8 +1,8 @@
-import { FieldSizesToken } from 'lib/theming'
-
 import styled, { css } from 'styled-components'
 
-import { ButtonBase } from '../ButtonBase'
+import { ButtonHeightToken } from 'lib'
+
+import { ButtonBase } from 'components/ButtonBase'
 
 const horizontalPadding = (size: string) => css`
   padding-left: ${size};
@@ -10,7 +10,7 @@ const horizontalPadding = (size: string) => css`
 `
 
 export const Wrapper = styled(ButtonBase)<{
-  $size: keyof FieldSizesToken
+  $size: ButtonHeightToken
   $fillWidth?: boolean
 }>`
   svg {
@@ -28,21 +28,21 @@ export const Wrapper = styled(ButtonBase)<{
       case 'small':
         return css`
           ${horizontalPadding(theme.spacing.components.large)}
-          height: ${theme.fieldSizes.small};
+          height: ${theme.button.height.small};
           font-size: ${theme.fontSizes.xsmall};
           gap: ${theme.spacing.components.small};
         `
       case 'medium':
         return css`
           ${horizontalPadding(theme.spacing.components.large)}
-          height: ${theme.fieldSizes.medium};
+          height: ${theme.button.height.medium};
           gap: ${theme.spacing.components.small};
           font-size: ${theme.fontSizes.medium};
         `
       case 'large':
         return css`
           ${horizontalPadding(theme.spacing.components.large)}
-          height: ${theme.fieldSizes.large};
+          height: ${theme.button.height.large};
           gap: ${theme.spacing.components.medium};
           font-size: ${theme.fontSizes.large};
         `

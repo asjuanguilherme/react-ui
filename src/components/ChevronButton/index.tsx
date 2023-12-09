@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, MutableRefObject } from 'react'
 
-import { FieldSizesToken, ThemeLayerIndex } from 'lib/theming'
+import { ButtonHeightToken, ThemeLayerIndex } from 'lib/theming'
 
 import { Chevron, ChevronDirection } from 'components'
 import { IconComponent } from 'icons'
@@ -20,7 +20,7 @@ export type ChevronButtonProps = {
   onClick?: MouseEventHandler
   chevronActiveDirection?: ChevronDirection
   chevronDefaultDirection?: ChevronDirection
-  size?: keyof FieldSizesToken
+  size?: ButtonHeightToken
   fillWidth?: boolean
   showChevron?: boolean
   borderLess?: boolean

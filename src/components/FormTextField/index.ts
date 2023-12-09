@@ -1,9 +1,9 @@
-import { fontFamily } from 'fonts'
 import { mix } from 'polished'
+import styled, { css } from 'styled-components'
+
+import { fontFamily } from 'fonts'
 
 import { ThemeLayerIndex } from 'lib/theming'
-
-import styled, { css } from 'styled-components'
 
 export type TextFieldSharedStyleProps = {
   $layer: ThemeLayerIndex
@@ -35,7 +35,7 @@ const TextArea = styled.textarea`
 
 const Input = styled.input`
   ${textFieldSharedStyle}
-  height: ${props => props.theme.fieldSizes.medium};
+  height: ${props => props.theme.field.height};
 `
 
 const Wrapper = styled.span<TextFieldSharedStyleProps>`

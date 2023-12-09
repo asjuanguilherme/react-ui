@@ -1,6 +1,6 @@
-import { breakpoints } from 'lib/responsiveness'
-
 import styled from 'styled-components'
+
+import { breakpoints } from 'lib/responsiveness'
 
 import { ContainerProps } from '.'
 
