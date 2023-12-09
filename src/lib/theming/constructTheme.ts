@@ -1,4 +1,5 @@
 import { poppinsFontFamily } from 'fonts/poppins'
+
 import { DefaultTheme } from 'styled-components'
 
 import { defaultThemePalette } from './defaultThemePalette'

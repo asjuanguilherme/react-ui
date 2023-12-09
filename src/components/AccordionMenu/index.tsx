@@ -1,11 +1,14 @@
 import React, { FC, MouseEventHandler } from 'react'
 
-import { Accordion, Menu } from 'components'
-import { IconComponent } from 'icons'
-import { ThemeLayerIndex } from 'lib/theming'
 import { HTMLStyleAttributes } from 'types'
 
+import { ThemeLayerIndex } from 'lib/theming'
+
+import { Accordion, Menu } from 'components'
+import { IconComponent } from 'icons'
+
 export type AccordionMenuItemProps = {
+  key?: string
   title: string
   href?: string
   icon?: IconComponent
@@ -35,15 +38,15 @@ export const AccordionMenu = ({
   return (
     <Accordion size="small" {...props}>
       <Menu.List>
-        {items?.map((item, index) => (
+        {items?.map(item => (
           <Menu.Item
-            key={index}
+            key={item.key}
             {...item}
-            liTag
-            href={item.href || ''}
-            size={size}
-            layer={props.layer}
             anchorComponent={anchorComponent}
+            href={item.href || ''}
+            layer={props.layer}
+            liTag
+            size={size}
           />
         ))}
       </Menu.List>

@@ -1,11 +1,12 @@
 import React from 'react'
 
-import * as S from './styles'
+import { FieldSizesToken } from 'lib/theming'
 
 import { Spinner } from 'components'
 import { ButtonBaseProps } from 'components/ButtonBase'
 import { IconComponent } from 'icons'
-import { FieldSizesToken } from 'lib/theming'
+
+import * as S from './styles'
 
 export type BackgroundImagePositionY = 'top' | 'center' | 'bottom'
 export type BackgroundImagePositionX = 'left' | 'center' | 'right'
@@ -43,11 +44,11 @@ export const IconButton = ({
 }: IconButtonProps) => {
   return (
     <S.Wrapper
-      $size={size}
-      $imageSrc={image?.src}
       $imageFit={image?.fit}
       $imagePositionX={image?.positionX}
       $imagePositionY={image?.positionY}
+      $imageSrc={image?.src}
+      $size={size}
       {...props}
     >
       {props.loading ? <Spinner size="extra-small" /> : Icon ? <Icon /> : ''}

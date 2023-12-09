@@ -1,5 +1,6 @@
-import { CardBase } from 'components/CardBase'
 import { fontFamily } from 'fonts'
+
+import { CardBase } from 'components/CardBase'
 import styled, { css } from 'styled-components'
 
 export const Slug = styled.span`

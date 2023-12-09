@@ -1,10 +1,11 @@
 import React from 'react'
 import { ReactNode } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
 
 import { breakpoints } from 'lib/responsiveness'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type ContainerProps = {
   children?: ReactNode
@@ -18,7 +19,7 @@ export const Container = ({
   variant,
 }: ContainerProps) => {
   return (
-    <S.Wrapper className={className} style={style} $variant={variant}>
+    <S.Wrapper $variant={variant} className={className} style={style}>
       {children}
     </S.Wrapper>
   )

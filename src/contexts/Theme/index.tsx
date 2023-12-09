@@ -9,6 +9,7 @@ import React, {
 } from 'react'
 
 import { Theme } from 'lib/theming'
+
 import { ThemeProvider } from 'styled-components'
 
 import { getThemeCookie, saveThemeCookie } from './utils'

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import * as S from './styles'
-
 import { MenuMobileRootCallbackProps } from '../Root'
+
+import * as S from './styles'
 
 export type MenuMobileToggleButtonProps = MenuMobileRootCallbackProps & {
   navbarHeight: number
@@ -16,12 +16,12 @@ export const MenuMobileToggleButton = ({
 }: MenuMobileToggleButtonProps) => {
   return (
     <S.Wrapper
+      $navbarHeight={navbarHeight}
       $opened={opened}
-      onClick={() => setOpened(state => !state)}
       aria-controls={htmlIDPrefix + 'box'}
       aria-expanded={opened}
       id={htmlIDPrefix + 'toggle'}
-      $navbarHeight={navbarHeight}
+      onClick={() => setOpened(state => !state)}
     >
       <S.TopBar />
       <S.MiddleBar />

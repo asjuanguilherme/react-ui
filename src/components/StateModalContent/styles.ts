@@ -1,5 +1,6 @@
 import { fontFamily } from 'fonts'
 import { opacify } from 'polished'
+
 import styled, { css, keyframes } from 'styled-components'
 
 import { StateType } from '.'

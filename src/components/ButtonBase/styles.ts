@@ -1,7 +1,9 @@
 import { regexPatterns } from '@asjuanguilherme/js-utils'
 import { fontFamily } from 'fonts'
-import { ThemeLayerIndex, generateThemeColorPaletteItem } from 'lib/theming'
 import { grayscale, readableColor } from 'polished'
+
+import { ThemeLayerIndex, generateThemeColorPaletteItem } from 'lib/theming'
+
 import styled, { css } from 'styled-components'
 
 import { ButtonColors, ButtonVariant } from '.'

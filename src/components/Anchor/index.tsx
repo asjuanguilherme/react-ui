@@ -1,11 +1,13 @@
 import React, { MutableRefObject, ReactNode } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
+
+import { ThemePaletteColors } from 'lib/theming'
 
 import { IconComponent } from 'icons'
-import { ThemePaletteColors } from 'lib/theming'
 import { WebTarget } from 'styled-components'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 type Color = keyof ThemePaletteColors
 

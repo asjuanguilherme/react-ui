@@ -7,14 +7,16 @@ import React, {
   useState,
 } from 'react'
 
+import { HTMLStyleAttributes } from 'types'
+
+import { ThemeLayerIndex } from 'lib/theming'
+
 import {
   FormField,
   FormTextField,
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
 } from 'components'
-import { ThemeLayerIndex } from 'lib/theming'
-import { HTMLStyleAttributes } from 'types'
 
 export type TextAreaProps = {
   label?: string
@@ -64,36 +66,36 @@ export const TextArea = ({
 
   return (
     <FormField.Root
-      fillWidth={fillWidth}
       className={props.className}
+      fillWidth={fillWidth}
       style={props.style}
     >
       <FormField.Label>{label}</FormField.Label>
       <FormTextField.Wrapper
-        $layer={layer}
-        $focused={focused}
-        $hasError={Boolean(error)}
         $disabled={props.disabled}
-        $hasSuccess={Boolean(success)}
+        $focused={focused}
         $hasCharsCounter={showCharsCount}
+        $hasError={Boolean(error)}
+        $hasSuccess={Boolean(success)}
+        $layer={layer}
       >
         <FormTextField.TextArea
           as="textarea"
-          ref={setRef}
-          onFocus={e => {
-            setFocused(true)
-            onFocus && onFocus(e)
-          }}
           onBlur={e => {
             setFocused(false)
             onBlur && onBlur(e)
           }}
-          rows={5}
           onChange={e => {
             setInternalValue(e.target.value)
 
             onChange && onChange(e)
           }}
+          onFocus={e => {
+            setFocused(true)
+            onFocus && onFocus(e)
+          }}
+          ref={setRef}
+          rows={5}
           {...props}
         />
         <FormField.CharsLimit charsCount={handledValue.length} limit={max} />

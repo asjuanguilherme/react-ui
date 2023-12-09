@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { ButtonProps, StateModalContent } from 'components'
 import { ModalContextItemProps, useModal } from 'contexts/Modal'
+
+import { ButtonProps, StateModalContent } from 'components'
 
 type StateModalProps = {
   title?: string
@@ -33,8 +34,8 @@ export const useStateModal = (modalIdentifier: string) => {
       ...overrideModalProps,
       content: (
         <StateModalContent
-          title={title}
           description={description}
+          title={title}
           type="loading"
         />
       ),
@@ -48,8 +49,9 @@ export const useStateModal = (modalIdentifier: string) => {
     closeButtonLabel,
   }: ErrorStateModalProps) => {
     const buttons = (() => {
-      const buttonsList: ButtonProps[] = []
+      const buttonsList: (ButtonProps & { key: string })[] = []
       const closeButton = {
+        key: 'close-btn',
         label: closeButtonLabel,
         onClick: close,
       }
@@ -62,10 +64,10 @@ export const useStateModal = (modalIdentifier: string) => {
       ...overrideModalProps,
       content: (
         <StateModalContent
-          title={title}
-          description={description}
-          type="error"
           buttons={buttons}
+          description={description}
+          title={title}
+          type="error"
         />
       ),
     })
@@ -79,8 +81,9 @@ export const useStateModal = (modalIdentifier: string) => {
     closeButtonLabel,
   }: SuccessStateModalProps) => {
     const buttons = (() => {
-      const buttonsList: ButtonProps[] = []
+      const buttonsList: (ButtonProps & { key: string })[] = []
       const closeButton = {
+        key: 'close-btn',
         label: closeButtonLabel,
         onClick: close,
       }
@@ -95,10 +98,10 @@ export const useStateModal = (modalIdentifier: string) => {
       showX: false,
       content: (
         <StateModalContent
-          title={title}
-          description={description}
-          type="success"
           buttons={buttons}
+          description={description}
+          title={title}
+          type="success"
         />
       ),
     })

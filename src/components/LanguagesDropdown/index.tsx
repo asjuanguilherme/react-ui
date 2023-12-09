@@ -45,14 +45,15 @@ export const LanguagesDropdown = ({
     <DropdownMenu
       {...props}
       icon={activeLocaleData.icon}
-      title={activeLocaleData.title[activeLocale]}
       items={locales.map(item => ({
+        key: item.locale,
         icon: item.icon,
         title: item.title[activeLocale],
         onClick: () => {
           onLocaleChange && onLocaleChange(item.locale)
         },
       }))}
+      title={activeLocaleData.title[activeLocale]}
     />
   )
 }

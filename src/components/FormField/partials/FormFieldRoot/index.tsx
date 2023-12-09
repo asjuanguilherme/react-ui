@@ -1,9 +1,9 @@
 import React from 'react'
 import { ReactNode } from 'react'
 
-import * as S from './styles'
-
 import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type FormFieldRootProps = {
   fillWidth?: boolean

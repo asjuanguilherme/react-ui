@@ -1,10 +1,11 @@
 import React, { ReactNode } from 'react'
 
-import * as S from './styles'
+import { ThemeLayerIndex } from 'lib/theming'
 
 import { Button } from 'components'
 import { XmarkIcon } from 'icons'
-import { ThemeLayerIndex } from 'lib/theming'
+
+import * as S from './styles'
 
 export type ModalVariant = 'default' | 'discret'
 
@@ -37,16 +38,16 @@ export const Modal = ({
 }: ModalComponentProps) => {
   return (
     <S.Wrapper
-      onClick={closeOnBlur ? onClose : undefined}
       $opened={opened}
       $variant={variant}
+      onClick={closeOnBlur ? onClose : undefined}
     >
       <S.Box
-        onClick={e => e.stopPropagation()}
-        $positionY={positionY}
         $hasTitle={Boolean(title)}
         $layer={layer}
+        $positionY={positionY}
         $width={width}
+        onClick={e => e.stopPropagation()}
       >
         {(title || showX) && (
           <S.BoxHeader>
@@ -54,9 +55,9 @@ export const Modal = ({
             {showX && (
               <Button
                 icon={XmarkIcon}
-                variant="layerBased"
                 onClick={onClose}
                 size="small"
+                variant="layerBased"
               />
             )}
           </S.BoxHeader>

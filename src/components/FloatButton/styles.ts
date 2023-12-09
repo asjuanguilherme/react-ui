@@ -1,5 +1,6 @@
-import { IconButton } from 'components/IconButton'
 import { opacify } from 'polished'
+
+import { IconButton } from 'components/IconButton'
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled(IconButton)<{

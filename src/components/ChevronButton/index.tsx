@@ -1,10 +1,11 @@
 import React, { MouseEventHandler, MutableRefObject } from 'react'
 
-import * as S from './styles'
+import { FieldSizesToken, ThemeLayerIndex } from 'lib/theming'
 
 import { Chevron, ChevronDirection } from 'components'
 import { IconComponent } from 'icons'
-import { FieldSizesToken, ThemeLayerIndex } from 'lib/theming'
+
+import * as S from './styles'
 
 export type ChevronButtonProps = {
   [key: string]: unknown
@@ -38,8 +39,11 @@ export const ChevronButton = ({
 }: ChevronButtonProps) => {
   return (
     <S.Wrapper
+      active={active}
+      disabled={disabled}
       label={title}
       prefix={Icon && <Icon />}
+      shape="rounded"
       suffix={
         showChevron && (
           <Chevron
@@ -49,10 +53,7 @@ export const ChevronButton = ({
           />
         )
       }
-      shape="rounded"
       variant="layerBased"
-      active={active}
-      disabled={disabled}
       {...props}
     />
   )

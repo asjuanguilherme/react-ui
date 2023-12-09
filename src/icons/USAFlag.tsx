@@ -121,7 +121,7 @@ export const USAFlagIcon = createIconComponent({
       </g>
       <defs>
         <clipPath id="clip0_2_172">
-          <rect width="18" height="18" fill="white" />
+          <rect fill="white" height="18" width="18" />
         </clipPath>
       </defs>
     </>

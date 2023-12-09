@@ -1,13 +1,16 @@
 import React from 'react'
 import { useMemo } from 'react'
 
-import * as S from './styles'
-
 import { useScreenSize } from '@asjuanguilherme/js-utils'
-import { Container } from 'components'
-import { useGlobalTheme } from 'contexts'
-import { ChevronLeftIcon, ChevronRightIcon } from 'icons'
+
 import { breakpoints } from 'lib'
+
+import { useGlobalTheme } from 'contexts'
+
+import { Container } from 'components'
+import { ChevronLeftIcon, ChevronRightIcon } from 'icons'
+
+import * as S from './styles'
 
 export type BreadcrumbPathProps = {
   title: string

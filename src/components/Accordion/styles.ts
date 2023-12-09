@@ -1,5 +1,6 @@
-import { CardBase } from 'components/CardBase'
 import { screens } from 'lib/responsiveness'
+
+import { CardBase } from 'components/CardBase'
 import styled, { css } from 'styled-components'
 
 export const ContentWrapper = styled.div<{ $enableContentPadding: boolean }>`

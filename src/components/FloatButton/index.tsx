@@ -1,8 +1,8 @@
 import React from 'react'
 
-import * as S from './styles'
-
 import { IconButtonProps } from 'components/IconButton'
+
+import * as S from './styles'
 
 type FloatButtonYAxisDefined =
   | {
@@ -48,11 +48,11 @@ export const FloatButton = ({
 }: FloatButtonProps) => {
   return (
     <S.Wrapper
-      $zIndex={zIndex}
-      $top={top}
-      $right={right}
       $bottom={bottom}
       $left={left}
+      $right={right}
+      $top={top}
+      $zIndex={zIndex}
       {...props}
     />
   )

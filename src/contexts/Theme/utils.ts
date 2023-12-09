@@ -1,8 +1,9 @@
 import { GetServerSidePropsContext } from 'next'
 
 import { objectKeys } from '@asjuanguilherme/js-utils'
-import { Theme } from 'lib/theming'
 import { parseCookies, setCookie } from 'nookies'
+
+import { Theme } from 'lib/theming'
 
 export type SaveThemeCookieParams<T extends Record<string, Theme>> = {
   ctx?: GetServerSidePropsContext

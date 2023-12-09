@@ -1,6 +1,10 @@
 import React from 'react'
 import { ChangeEventHandler, useMemo, useState } from 'react'
 
+import { HTMLStyleAttributes } from 'types'
+
+import { ThemeLayerIndex } from 'lib/theming'
+
 import {
   FormField,
   HandleFormFieldStatusParams,
@@ -9,8 +13,6 @@ import {
 } from 'components'
 import { ChevronButton, Popover, Menu } from 'components'
 import { IconComponent, MagIcon } from 'icons'
-import { ThemeLayerIndex } from 'lib/theming'
-import { HTMLStyleAttributes } from 'types'
 
 export type DropdownSelectSearchProps = {
   enabled: boolean
@@ -118,32 +120,32 @@ export const DropdownSelect = ({
     <Popover.Root triggerOn={triggerOn}>
       {({ isActive, setIsActive, triggerRef }) => (
         <FormField.Root
-          fillWidth={fillWidth}
           className={className}
+          fillWidth={fillWidth}
           style={style}
         >
           <FormField.Label>{label}</FormField.Label>
           <ChevronButton
             active={isActive}
-            layer={layer}
             disabled={loading || disabled}
+            fillWidth={fillWidth}
             icon={icon}
+            layer={layer}
             loading={loading}
-            title={selectedOptionData?.label || placeholder}
-            size={size}
             setRef={triggerRef}
             showChevron={!loading}
-            fillWidth={fillWidth}
+            size={size}
+            title={selectedOptionData?.label || placeholder}
           />
-          <Popover.Box visible={isActive} layer={layer}>
+          <Popover.Box layer={layer} visible={isActive}>
             {search?.enabled && (
               <>
                 <TextInput
-                  prefix={<MagIcon />}
-                  placeholder={search.placeholder}
                   fillWidth
-                  value={searchValue}
                   onChange={handleSearchChange}
+                  placeholder={search.placeholder}
+                  prefix={<MagIcon />}
+                  value={searchValue}
                 />
                 <Menu.Divider />
               </>
@@ -151,18 +153,18 @@ export const DropdownSelect = ({
             <Menu.List maxHeight={maxHeight}>
               {optionsList?.map(item => (
                 <Menu.Item
-                  key={item.value}
                   active={item.value === selectedOptionData?.value}
                   icon={item.icon}
-                  title={item.label}
+                  key={item.value}
                   layer={layer}
+                  liTag
                   onClick={() => {
                     setInternalSelectedValue(item.value)
                     onChange && onChange(item.value)
 
                     if (closeOnSelect) setIsActive(false)
                   }}
-                  liTag
+                  title={item.label}
                 />
               ))}
             </Menu.List>

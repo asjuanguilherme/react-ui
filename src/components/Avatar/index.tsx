@@ -1,10 +1,10 @@
 import React from 'react'
 import { MutableRefObject } from 'react'
 
-import * as S from './styles'
-
 import { getInitialsFromName } from '@asjuanguilherme/js-utils'
 import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type AvatarProps = {
   size: number
@@ -21,8 +21,8 @@ export const Avatar = ({
   ...props
 }: AvatarProps) => {
   return (
-    <S.Wrapper $size={size} $name={name} ref={setRef} {...props}>
-      {image ? <S.Image src={image} alt={name} /> : getInitialsFromName(name)}
+    <S.Wrapper $name={name} $size={size} ref={setRef} {...props}>
+      {image ? <S.Image alt={name} src={image} /> : getInitialsFromName(name)}
     </S.Wrapper>
   )
 }

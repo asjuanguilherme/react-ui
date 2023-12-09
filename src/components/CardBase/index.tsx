@@ -1,8 +1,8 @@
 import React, { HTMLAttributes, ReactNode } from 'react'
 
-import * as S from './styles'
-
 import { ThemeLayerIndex } from 'lib/theming'
+
+import * as S from './styles'
 
 export type CardBaseProps = {
   layer?: ThemeLayerIndex
@@ -23,10 +23,10 @@ export const CardBase = ({
   return (
     <S.Wrapper
       {...props}
-      as={tag}
-      $layer={layer}
       $hoverable={hoverable}
+      $layer={layer}
       $roundedCorners={roundedCorners}
+      as={tag}
     >
       {children}
     </S.Wrapper>

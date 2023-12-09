@@ -170,9 +170,9 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
         updateModal,
       }}
     >
-      {modals.map(({ ...modal }, index) => (
+      {modals.map(modal => (
         <Modal
-          key={index}
+          key={modal.identifier}
           {...modal}
           onClose={() => {
             modal.onClose && modal.onClose()

@@ -40,7 +40,7 @@ export const HeaderRoot = ({
   }, [elementHeight])
 
   return (
-    <S.Wrapper ref={ref} $transparent={transparentStyle} $sticky={sticky}>
+    <S.Wrapper $sticky={sticky} $transparent={transparentStyle} ref={ref}>
       <S.Container>{children}</S.Container>
     </S.Wrapper>
   )

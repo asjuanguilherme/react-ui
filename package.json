@@ -42,6 +42,7 @@
     "lint": "eslint ./src/**/*{ts,tsx}"
   },
   "devDependencies": {
+    "@asjuanguilherme/eslint-config": "^0.1.0",
     "@asjuanguilherme/js-utils": "^0.4.0",
     "@asjuanguilherme/prettier-config": "^1.0.0",
     "@asjuanguilherme/tsconfig": "^0.2.1",
@@ -90,14 +91,14 @@
   },
   "peerDependencies": {
     "@asjuanguilherme/js-utils": "^0.2.0",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
     "lodash": "^4.17.21",
     "next": "^13.5.4",
     "nookies": "^2.5.2",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.1.1",
-    "@types/react": "^18.2.42",
-    "@types/react-dom": "^18.2.17"
+    "styled-components": "^6.1.1"
   }
 }

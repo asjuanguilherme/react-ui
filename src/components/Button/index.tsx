@@ -1,12 +1,13 @@
 import React from 'react'
 import { ReactNode } from 'react'
 
-import * as S from './styles'
+import { FieldSizesToken } from 'lib/theming'
 
 import { Spinner } from 'components'
 import { ButtonBaseProps } from 'components/ButtonBase'
 import { IconComponent } from 'icons'
-import { FieldSizesToken } from 'lib/theming'
+
+import * as S from './styles'
 
 export type ButtonProps = ButtonBaseProps & {
   children?: never

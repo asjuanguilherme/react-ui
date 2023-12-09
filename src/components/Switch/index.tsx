@@ -1,9 +1,10 @@
 import React, { ChangeEventHandler } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
 
 import { ThemeLayerIndex } from 'lib/theming'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type SwitchProps = {
   onChange?: ChangeEventHandler<HTMLInputElement>
@@ -23,9 +24,9 @@ export const Switch = ({
   layer = 1,
 }: SwitchProps) => {
   return (
-    <S.Wrapper className={className} style={style} $layer={layer}>
+    <S.Wrapper $layer={layer} className={className} style={style}>
       {labelPosition === 'start' && label}
-      <input type="checkbox" checked={checked} onChange={onChange} hidden />
+      <input checked={checked} hidden onChange={onChange} type="checkbox" />
       <S.SwitchTrack>
         <S.SwitchDot />
       </S.SwitchTrack>

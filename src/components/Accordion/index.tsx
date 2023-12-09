@@ -6,13 +6,15 @@ import React, {
   useState,
 } from 'react'
 
-import * as S from './styles'
+import _uniqueId from 'lodash/uniqueId'
+import { HTMLStyleAttributes } from 'types'
+
+import { ThemeLayerIndex } from 'lib/theming'
 
 import { ChevronButton } from 'components'
 import { IconComponent } from 'icons'
-import { ThemeLayerIndex } from 'lib/theming'
-import _uniqueId from 'lodash/uniqueId'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type AccordionSize = 'small' | 'medium'
 
@@ -76,25 +78,25 @@ export const Accordion = ({
   }
 
   return (
-    <S.Wrapper className={className} style={style} layer={layer} {...props}>
+    <S.Wrapper className={className} layer={layer} style={style} {...props}>
       <ChevronButton
-        title={title}
-        icon={icon}
-        size={size}
-        onClick={handleClick}
-        id={`${htmlId}-button`}
-        aria-expanded={handledOpenedState}
-        aria-controls={`${htmlId}-content`}
-        fillWidth
         active={handledOpenedState}
+        aria-controls={`${htmlId}-content`}
+        aria-expanded={handledOpenedState}
+        fillWidth
+        icon={icon}
+        id={`${htmlId}-button`}
         layer={layer}
+        onClick={handleClick}
+        size={size}
+        title={title}
       />
       <S.Body
-        id={`${htmlId}-content`}
-        aria-labelledby={`${htmlId}-button`}
-        ref={accordionBodyRef}
         $maxHeight={maxHeight}
         $opened={handledOpenedState}
+        aria-labelledby={`${htmlId}-button`}
+        id={`${htmlId}-content`}
+        ref={accordionBodyRef}
       >
         <S.ContentWrapper $enableContentPadding={enableContentPadding}>
           {children}

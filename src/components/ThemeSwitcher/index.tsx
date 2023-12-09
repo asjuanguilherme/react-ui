@@ -1,9 +1,11 @@
 import React from 'react'
 
-import { IconButton } from 'components/IconButton'
-import { useGlobalTheme } from 'contexts'
-import { IconComponent, MoonIcon, SunIcon } from 'icons'
 import { ThemeType } from 'lib/theming'
+
+import { useGlobalTheme } from 'contexts'
+
+import { IconButton } from 'components/IconButton'
+import { IconComponent, MoonIcon, SunIcon } from 'icons'
 
 const iconByTheme: Record<ThemeType, IconComponent> = {
   dark: MoonIcon,
@@ -16,10 +18,10 @@ export const ThemeSwitcher = () => {
 
   return (
     <IconButton
-      onClick={theme.themeToggle}
       icon={Icon}
-      variant="layerBased"
+      onClick={theme.themeToggle}
       size="small"
+      variant="layerBased"
     />
   )
 }

@@ -8,9 +8,9 @@ import React, {
   useState,
 } from 'react'
 
-import * as S from './styles'
-
 import _uniqueId from 'lodash/uniqueId'
+
+import * as S from './styles'
 
 export type PopoverRootChildrenCallbackProps<T extends HTMLElement | null> = {
   popoverId: string

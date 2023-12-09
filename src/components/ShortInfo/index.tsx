@@ -1,9 +1,9 @@
 import React, { ReactNode, useState } from 'react'
 
-import * as S from './styles'
-
 import _uniqueId from 'lodash/uniqueId'
 import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type ShortInfoProps = {
   title: string
@@ -23,8 +23,8 @@ export const ShortInfo = ({
     <S.Wrapper {...props}>
       <S.Title id={htmlId + 'title'}>{title}</S.Title>
       <S.Content
-        aria-labelledby={htmlId + 'title'}
         $highlightContent={highlightContent}
+        aria-labelledby={htmlId + 'title'}
       >
         {children}
       </S.Content>

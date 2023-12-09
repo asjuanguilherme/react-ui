@@ -1,4 +1,5 @@
 import { opacify } from 'polished'
+
 import styled, { css } from 'styled-components'
 
 export const Button = styled.button<{ $active?: boolean }>`

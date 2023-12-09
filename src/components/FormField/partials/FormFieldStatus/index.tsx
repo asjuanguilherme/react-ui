@@ -1,13 +1,13 @@
 import React from 'react'
 
-import * as S from './styles'
-
 import {
   CheckIcon,
   CircleExclamationIcon,
   IconComponent,
   InfoCircleIcon,
 } from 'icons'
+
+import * as S from './styles'
 
 export type FormFieldStatusType = 'info' | 'error' | 'success'
 

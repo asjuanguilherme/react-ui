@@ -1,6 +1,8 @@
 import { fontFamily } from 'fonts'
-import { ThemeLayerIndex } from 'lib/theming'
 import { mix } from 'polished'
+
+import { ThemeLayerIndex } from 'lib/theming'
+
 import styled, { css } from 'styled-components'
 
 export type TextFieldSharedStyleProps = {

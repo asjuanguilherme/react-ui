@@ -15,6 +15,11 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@asjuanguilherme/eslint-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@asjuanguilherme/eslint-config/-/eslint-config-0.1.0.tgz#d82ba6bc25cfee2d67a8d44b76be217ee950f11b"
+  integrity sha512-CQjp+V9FOe4JwMuHXi0CeDuZ0aZqN/DsJH+bZVRsN6wFUmzONdUka91GXjt1PF2lELETgJmxHGIwuGaITVUIiQ==
+
 "@asjuanguilherme/js-utils@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@asjuanguilherme/js-utils/-/js-utils-0.4.0.tgz#2046c217152d3848c499195f5eb5e1067ba096d7"

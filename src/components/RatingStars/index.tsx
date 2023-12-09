@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import * as S from './styles'
-
 import { ThemeLayerIndex } from 'lib/theming'
+
+import * as S from './styles'
 
 import { RatingStar } from './RatingStar'
 
@@ -28,24 +28,24 @@ export const RatingStars = ({
     <S.Wrapper>
       {rateNumbers.map(rateNumber => (
         <RatingStar
-          layer={layer}
-          readOnly={readOnly}
-          key={rateNumber}
-          onClick={() => {
-            setValue && setValue(rateNumber)
-            setRateValue(rateNumber)
-          }}
-          onMouseOver={() => {
-            !readOnly && setHoverValue(rateNumber)
-          }}
-          onMouseLeave={() => {
-            !readOnly && setHoverValue(null)
-          }}
           filled={
             hoverValue
               ? hoverValue >= rateNumber
               : (value || rateValue) >= rateNumber
           }
+          key={rateNumber}
+          layer={layer}
+          onClick={() => {
+            setValue && setValue(rateNumber)
+            setRateValue(rateNumber)
+          }}
+          onMouseLeave={() => {
+            !readOnly && setHoverValue(null)
+          }}
+          onMouseOver={() => {
+            !readOnly && setHoverValue(rateNumber)
+          }}
+          readOnly={readOnly}
         />
       ))}
     </S.Wrapper>

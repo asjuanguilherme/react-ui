@@ -1,10 +1,11 @@
 import React, { MouseEventHandler } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
 
 import { IconComponent } from 'icons'
 import { SupportedHTMLElements } from 'styled-components'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type ResponsiveButtonProps = {
   height?: number

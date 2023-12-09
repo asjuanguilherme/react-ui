@@ -1,10 +1,11 @@
 import React, { CSSProperties, ReactNode, useEffect, useState } from 'react'
 
-import * as S from './styles'
+import { ThemeLayerIndex } from 'lib'
 
 import { Button, ButtonProps } from 'components/Button'
 import { CheckIcon, InfoIcon, TriangleExclamationIcon, XmarkIcon } from 'icons'
-import { ThemeLayerIndex } from 'lib'
+
+import * as S from './styles'
 
 export type StatusBoxTypes = 'info' | 'error' | 'success' | 'warning'
 
@@ -14,7 +15,7 @@ export type StatusBoxProps = {
   type?: StatusBoxTypes
   opened?: boolean
   onClose?: () => void
-  actionButtons?: ButtonProps[]
+  actionButtons?: (ButtonProps & { key: string })[]
   height?: string
   width?: string
   layer?: ThemeLayerIndex
@@ -56,7 +57,7 @@ export const StatusBox = ({
   if (!render) return <></>
 
   return (
-    <S.Wrapper opened={opened} type={type} layer={layer} {...props}>
+    <S.Wrapper layer={layer} opened={opened} type={type} {...props}>
       <S.Header>
         <S.Title>
           {iconByType[type]}
@@ -71,8 +72,8 @@ export const StatusBox = ({
       {children && <S.Content>{children}</S.Content>}
       {actionButtons && (
         <S.ActionButtons>
-          {actionButtons.map((button, index) => (
-            <Button {...button} key={index} />
+          {actionButtons.map(button => (
+            <Button {...button} key={button.key} />
           ))}
         </S.ActionButtons>
       )}

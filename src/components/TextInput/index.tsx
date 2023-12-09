@@ -8,15 +8,17 @@ import React, {
   useState,
 } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
+
+import { ThemeLayerIndex } from 'lib/theming'
 
 import { ButtonProps, FormField, FormTextField } from 'components'
 import {
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
 } from 'components/FormField/utils/handleFormFieldStatus'
-import { ThemeLayerIndex } from 'lib/theming'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type TextInputProps = {
   label?: string
@@ -63,28 +65,28 @@ export const TextInput = ({
   const fieldStatus = handleFormFieldStatus({ error, info, success })
 
   return (
-    <FormField.Root fillWidth={fillWidth} className={className} style={style}>
+    <FormField.Root className={className} fillWidth={fillWidth} style={style}>
       <FormField.Label>{label}</FormField.Label>
       <FormTextField.Wrapper
-        $layer={layer}
+        $disabled={props.disabled}
         $focused={focused}
         $hasError={Boolean(error)}
-        $disabled={props.disabled}
         $hasSuccess={Boolean(success)}
+        $layer={layer}
       >
         {prefix && <S.Prefix>{prefix}</S.Prefix>}
         <S.Input
           $hasPrefix={Boolean(prefix)}
-          ref={setRef}
-          onFocus={e => {
-            setFocused(true)
-            props.onFocus && props.onFocus(e)
-          }}
+          disabled={props.disabled}
           onBlur={e => {
             setFocused(false)
             props.onBlur && props.onBlur(e)
           }}
-          disabled={props.disabled}
+          onFocus={e => {
+            setFocused(true)
+            props.onFocus && props.onFocus(e)
+          }}
+          ref={setRef}
           {...props}
         />
         {suffix && <S.Suffix>{suffix}</S.Suffix>}

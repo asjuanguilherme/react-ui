@@ -1,5 +1,6 @@
-import { Container as DefaultContainer } from 'components'
 import { opacify } from 'polished'
+
+import { Container as DefaultContainer } from 'components'
 import styled, { css } from 'styled-components'
 
 export const Container = styled(DefaultContainer)``

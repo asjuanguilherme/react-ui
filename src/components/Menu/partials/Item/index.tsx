@@ -1,11 +1,13 @@
 import React from 'react'
 import { MouseEventHandler, MutableRefObject } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
+
+import { ThemeLayerIndex } from 'lib/theming'
 
 import { IconComponent } from 'icons'
-import { ThemeLayerIndex } from 'lib/theming'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 type MenuItemCommonProps = {
   title?: string
@@ -49,12 +51,12 @@ export const MenuItem = ({
   return (
     <S.Wrapper as={liTag ? 'li' : 'span'}>
       <S.Button
-        as={props.href ? (anchorComponent ? anchorComponent : 'a') : 'button'}
         $active={active}
         $layer={layer}
-        rel={isExternal ? 'noopener noreferrer' : undefined}
-        ref={setRef}
         $size={size}
+        as={props.href ? (anchorComponent ? anchorComponent : 'a') : 'button'}
+        ref={setRef}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
         {...props}
       >
         {Icon && <Icon />}

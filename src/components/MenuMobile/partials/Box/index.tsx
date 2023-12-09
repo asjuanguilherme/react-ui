@@ -1,9 +1,9 @@
 import React from 'react'
 import { ReactNode } from 'react'
 
-import * as S from './styles'
-
 import { MenuMobileRootCallbackProps } from '../Root'
+
+import * as S from './styles'
 
 export type MenuMobileBoxProps = MenuMobileRootCallbackProps & {
   title: string
@@ -19,9 +19,9 @@ export const MenuMobileBox = ({
 }: MenuMobileBoxProps) => {
   return (
     <S.Wrapper
+      $opened={opened}
       aria-hidden={!opened}
       id={htmlIDPrefix + 'box'}
-      $opened={opened}
       onClick={() => setOpened(false)}
     >
       <S.Box onClick={e => e.stopPropagation()} roundedCorners="large">

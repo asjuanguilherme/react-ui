@@ -1,10 +1,11 @@
 import React, { ChangeEventHandler } from 'react'
 import { ReactNode } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
 
 import { ThemeLayerIndex } from 'lib/theming'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type CheckboxProps = {
   name?: string
@@ -30,18 +31,18 @@ export const Checkbox = ({
 }: CheckboxProps) => {
   return (
     <S.Wrapper
-      style={style}
-      className={className}
-      $layer={layer}
       $alignment={alignment}
+      $layer={layer}
+      className={className}
+      style={style}
     >
       <input
-        type="checkbox"
+        checked={checked}
         hidden
         name={name}
-        value={value}
         onChange={onChange}
-        checked={checked}
+        type="checkbox"
+        value={value}
         {...props}
       />
 

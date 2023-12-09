@@ -1,8 +1,8 @@
 import React from 'react'
 
-import * as S from './styles'
-
 import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type SpinnerSize =
   | 'extra-small'
@@ -35,20 +35,20 @@ export const Spinner = ({
 
   return (
     <svg
-      style={style}
       className={className}
-      viewBox={`0 0 ${sizeWidth} ${sizeWidth}`}
       height={sizeWidth}
+      style={style}
+      viewBox={`0 0 ${sizeWidth} ${sizeWidth}`}
       width={sizeWidth}
       x={0}
       y={0}
     >
       <S.Circle
+        $size={sizeWidth}
+        $strokeWidth={strokeWidth}
         cx={sizeWidth / 2}
         cy={sizeWidth / 2}
         r={(sizeWidth - strokeWidth) / 2}
-        $size={sizeWidth}
-        $strokeWidth={strokeWidth}
         stroke={color}
       />
     </svg>

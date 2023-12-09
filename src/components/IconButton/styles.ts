@@ -1,5 +1,6 @@
-import { ButtonBase } from 'components/ButtonBase'
 import { FieldSizesToken } from 'lib/theming'
+
+import { ButtonBase } from 'components/ButtonBase'
 import styled, { css } from 'styled-components'
 
 import {

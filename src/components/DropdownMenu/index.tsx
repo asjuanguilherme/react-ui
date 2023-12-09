@@ -1,12 +1,14 @@
 import React from 'react'
 
+import { HTMLStyleAttributes } from 'types'
+
+import { ThemeLayerIndex } from 'lib/theming'
+
 import { ChevronButton, Menu, Popover } from 'components'
 import { MenuItemProps } from 'components/Menu/partials'
 import { IconComponent } from 'icons'
-import { ThemeLayerIndex } from 'lib/theming'
-import { HTMLStyleAttributes } from 'types'
 
-export type DropdownMenuItem = MenuItemProps
+export type DropdownMenuItem = MenuItemProps & { key: string }
 
 export type DropdownMenuProps = {
   title?: string
@@ -45,23 +47,23 @@ export const DropdownMenu = ({
         <>
           <ChevronButton
             active={isActive}
-            layer={layer}
+            borderLess={borderLess}
             disabled={loading || disabled}
+            fillWidth={fillWidth}
             icon={icon}
+            layer={layer}
             loading={loading}
-            title={title}
-            size={size}
             setRef={triggerRef}
             showChevron={!loading}
-            fillWidth={fillWidth}
-            borderLess={borderLess}
+            size={size}
+            title={title}
             transparent={transparent}
           />
-          <Popover.Box visible={isActive} layer={layer}>
+          <Popover.Box layer={layer} visible={isActive}>
             <Menu.List maxHeight={maxHeight}>
-              {items?.map((item, index) => (
+              {items?.map(({ key, ...item }) => (
                 <Menu.Item
-                  key={index}
+                  key={key}
                   layer={layer}
                   {...item}
                   onClick={e => {

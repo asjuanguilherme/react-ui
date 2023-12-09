@@ -33,8 +33,8 @@ export const Pagination = ({
     <S.Wrapper className={className} style={style}>
       {pages.map(pageNumber => (
         <S.Button
-          key={pageNumber}
           $active={pageNumber === currentPage}
+          key={pageNumber}
           onClick={() => onPageChange && onPageChange(pageNumber)}
         >
           {pageNumber}

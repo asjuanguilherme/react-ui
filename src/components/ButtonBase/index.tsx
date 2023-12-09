@@ -1,11 +1,13 @@
 import React from 'react'
 import { MouseEvent, MutableRefObject, ReactNode } from 'react'
 
-import * as S from './styles'
+import { HTMLStyleAttributes } from 'types'
 
 import { ThemeLayerIndex, ThemePaletteColors } from 'lib/theming'
+
 import { WebTarget } from 'styled-components'
-import { HTMLStyleAttributes } from 'types'
+
+import * as S from './styles'
 
 export type ButtonVariant = 'filled' | 'outlined' | 'layerBased'
 
@@ -69,18 +71,18 @@ export const ButtonBase = ({
     <S.Wrapper
       as={props.href ? linkComponent || 'a' : 'button'}
       ref={setRef}
-      target={props.href && isExternal ? '_blank' : '_self'}
       rel={props.href && isExternal ? 'noopener noreferrer' : undefined}
+      target={props.href && isExternal ? '_blank' : '_self'}
       type={type}
       {...props}
-      $layer={layer}
-      $variant={variant}
+      $active={active}
+      $borderLess={borderLess}
       $color={color}
+      $layer={layer}
       $loading={loading}
       $shape={shape}
-      $borderLess={borderLess}
       $transparent={transparent}
-      $active={active}
+      $variant={variant}
     >
       {children}
     </S.Wrapper>
