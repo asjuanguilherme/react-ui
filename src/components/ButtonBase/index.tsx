@@ -5,7 +5,11 @@ import { WebTarget } from 'styled-components'
 
 import { HTMLStyleAttributes } from 'types'
 
-import { ThemeLayerIndex, ThemePaletteColors } from 'lib/theming'
+import {
+  ButtonConfigTokenShape,
+  ThemeLayerIndex,
+  ThemePaletteColors,
+} from 'lib/theming'
 
 import * as S from './styles'
 
@@ -26,7 +30,7 @@ export type ButtonBaseCommonProps = {
   isExternal?: boolean
   href?: string
   linkComponent?: WebTarget
-  shape?: 'pill' | 'rounded'
+  shape?: ButtonConfigTokenShape
 } & HTMLStyleAttributes
 
 export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
@@ -60,7 +64,7 @@ export const ButtonBase = ({
   type = 'button',
   variant = 'filled',
   color = 'primary',
-  shape = 'pill',
+  shape,
   setRef,
   borderLess = false,
   transparent = false,

@@ -2,9 +2,14 @@ import { grayscale, readableColor } from 'polished'
 import styled, { css } from 'styled-components'
 
 import { regexPatterns } from '@asjuanguilherme/js-utils'
+
 import { fontFamily } from 'fonts'
 
-import { ThemeLayerIndex, generateThemeColorPaletteItem } from 'lib/theming'
+import {
+  ButtonConfigTokenShape,
+  ThemeLayerIndex,
+  generateThemeColorPaletteItem,
+} from 'lib/theming'
 
 import { ButtonColors, ButtonVariant } from '.'
 
@@ -13,7 +18,7 @@ export const Wrapper = styled.button<{
   $color: ButtonColors
   $layer: ThemeLayerIndex
   $loading: boolean
-  $shape: 'pill' | 'rounded'
+  $shape: ButtonConfigTokenShape
   $transparent: boolean
   $borderLess: boolean
   $active: boolean
@@ -36,15 +41,18 @@ export const Wrapper = styled.button<{
     }
   }
 
-  ${({ $shape }) => {
-    switch ($shape) {
+  ${({ $shape, theme }) => {
+    const defaultShape = theme.button.shape
+    const shape = $shape || defaultShape
+
+    switch (shape) {
       case 'pill':
         return css`
-          border-radius: ${props => props.theme.borderRadius.pill};
+          border-radius: ${theme.borderRadius.pill};
         `
       case 'rounded':
         return css`
-          border-radius: ${props => props.theme.button.borderRadius};
+          border-radius: ${theme.button.borderRadius};
         `
     }
   }}

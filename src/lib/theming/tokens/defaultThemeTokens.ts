@@ -15,6 +15,7 @@ export const defaultThemeTokens: ThemeTokens = {
     borderRadius: '0.4rem',
   },
   button: {
+    shape: 'pill',
     height: {
       small: '2.375rem',
       medium: '3rem',
