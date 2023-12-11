@@ -1,6 +1,7 @@
 import { GetServerSidePropsContext } from 'next'
 
 import { objectKeys } from '@asjuanguilherme/js-utils'
+
 import { parseCookies, setCookie } from 'nookies'
 
 import { Theme } from 'lib/theming'

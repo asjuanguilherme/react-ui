@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "jsx": "react"
+    "jsx": "preserve",
+    "incremental": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true
   },
   "extends": "@asjuanguilherme/tsconfig/react-library.json",
   "include": ["src/**/*.tsx", "src/**/*.ts", "styled.d.ts"],
