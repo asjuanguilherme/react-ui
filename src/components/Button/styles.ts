@@ -37,14 +37,14 @@ export const Wrapper = styled(ButtonBase)<{
           ${horizontalPadding(theme.spacing.components.large)}
           height: ${theme.button.height.medium};
           gap: ${theme.spacing.components.small};
-          font-size: ${theme.fontSizes.medium};
+          font-size: ${theme.fontSizes.small};
         `
       case 'large':
         return css`
           ${horizontalPadding(theme.spacing.components.large)}
           height: ${theme.button.height.large};
           gap: ${theme.spacing.components.medium};
-          font-size: ${theme.fontSizes.large};
+          font-size: ${theme.fontSizes.medium};
         `
     }
   }}
