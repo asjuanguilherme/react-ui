@@ -13,7 +13,7 @@ import { getThemeCookie, saveThemeCookie } from 'misc'
 
 import { Theme } from 'lib/theming'
 
-export type GlobalThemeContextProps = Theme & {
+export type GlobalThemeContextProps = {
   themeToggle: () => void
 }
 
@@ -80,7 +80,7 @@ export const GlobalThemeProvider = <T extends Record<string, Theme>>({
   }, [themeCookieKey, themes])
 
   return (
-    <GlobalThemeContext.Provider value={{ ...selectedThemeData, themeToggle }}>
+    <GlobalThemeContext.Provider value={{ themeToggle }}>
       <ThemeProvider theme={selectedThemeData}>
         {children(selectedThemeData)}
       </ThemeProvider>

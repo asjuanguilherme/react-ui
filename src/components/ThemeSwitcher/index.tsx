@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useTheme } from 'styled-components'
+
 import { ThemeType } from 'lib/theming'
 
 import { useGlobalTheme } from 'contexts'
@@ -13,13 +15,14 @@ const iconByTheme: Record<ThemeType, IconComponent> = {
 }
 
 export const ThemeSwitcher = () => {
-  const theme = useGlobalTheme()
+  const { themeToggle } = useGlobalTheme()
+  const theme = useTheme()
   const Icon = iconByTheme[theme.type]
 
   return (
     <IconButton
       icon={Icon}
-      onClick={theme.themeToggle}
+      onClick={themeToggle}
       size="small"
       variant="layerBased"
     />

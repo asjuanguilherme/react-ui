@@ -1,6 +1,7 @@
 import React from 'react'
 import { useMemo } from 'react'
 
+import { useTheme } from 'styled-components'
 import { useScreenSize } from '@asjuanguilherme/js-utils'
 
 import { breakpoints } from 'lib'
@@ -22,7 +23,7 @@ export type BreadcrumbsProps = {
 }
 
 export const Breadcrumbs = ({ paths }: BreadcrumbsProps) => {
-  const theme = useGlobalTheme()
+  const theme = useTheme()
   const screen = useScreenSize()
   const isTabletSUp = screen.width > breakpoints.tabletS
 
