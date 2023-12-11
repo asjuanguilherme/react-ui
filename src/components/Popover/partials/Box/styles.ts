@@ -13,6 +13,7 @@ export const Box = styled(CardBase)<{
   $horizontalAlignment: PopoverBoxHorizontalAlignment
   $verticalAlignment: PopoverBoxVerticalAlignment
   $maxHeight?: number
+  $maxWidth?: number
 }>`
   @media screen and (max-width: ${breakpoints.tablet}px) {
     width: 100%;
@@ -30,10 +31,12 @@ export const Box = styled(CardBase)<{
   overflow-y: hidden;
   position: absolute;
   z-index: 10;
-  width: 100%;
+
   transition: ${props => props.theme.transitionDurations.default};
   transition-property: background, border, transform, opacity, top;
   top: 100%;
+
+  width: ${({ $maxWidth }) => ($maxWidth ? $maxWidth + 'px' : 'max-content')};
 
   ${({ $maxHeight }) =>
     $maxHeight &&

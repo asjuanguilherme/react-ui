@@ -13,6 +13,7 @@ export type PopoverBoxVerticalAlignment = 'top' | 'bottom'
 export type PopoverBoxProps = {
   visible?: boolean
   maxHeight?: number
+  maxWidth?: number
   layer?: ThemeLayerIndex
   children?: ReactNode
   horizontalAlignment?: PopoverBoxHorizontalAlignment
@@ -26,6 +27,7 @@ export const PopoverBox = ({
   maxHeight,
   horizontalAlignment = 'center',
   verticalAlignment = 'top',
+  maxWidth,
   ...props
 }: PopoverBoxProps) => {
   return (
@@ -34,6 +36,7 @@ export const PopoverBox = ({
         $horizontalAlignment={horizontalAlignment}
         $layer={layer}
         $maxHeight={maxHeight}
+        $maxWidth={maxWidth}
         $verticalAlignment={verticalAlignment}
         $visible={visible}
       >
