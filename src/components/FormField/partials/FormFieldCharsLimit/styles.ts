@@ -11,7 +11,7 @@ export const Count = styled.span<{ $limitExceeded: boolean }>`
 `
 
 export const Wrapper = styled.span`
-  font-size: ${props => props.theme.fontSizes.xsmall};
+  font-size: ${props => props.theme.fontSizes.small};
   position: absolute;
   right: ${props => props.theme.spacing.components.small};
   bottom: ${props => props.theme.spacing.components.small};

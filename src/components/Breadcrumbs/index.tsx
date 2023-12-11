@@ -45,7 +45,7 @@ export const Breadcrumbs = ({ paths }: BreadcrumbsProps) => {
                 ) : (
                   <>
                     <S.Path>{item.title}</S.Path>
-                    <ChevronRightIcon size={theme.fontSizes.xsmall} />
+                    <ChevronRightIcon size={theme.fontSizes.small} />
                   </>
                 )}
               </S.Item>
@@ -55,7 +55,7 @@ export const Breadcrumbs = ({ paths }: BreadcrumbsProps) => {
           {!isTabletSUp && previousPathItem && (
             <S.Item>
               <S.PathLink href={previousPathItem.path || '/'}>
-                <ChevronLeftIcon size={theme.fontSizes.xsmall} />
+                <ChevronLeftIcon size={theme.fontSizes.small} />
                 Voltar para: {previousPathItem.title}
               </S.PathLink>
             </S.Item>

@@ -6,7 +6,7 @@ export const Wrapper = styled.span<{ $type: FormFieldStatusType }>`
   display: flex;
   gap: ${props => props.theme.spacing.components.small};
   align-items: center;
-  font-size: ${props => props.theme.fontSizes.xsmall};
+  font-size: ${props => props.theme.fontSizes.small};
   padding-top: ${props => props.theme.spacing.components.xsmall};
   padding-left: ${props => props.theme.spacing.components.small};
 

@@ -40,7 +40,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
   background: transparent;
   color: ${({ theme }) => theme.colors.content.text};
-  font-size: ${props => props.theme.fontSizes.xsmall};
+  font-size: ${props => props.theme.fontSizes.small};
   border-radius: 100%;
   opacity: 0.5;
 

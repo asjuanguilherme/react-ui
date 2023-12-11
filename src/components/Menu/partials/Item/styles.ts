@@ -23,7 +23,7 @@ export const Button = styled.button<{
     switch ($size) {
       case 'small':
         return css`
-          font-size: ${props => props.theme.fontSizes.xsmall};
+          font-size: ${props => props.theme.fontSizes.small};
           padding: ${props => props.theme.spacing.components.small}
             ${props => props.theme.spacing.components.small};
         `

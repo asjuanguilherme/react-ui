@@ -29,7 +29,7 @@ export const Wrapper = styled(ButtonBase)<{
         return css`
           ${horizontalPadding(theme.spacing.components.large)}
           height: ${theme.button.height.small};
-          font-size: ${theme.fontSizes.xsmall};
+          font-size: ${theme.fontSizes.small};
           gap: ${theme.spacing.components.small};
         `
       case 'medium':

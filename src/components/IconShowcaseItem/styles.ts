@@ -6,7 +6,7 @@ import { CardBase } from 'components/CardBase'
 
 export const Slug = styled.span`
   position: absolute;
-  font-size: ${props => props.theme.fontSizes.xsmall};
+  font-size: ${props => props.theme.fontSizes.small};
   left: ${props => props.theme.spacing.components.small};
   bottom: ${props => props.theme.spacing.components.small};
   width: 90%;

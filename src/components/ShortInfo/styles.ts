@@ -17,5 +17,5 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${props => props.theme.spacing.components.xsmall};
-  font-size: ${props => props.theme.fontSizes.xsmall};
+  font-size: ${props => props.theme.fontSizes.small};
 `
