@@ -54,6 +54,8 @@ export const TextInput = ({
   info,
   error,
   success,
+  onFocus,
+  onBlur,
   ...props
 }: TextInputProps) => {
   const [focused, setFocused] = useState(false)
@@ -80,11 +82,11 @@ export const TextInput = ({
           disabled={props.disabled}
           onBlur={e => {
             setFocused(false)
-            props.onBlur && props.onBlur(e)
+            onBlur && onBlur(e)
           }}
           onFocus={e => {
             setFocused(true)
-            props.onFocus && props.onFocus(e)
+            onFocus && onFocus(e)
           }}
           ref={setRef}
           {...props}
