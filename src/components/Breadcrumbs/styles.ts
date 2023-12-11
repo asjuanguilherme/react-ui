@@ -1,41 +1,44 @@
 import styled from 'styled-components'
 
-import { screens } from 'lib'
+import { ChevronRightIcon } from 'icons'
 
-export const PathLink = styled.a``
+export const ItemContent = styled.span`
+  text-decoration: none;
+`
 
-export const Path = styled.span``
+export const ListItem = styled.li`
+  width: max-content;
+  flex-shrink: 0;
 
-export const Item = styled.li`
   a {
     color: ${props => props.theme.colors.content.text};
-    text-decoration: none;
-    svg {
-      margin-right: ${props => props.theme.spacing.components.small};
-    }
 
     &:hover {
       color: ${props => props.theme.colors.palette.primary.normal};
     }
   }
-
-  span {
-    color: ${props => props.theme.colors.content.detail};
-  }
 `
 
-export const List = styled.ul`
+export const BreadcrumbChevron = styled(ChevronRightIcon)`
+  color: ${props => props.theme.colors.content.detail};
+`
+
+export const List = styled.ol`
   list-style: none;
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.components.medium};
-  font-size: ${props => props.theme.fontSizes.small};
+  flex-wrap: wrap;
+
+  ${ListItem}:last-of-type {
+    color: ${props => props.theme.colors.content.detail};
+  }
+
+  ${BreadcrumbChevron}:last-of-type {
+    display: none;
+  }
 `
 
-export const Wrapper = styled.div`
-  padding: ${props => props.theme.spacing.components.large} 0;
-
-  ${screens.tablet} {
-    padding: ${props => props.theme.spacing.sections.small} 0;
-  }
+export const Wrapper = styled.nav`
+  font-size: ${props => props.theme.fontSizes.small};
 `

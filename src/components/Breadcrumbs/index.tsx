@@ -1,67 +1,34 @@
-import React from 'react'
-import { useMemo } from 'react'
+import React, { Fragment } from 'react'
 
-import { useTheme } from 'styled-components'
-
-import { useScreenSize } from '@asjuanguilherme/js-utils'
-
-import { breakpoints } from 'lib'
-
-import { Container } from 'components'
-import { ChevronLeftIcon, ChevronRightIcon } from 'icons'
+import _uniqueId from 'lodash/uniqueId'
+import { HTMLStyleAttributes } from 'types'
 
 import * as S from './styles'
 
 export type BreadcrumbPathProps = {
   title: string
-  path?: string
+  href?: string
 }
 
 export type BreadcrumbsProps = {
-  paths: BreadcrumbPathProps[]
-}
+  items: BreadcrumbPathProps[]
+} & HTMLStyleAttributes
 
-export const Breadcrumbs = ({ paths }: BreadcrumbsProps) => {
-  const theme = useTheme()
-  const screen = useScreenSize()
-  const isTabletSUp = screen.width > breakpoints.tabletS
-
-  const previousPathItem = useMemo(() => {
-    return paths[paths.length - 2] || null
-  }, [paths])
-
+export const Breadcrumbs = ({ items, ...props }: BreadcrumbsProps) => {
   return (
-    <S.Wrapper>
-      <Container>
-        <S.List>
-          {paths.map((item, index) => {
-            const isLastItem = index === paths.length - 1
-            const key = item.path || `${index}-${item.title}`
-
-            return (
-              <S.Item key={key}>
-                {isLastItem && item.path ? (
-                  <S.PathLink href={item.path}>{item.title}</S.PathLink>
-                ) : (
-                  <>
-                    <S.Path>{item.title}</S.Path>
-                    <ChevronRightIcon size={theme.fontSizes.small} />
-                  </>
-                )}
-              </S.Item>
-            )
-          })}
-
-          {!isTabletSUp && previousPathItem && (
-            <S.Item>
-              <S.PathLink href={previousPathItem.path || '/'}>
-                <ChevronLeftIcon size={theme.fontSizes.small} />
-                Voltar para: {previousPathItem.title}
-              </S.PathLink>
-            </S.Item>
-          )}
-        </S.List>
-      </Container>
+    <S.Wrapper {...props}>
+      <S.List>
+        {items?.map(item => (
+          <Fragment key={_uniqueId('breadcrumb-id-')}>
+            <S.ListItem>
+              <S.ItemContent as={item.href ? 'a' : 'span'} href={item.href}>
+                {item.title}
+              </S.ItemContent>
+            </S.ListItem>
+            <S.BreadcrumbChevron />
+          </Fragment>
+        ))}
+      </S.List>
     </S.Wrapper>
   )
 }
