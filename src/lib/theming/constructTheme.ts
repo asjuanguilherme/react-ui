@@ -37,9 +37,7 @@ export type ConstructThemeParams = {
     layers: GenerateThemeLayersColorsParams
   }
   fontFamily?: string
-  tokens?: ThemeTokens
-  button?: Partial<ButtonConfigToken>
-  field?: Partial<FieldConfigToken>
+  tokens?: Partial<ThemeTokens>
 }
 
 export type Theme = {
