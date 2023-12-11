@@ -42,7 +42,8 @@
     "format": "prettier --write .",
     "build": "tsup src/index.ts --format esm,cjs --dts --cjsInterop",
     "dev": "yarn build --watch",
-    "clean": "rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf node_modules && rm -rf dist",
+    "convert-icons": "node ./convert-icons.js"
   },
   "devDependencies": {
     "@asjuanguilherme/eslint-config": "^0.1.2",
@@ -60,6 +61,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "fs-extra": "^11.2.0",
     "husky": "^8.0.3",
     "lodash": "^4.17.21",
     "next": "^13.5.4",
