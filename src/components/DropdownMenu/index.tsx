@@ -43,7 +43,7 @@ export const DropdownMenu = ({
 }: DropdownMenuProps) => {
   return (
     <Popover.Root triggerOn={triggerOn}>
-      {({ isActive, setIsActive, triggerRef }) => (
+      {({ isActive, setIsActive, triggerRef, popoverBoxProps }) => (
         <>
           <ChevronButton
             active={isActive}
@@ -59,7 +59,7 @@ export const DropdownMenu = ({
             title={title}
             transparent={transparent}
           />
-          <Popover.Box layer={layer} visible={isActive}>
+          <Popover.Box layer={layer} {...popoverBoxProps}>
             <Menu.List maxHeight={maxHeight}>
               {items?.map(({ key, ...item }) => (
                 <Menu.Item

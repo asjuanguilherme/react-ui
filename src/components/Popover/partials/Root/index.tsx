@@ -10,6 +10,8 @@ import React, {
 
 import _uniqueId from 'lodash/uniqueId'
 
+import { PopoverBoxProps } from '../Box'
+
 import * as S from './styles'
 
 export type PopoverRootChildrenCallbackProps<T extends HTMLElement | null> = {
@@ -17,6 +19,7 @@ export type PopoverRootChildrenCallbackProps<T extends HTMLElement | null> = {
   isActive: boolean
   setIsActive: Dispatch<SetStateAction<boolean>>
   triggerRef: MutableRefObject<T>
+  popoverBoxProps: PopoverBoxProps
 }
 
 export type PopoverRootProps = {
@@ -96,9 +99,21 @@ export const PopoverRoot = ({
     }
   }, [triggerRef, setIsActive])
 
+  const popoverBoxProps: PopoverBoxProps = {
+    onClose: () => setIsActive(false),
+    visible: isActive,
+  }
+
   return (
     <S.Wrapper ref={wrapperRef}>
-      {children && children({ popoverId, isActive, setIsActive, triggerRef })}
+      {children &&
+        children({
+          popoverId,
+          isActive,
+          setIsActive,
+          triggerRef,
+          popoverBoxProps,
+        })}
     </S.Wrapper>
   )
 }

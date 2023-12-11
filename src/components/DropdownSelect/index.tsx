@@ -118,7 +118,7 @@ export const DropdownSelect = ({
 
   return (
     <Popover.Root triggerOn={triggerOn}>
-      {({ isActive, setIsActive, triggerRef }) => (
+      {({ isActive, setIsActive, triggerRef, popoverBoxProps }) => (
         <FormField.Root
           className={className}
           fillWidth={fillWidth}
@@ -137,7 +137,7 @@ export const DropdownSelect = ({
             size={size}
             title={selectedOptionData?.label || placeholder}
           />
-          <Popover.Box layer={layer} visible={isActive}>
+          <Popover.Box layer={layer} {...popoverBoxProps}>
             {search?.enabled && (
               <>
                 <TextInput

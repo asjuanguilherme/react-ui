@@ -11,7 +11,8 @@ export type PopoverBoxHorizontalAlignment = 'right' | 'center' | 'left'
 export type PopoverBoxVerticalAlignment = 'top' | 'bottom'
 
 export type PopoverBoxProps = {
-  visible?: boolean
+  onClose: () => void
+  visible: boolean
   maxHeight?: number
   maxWidth?: number
   layer?: ThemeLayerIndex
@@ -28,10 +29,11 @@ export const PopoverBox = ({
   horizontalAlignment = 'center',
   verticalAlignment = 'top',
   maxWidth,
+  onClose,
   ...props
 }: PopoverBoxProps) => {
   return (
-    <S.Wrapper $visible={visible} {...props}>
+    <S.Wrapper $visible={visible} onClick={onClose} {...props}>
       <S.Box
         $horizontalAlignment={horizontalAlignment}
         $layer={layer}
@@ -39,6 +41,7 @@ export const PopoverBox = ({
         $maxWidth={maxWidth}
         $verticalAlignment={verticalAlignment}
         $visible={visible}
+        onClick={e => e.stopPropagation()}
       >
         {children}
       </S.Box>

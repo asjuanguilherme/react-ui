@@ -2,11 +2,10 @@ import React from 'react'
 import { useMemo } from 'react'
 
 import { useTheme } from 'styled-components'
+
 import { useScreenSize } from '@asjuanguilherme/js-utils'
 
 import { breakpoints } from 'lib'
-
-import { useGlobalTheme } from 'contexts'
 
 import { Container } from 'components'
 import { ChevronLeftIcon, ChevronRightIcon } from 'icons'

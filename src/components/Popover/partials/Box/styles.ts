@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { breakpoints } from 'lib/responsiveness'
+import { breakpoints, screens } from 'lib/responsiveness'
 import { ThemeLayerIndex } from 'lib/theming'
 
 import { CardBase } from 'components/CardBase'
@@ -34,61 +34,44 @@ export const Box = styled(CardBase)<{
 
   transition: ${props => props.theme.transitionDurations.default};
   transition-property: background, border, transform, opacity, top;
-  top: 100%;
 
-  width: ${({ $maxWidth }) => ($maxWidth ? $maxWidth + 'px' : 'max-content')};
+  ${screens.tablet} {
+    top: 100%;
+    width: ${({ $maxWidth }) => ($maxWidth ? $maxWidth + 'px' : 'max-content')};
 
-  ${({ $maxHeight }) =>
-    $maxHeight &&
-    css`
-      max-height: ${$maxHeight}px;
-    `}
+    ${({ $maxHeight }) =>
+      $maxHeight &&
+      css`
+        max-height: ${$maxHeight}px;
+      `}
 
-  ${({ $visible }) =>
-    !$visible &&
-    css`
-      top: calc(100% - 2rem);
-      opacity: 0;
-      pointer-events: none;
-    `};
+    ${({ $visible }) =>
+      !$visible &&
+      css`
+        top: calc(100% - 2rem);
+        opacity: 0;
+        pointer-events: none;
+      `};
 
-  ${({ $horizontalAlignment }) => {
-    switch ($horizontalAlignment) {
-      default:
-      case 'center':
-        return css`
-          left: 50%;
-          transform: translateX(-50%);
-        `
-      case 'right':
-        return css`
-          right: 0;
-        `
-      case 'left':
-        return css`
-          left: 0;
-        `
-    }
-  }};
-
-  ${({ $horizontalAlignment }) => {
-    switch ($horizontalAlignment) {
-      default:
-      case 'center':
-        return css`
-          left: 50%;
-          transform: translateX(-50%);
-        `
-      case 'right':
-        return css`
-          right: 0;
-        `
-      case 'left':
-        return css`
-          left: 0;
-        `
-    }
-  }};
+    ${({ $horizontalAlignment }) => {
+      switch ($horizontalAlignment) {
+        default:
+        case 'center':
+          return css`
+            left: 50%;
+            transform: translateX(-50%);
+          `
+        case 'right':
+          return css`
+            right: 0;
+          `
+        case 'left':
+          return css`
+            left: 0;
+          `
+      }
+    }};
+  }
 `
 
 export const Wrapper = styled.div<{ $visible: boolean }>`
