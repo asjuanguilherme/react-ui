@@ -80,7 +80,7 @@ export const GlobalThemeProvider = <T extends Record<string, Theme>>({
   }, [themeCookieKey, themes])
 
   return (
-    <GlobalThemeContext.Provider value={{ themeToggle }}>
+    <GlobalThemeContext.Provider value={{ ...selectedThemeData, themeToggle }}>
       <ThemeProvider theme={selectedThemeData}>
         {children(selectedThemeData)}
       </ThemeProvider>
