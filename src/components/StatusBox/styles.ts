@@ -63,25 +63,25 @@ const appearCard = keyframes`
 `
 
 export const Wrapper = styled.div<{
-  opened: boolean
-  type: StatusBoxTypes
-  layer: ThemeLayerIndex
-  height?: string
-  width?: string
+  $opened: boolean
+  $type: StatusBoxTypes
+  $layer: ThemeLayerIndex
+  $height?: string
+  $width?: string
 }>`
   display: flex;
   flex-direction: column;
   border-radius: ${props => props.theme.borderRadius.medium};
   padding: ${props => props.theme.spacing.components.large};
-  width: ${props => props.width ?? 'unset'};
-  height: ${props => props.height ?? 'unset'};
+  width: ${props => props.$width ?? 'unset'};
+  height: ${props => props.$height ?? 'unset'};
   border-width: 1px;
   border-style: solid;
   animation: ${appearCard} ${props => props.theme.transitionDurations.default}
     linear;
 
-  ${({ opened, theme }) =>
-    !opened &&
+  ${({ $opened, theme }) =>
+    !$opened &&
     css`
       transition: ${theme.transitionDurations.default} ease;
       transition-property: transform, opacity;
@@ -89,10 +89,10 @@ export const Wrapper = styled.div<{
       opacity: 0;
     `}
 
-  ${({ theme, type, layer }) => {
-    const currentLayer = theme.colors.layers[layer]
+  ${({ theme, $type, $layer }) => {
+    const currentLayer = theme.colors.layers[$layer]
 
-    switch (type) {
+    switch ($type) {
       case 'info':
         return css`
           background-color: ${currentLayer.background};
@@ -100,40 +100,18 @@ export const Wrapper = styled.div<{
           color: ${theme.colors.content.text};
         `
       case 'warning':
-        return css`
-          background-color: ${getBgColor(
-            currentLayer.background,
-            theme.colors.palette.primary.normal,
-          )};
-          border-color: ${getBorderColor(
-            theme.colors.palette.primary.normal,
-            currentLayer.border,
-          )};
-          color: ${theme.colors.palette.primary.normal};
-        `
       case 'error':
-        return css`
-          background-color: ${getBgColor(
-            currentLayer.background,
-            theme.colors.palette.error.normal,
-          )};
-          border-color: ${getBorderColor(
-            theme.colors.palette.error.normal,
-            currentLayer.border,
-          )};
-          color: ${theme.colors.palette.error.normal};
-        `
       case 'success':
         return css`
           background-color: ${getBgColor(
             currentLayer.background,
-            theme.colors.palette.success.normal,
+            theme.colors.palette[$type].normal,
           )};
           border-color: ${getBorderColor(
-            theme.colors.palette.success.normal,
+            theme.colors.palette[$type].normal,
             currentLayer.border,
           )};
-          color: ${theme.colors.palette.success.normal};
+          color: ${theme.colors.palette[$type].normal};
         `
     }
   }}

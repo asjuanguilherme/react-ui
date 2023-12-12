@@ -38,6 +38,8 @@ export const StatusBox = ({
   actionButtons,
   layer = 1,
   opened = true,
+  height,
+  width,
   ...props
 }: StatusBoxProps) => {
   const [render, setRender] = useState(opened)
@@ -57,7 +59,14 @@ export const StatusBox = ({
   if (!render) return <></>
 
   return (
-    <S.Wrapper layer={layer} opened={opened} type={type} {...props}>
+    <S.Wrapper
+      $height={height}
+      $layer={layer}
+      $opened={opened}
+      $type={type}
+      $width={width}
+      {...props}
+    >
       <S.Header>
         <S.Title>
           {iconByType[type]}
