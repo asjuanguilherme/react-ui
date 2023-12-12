@@ -1,5 +1,2 @@
-import { poppinsFontFamily } from './poppins'
-
-export const fontFamily = {
-  poppins: poppinsFontFamily,
-}
+export * from './font-family'
+export * from './poppins'

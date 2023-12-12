@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Teste';
+  font-weight: 200;
+  font-style: normal;
+  src: url(./Poppins-200.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Teste';
+  font-weight: 400;
+  font-style: normal;
+  src: url(./Poppins-400.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Teste';
+  font-weight: 500;
+  font-style: normal;
+  src: url(./Poppins-500.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Teste';
+  font-weight: 700;
+  font-style: normal;
+  src: url(./Poppins-700.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Teste';
+  font-weight: 800;
+  font-style: normal;
+  src: url(./Poppins-800.ttf) format('truetype');
+}

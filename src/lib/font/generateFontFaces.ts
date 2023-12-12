@@ -20,9 +20,9 @@ export const generateFontFaces = (fontFamily: FontFamily): string => {
           font-style: normal;
           src: local('${fontFamily.name} ${capitalizeFirstLetter(weight)}'),
             url(
-              ./fonts/assets/${fontFamily.filePrefix}${weightValue}${
-                fontFamily.fileExtension
-              }
+              ./${fontFamily.filePrefix}${weightValue}${
+        fontFamily.fileExtension
+      }
             )
               format('${fontFamily.format}');
         }

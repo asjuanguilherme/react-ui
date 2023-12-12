@@ -1,9 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { customScrollbar, fontFaces, resets } from './partials'
+import { customScrollbar, resets } from './partials'
 
 export const GlobalStyles = createGlobalStyle`
-  ${fontFaces}
   ${resets}
   ${customScrollbar}
 `
