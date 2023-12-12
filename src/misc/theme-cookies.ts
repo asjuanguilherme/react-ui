@@ -36,11 +36,13 @@ export const saveThemeCookie = <T extends Record<string, Theme>>({
         defaultTheme as string
       }) and saving the cookie.`,
     )
-    setCookie(ctx, themeCookieKey, defaultTheme as string)
+    setCookie(ctx, themeCookieKey, defaultTheme as string, {
+      path: '/',
+    })
     return defaultTheme
   }
 
-  setCookie(ctx, themeCookieKey, theme as string)
+  setCookie(ctx, themeCookieKey, theme as string, { path: '/' })
   return theme
 }
 
@@ -65,7 +67,7 @@ export const getThemeCookie = <T extends Record<string, Theme>>({
         defaultTheme as string
       }) and saving the cookie.`,
     )
-    setCookie(ctx, themeCookieKey, defaultTheme as string)
+    setCookie(ctx, themeCookieKey, defaultTheme as string, { path: '/' })
     return defaultTheme
   }
 
