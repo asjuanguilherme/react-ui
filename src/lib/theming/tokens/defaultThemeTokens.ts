@@ -1,3 +1,5 @@
+import { fontFamily } from 'fonts'
+
 import { ThemeTokens } from './tokens'
 
 export const defaultThemeTokens: ThemeTokens = {
@@ -33,7 +35,7 @@ export const defaultThemeTokens: ThemeTokens = {
     xxlarge: '2rem',
     xxxlarge: '2.5rem',
   },
-  fontWeights: { light: 300, regular: 400, bold: 500 },
+  fontWeights: fontFamily.poppins.weights,
   spacing: {
     components: {
       xsmall: '0.25rem',

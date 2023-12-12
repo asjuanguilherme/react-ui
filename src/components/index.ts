@@ -1,3 +1,4 @@
+// @index('./*', f => `export * from '${f.path}'`)
 export * from './Accordion'
 export * from './AccordionMenu'
 export * from './AccordionsContext'
@@ -17,6 +18,7 @@ export * from './FloatButton'
 export * from './FormField'
 export * from './FormTextField'
 export * from './Header'
+export * from './Heading'
 export * from './IconButton'
 export * from './IconShowcaseItem'
 export * from './LanguagesDropdown'
