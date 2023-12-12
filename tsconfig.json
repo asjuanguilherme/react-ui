@@ -7,6 +7,6 @@
     "allowSyntheticDefaultImports": true
   },
   "extends": "@asjuanguilherme/tsconfig/react-library.json",
-  "include": ["src/**/*.tsx", "src/**/*.ts", "styled.d.ts"],
+  "include": ["src/**/*.tsx", "src/**/*.ts", "styled.d.ts", "./tsup.config.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }

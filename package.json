@@ -32,7 +32,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "fonts"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -40,7 +41,7 @@
     "lint": "eslint ./src/**/*{ts,tsx}",
     "prepublishOnly": "npm run build",
     "format": "prettier --write .",
-    "build": "tsup src/index.ts --format esm,cjs --dts --cjsInterop",
+    "build": "tsup",
     "dev": "yarn build --watch",
     "clean": "rm -rf node_modules && rm -rf dist",
     "convert-icons": "node ./convert-icons.js"
@@ -51,6 +52,7 @@
     "@asjuanguilherme/prettier-config": "^1.0.0",
     "@asjuanguilherme/tsconfig": "^0.2.1",
     "@types/lodash": "^4.14.202",
+    "@types/node": "^20.10.4",
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
@@ -61,7 +63,6 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "fs-extra": "^11.2.0",
     "husky": "^8.0.3",
     "lodash": "^4.17.21",
     "next": "^13.5.4",
