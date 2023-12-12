@@ -36,11 +36,12 @@ export const PopoverBox = ({
     <S.Wrapper $visible={visible} onClick={onClose} {...props}>
       <S.Box
         $horizontalAlignment={horizontalAlignment}
-        $layer={layer}
         $maxHeight={maxHeight}
         $maxWidth={maxWidth}
         $verticalAlignment={verticalAlignment}
         $visible={visible}
+        boxShadow
+        layer={layer}
         onClick={e => e.stopPropagation()}
       >
         {children}

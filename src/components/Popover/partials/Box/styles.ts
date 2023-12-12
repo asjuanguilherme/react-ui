@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
 import { breakpoints, screens } from 'lib/responsiveness'
-import { ThemeLayerIndex } from 'lib/theming'
 
 import { CardBase } from 'components/CardBase'
 
@@ -9,7 +8,6 @@ import { PopoverBoxHorizontalAlignment, PopoverBoxVerticalAlignment } from '.'
 
 export const Box = styled(CardBase)<{
   $visible: boolean
-  $layer: ThemeLayerIndex
   $horizontalAlignment: PopoverBoxHorizontalAlignment
   $verticalAlignment: PopoverBoxVerticalAlignment
   $maxHeight?: number

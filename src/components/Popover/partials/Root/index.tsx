@@ -49,7 +49,6 @@ export const PopoverRoot = ({
       }
 
       const mouseoutHandler: EventListener = e => {
-        if (!isActive) return
         if (!wrapperRef.current) return
         if (!(e.target instanceof HTMLElement)) return
         if (wrapperRef.current.contains(e.target)) return
