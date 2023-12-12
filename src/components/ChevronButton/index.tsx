@@ -39,7 +39,6 @@ export const ChevronButton = ({
 }: ChevronButtonProps) => {
   return (
     <S.Wrapper
-      active={active}
       disabled={disabled}
       label={title}
       prefix={Icon && <Icon />}
