@@ -10,6 +10,7 @@ export type CardBaseProps = {
   children?: ReactNode
   roundedCorners?: 'small' | 'medium' | 'large' | 'none'
   tag?: keyof HTMLElementTagNameMap
+  boxShadow?: boolean
 } & HTMLAttributes<HTMLDivElement>
 
 export const CardBase = ({
@@ -18,11 +19,13 @@ export const CardBase = ({
   children,
   roundedCorners = 'medium',
   tag,
+  boxShadow,
   ...props
 }: CardBaseProps) => {
   return (
     <S.Wrapper
       {...props}
+      $boxShadow={boxShadow}
       $hoverable={hoverable}
       $layer={layer}
       $roundedCorners={roundedCorners}
