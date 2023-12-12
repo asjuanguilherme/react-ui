@@ -1,0 +1,11 @@
+import React from 'react'
+
+import { createIconComponent } from './createIconComponent'
+
+export const BoxTapedIcon = createIconComponent({
+  content: <>
+    <path d="M448 160L391.25 53.875C386.875 40.75 374.75 32 360.875 32H256L288 160H448ZM288 192V272C288 280.8 280.8 288 272 288H176C167.2 288 160 280.8 160 272V192H0V432C0 458.51 21.49 480 48 480H400C426.51 480 448 458.51 448 432V192H288ZM160 160L192 32H87.125C73.25 32 61.125 40.75 56.75 53.875L0 160H160Z"/>
+  </>,
+  viewBox: '0 0 448 512',
+})
+

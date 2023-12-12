@@ -1,5 +1,6 @@
 /dist
 /node_modules
+/new-icons
 yarn-error.log
 .rollup.cache
 tsconfig.tsbuildinfo
