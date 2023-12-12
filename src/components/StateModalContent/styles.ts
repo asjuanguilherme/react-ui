@@ -20,7 +20,7 @@ export const Message = styled.div`
 
 export const Title = styled.span`
   font-size: ${props => props.theme.fontSizes.medium};
-  font-weight: ${fontFamily.poppins.weights};
+  font-weight: ${fontFamily.poppins.weights.medium};
   line-height: 1.3em;
   margin-bottom: ${props => props.theme.spacing.components.medium};
 `
@@ -44,7 +44,7 @@ export const Icon = styled.div<{ $type: StateType }>`
   justify-content: center;
   animation: ${iconAppearKeyframes}
     ${props => props.theme.transitionDurations.default} ease;
-  color: ${props => props.theme.colors.content.title};
+  color: white;
   margin-bottom: ${props => props.theme.spacing.components.medium};
 
   ${({ $type }) =>
@@ -58,12 +58,9 @@ export const Icon = styled.div<{ $type: StateType }>`
     switch ($type) {
       case 'error':
       case 'warning':
-        return css`
-          background: ${theme.colors.palette.primary.normal};
-        `
       case 'success':
         return css`
-          background: ${theme.colors.palette.success.normal};
+          background: ${theme.colors.palette[$type].normal};
         `
       case 'loading':
         return css`
