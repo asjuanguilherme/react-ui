@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+
 import * as S from './styles'
 
 export type StepsProgressRootProps = { children: ReactNode }

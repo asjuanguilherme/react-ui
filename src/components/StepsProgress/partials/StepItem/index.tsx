@@ -15,6 +15,7 @@ export type StepsProgressStepItemProps = {
   listPosition?: StepsProgressStemItemListPosition
   width?: number
   isCurrentStep?: boolean
+  stepsFullyCompleted?: boolean
 }
 
 export const StepsProgressStepItem = ({
@@ -22,9 +23,10 @@ export const StepsProgressStepItem = ({
   title,
   description,
   listPosition = 'middle',
-  active = false,
   width,
+  active = false,
   isCurrentStep = false,
+  stepsFullyCompleted = false,
 }: StepsProgressStepItemProps) => {
   return (
     <S.Wrapper
@@ -32,8 +34,9 @@ export const StepsProgressStepItem = ({
       $isCurrentStep={isCurrentStep}
       $listPosition={listPosition}
       $width={width}
+      $stepsFullyCompleted={stepsFullyCompleted}
     >
-      <S.Badge $active={active}>
+      <S.Badge $active={active} $stepsFullyCompleted={stepsFullyCompleted}>
         {Icon && <Icon />} {!Icon && <S.BadgeCircle />}
       </S.Badge>
       <S.Title>{title}</S.Title>
