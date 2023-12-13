@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 
 import { ThemeLayerIndex } from 'lib/theming'
 
-import { Button } from 'components'
+import { Button, IconButton } from 'components'
 import { XmarkIcon } from 'icons'
 
 import * as S from './styles'
@@ -53,10 +53,9 @@ export const Modal = ({
           <S.BoxHeader>
             <S.Title>{title}</S.Title>
             {showX && (
-              <Button
+              <IconButton
                 icon={XmarkIcon}
                 onClick={onClose}
-                size="small"
                 variant="layerBased"
               />
             )}
