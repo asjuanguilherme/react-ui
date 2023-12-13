@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { ThemeLayerIndex } from 'lib'
+
 import { IconComponent } from 'icons'
 
 import * as S from './styles'
@@ -9,11 +11,12 @@ export type StepsProgressStemItemListPosition = 'start' | 'middle' | 'end'
 export type StepsProgressStepItemProps = {
   title: string
   icon?: IconComponent
-  active?: boolean
   description?: string
   customActiveColor?: string
-  listPosition?: StepsProgressStemItemListPosition
   width?: number
+  layer?: ThemeLayerIndex
+  active?: boolean
+  listPosition?: StepsProgressStemItemListPosition
   isCurrentStep?: boolean
   stepsFullyCompleted?: boolean
 }
@@ -27,20 +30,25 @@ export const StepsProgressStepItem = ({
   active = false,
   isCurrentStep = false,
   stepsFullyCompleted = false,
+  layer = 1,
 }: StepsProgressStepItemProps) => {
   return (
     <S.Wrapper
       $active={active}
       $isCurrentStep={isCurrentStep}
       $listPosition={listPosition}
-      $width={width}
       $stepsFullyCompleted={stepsFullyCompleted}
+      $width={width}
     >
       <S.Badge $active={active} $stepsFullyCompleted={stepsFullyCompleted}>
         {Icon && <Icon />} {!Icon && <S.BadgeCircle />}
       </S.Badge>
-      <S.Title>{title}</S.Title>
-      {description && <S.Description>{description}</S.Description>}
+      {(description || title) && (
+        <S.Card $isCurrentStep={isCurrentStep} layer={layer}>
+          {title && <S.Title role="heading">{title}</S.Title>}
+          {description && <S.Description>{description}</S.Description>}
+        </S.Card>
+      )}
     </S.Wrapper>
   )
 }

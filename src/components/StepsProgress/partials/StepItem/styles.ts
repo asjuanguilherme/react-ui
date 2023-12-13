@@ -1,6 +1,8 @@
 import { math, opacify, rem } from 'polished'
 import styled, { css } from 'styled-components'
 
+import { CardBase } from 'components/CardBase'
+
 import { StepsProgressStemItemListPosition } from '.'
 
 const config = {
@@ -13,15 +15,29 @@ const config = {
 
 export const Description = styled.p`
   font-size: ${props => props.theme.fontSizes.small};
-  text-align: center;
 `
 
 export const Title = styled.span`
-  margin-bottom: ${props => props.theme.spacing.components.medium};
   font-size: ${props => props.theme.fontSizes.medium};
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.content.title};
-  text-align: center;
+  width: max-content;
+`
+
+export const Card = styled(CardBase)<{
+  $isCurrentStep: boolean
+}>`
+  display: flex;
+  flex-direction: column;
+  gap: ${props => props.theme.spacing.components.medium};
+  padding: ${props => props.theme.spacing.components.medium};
+
+  ${({ $isCurrentStep, theme }) =>
+    $isCurrentStep &&
+    css`
+      border: 1px solid ${opacify(-0.85, theme.colors.palette.primary.light)};
+      background-color: ${opacify(-0.9, theme.colors.palette.primary.light)};
+    `}
 `
 
 export const BadgeCircle = styled.span``
@@ -38,10 +54,12 @@ export const Badge = styled.span<{
   border-radius: ${props => props.theme.borderRadius.circle};
   font-size: calc(${config.badgeSize} / 2);
   margin-bottom: ${props => props.theme.spacing.components.medium};
+  flex-shrink: 0;
 
   ${({ $active, $stepsFullyCompleted, theme }) => {
     if ($stepsFullyCompleted)
       return css`
+        color: white;
         background: ${theme.colors.palette.success.normal};
       `
 
@@ -54,7 +72,6 @@ export const Badge = styled.span<{
       default:
       case false:
         return css`
-          color: white;
           background: ${theme.colors.content.detail};
         `
     }
