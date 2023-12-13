@@ -40,7 +40,13 @@ export const Card = styled(CardBase)<{
     `}
 `
 
-export const BadgeCircle = styled.span``
+export const BadgeCircle = styled.span`
+  display: block;
+  height: calc(${config.badgeSize} / 3);
+  width: calc(${config.badgeSize} / 3);
+  border-radius: ${props => props.theme.borderRadius.circle};
+  background-color: currentColor;
+`
 
 export const Badge = styled.span<{
   $active: boolean
@@ -72,6 +78,7 @@ export const Badge = styled.span<{
       default:
       case false:
         return css`
+          color: white;
           background: ${theme.colors.content.detail};
         `
     }
