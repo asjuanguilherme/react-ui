@@ -22,7 +22,9 @@ export const PageTemplateHeader = ({
           <Breadcrumbs items={breadcrumbs} />
         </Container>
       )}
-      <Heading level={1}>{title}</Heading>
+      <Container>
+        <Heading level={1}>{title}</Heading>
+      </Container>
     </S.Wrapper>
   )
 }

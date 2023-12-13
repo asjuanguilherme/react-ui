@@ -14,12 +14,12 @@ export const Title = styled.h1`
 `
 
 export const Wrapper = styled.header`
-  padding: ${props => props.theme.spacing.components.medium} 0;
+  padding-top: ${props => props.theme.spacing.components.medium};
   display: flex;
   flex-direction: column;
   gap: ${props => props.theme.spacing.components.medium};
 
   ${screens.tablet} {
-    padding: ${props => props.theme.spacing.components.xlarge} 0;
+    padding-top: ${props => props.theme.spacing.components.xlarge};
   }
 `
