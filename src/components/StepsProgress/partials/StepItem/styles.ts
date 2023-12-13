@@ -3,12 +3,14 @@ import styled, { css } from 'styled-components'
 
 import { CardBase } from 'components/CardBase'
 
+import { StepsProgressDirection } from '../Root'
+
 import { StepsProgressStemItemListPosition } from '.'
 
 const config = {
   badgeSize: rem(80),
-  progressBarHeight: rem(15),
-  progressBarTopOffset: function () {
+  progressBarSize: rem(15),
+  progressBarOffset: function () {
     return math(this.badgeSize + ' / 2')
   },
 }
@@ -17,11 +19,11 @@ export const Description = styled.p`
   font-size: ${props => props.theme.fontSizes.small};
 `
 
-export const Title = styled.span`
+export const Title = styled.span<{ $direction: StepsProgressDirection }>`
   font-size: ${props => props.theme.fontSizes.medium};
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.content.title};
-  width: max-content;
+  text-wrap: nowrap;
 `
 
 export const Card = styled(CardBase)<{
@@ -31,6 +33,7 @@ export const Card = styled(CardBase)<{
   flex-direction: column;
   gap: ${props => props.theme.spacing.components.medium};
   padding: ${props => props.theme.spacing.components.medium};
+  flex: 1;
 
   ${({ $isCurrentStep, theme }) =>
     $isCurrentStep &&
@@ -90,32 +93,69 @@ export const Wrapper = styled.li<{
   $isCurrentStep: boolean
   $stepsFullyCompleted: boolean
   $active: boolean
-  $width?: number
+  $width?: number | string
+  $direction?: StepsProgressDirection
 }>`
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  position: relative;
   z-index: 0;
-  padding: 0 ${props => props.theme.spacing.components.large};
+  position: relative;
+  align-items: center;
 
-  ${({ $width }) =>
-    $width &&
-    css`
+  ${({ $width }) => {
+    if (!$width) return
+    if (typeof $width === 'string')
+      return css`
+        width: ${$width};
+      `
+
+    return css`
       width: ${$width}px;
-    `}
+    `
+  }}
+
+  ${({ $direction, theme }) => {
+    switch ($direction) {
+      case 'column':
+        return css`
+          padding: ${theme.spacing.components.large} 0;
+          gap: ${theme.spacing.components.large};
+        `
+      default:
+      case 'row':
+        return css`
+          flex-direction: column;
+          padding: 0 ${theme.spacing.components.large};
+        `
+    }
+  }}
 
   &::after {
     content: '';
     position: absolute;
     z-index: -1;
     display: block;
-    height: ${config.progressBarHeight};
-    top: ${config.progressBarTopOffset()};
-    width: 100.1%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+    ${({ $direction }) => {
+      switch ($direction) {
+        case 'column':
+          return css`
+            height: 100.1%;
+            width: ${config.progressBarSize};
+            left: ${config.progressBarOffset()};
+            transform: translateX(-50%);
+          `
+        default:
+        case 'row':
+          return css`
+            top: ${config.progressBarOffset()};
+            height: ${config.progressBarSize};
+            width: 100.1%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          `
+      }
+    }}
 
     ${({
       $active,
@@ -123,6 +163,7 @@ export const Wrapper = styled.li<{
       $isCurrentStep,
       $stepsFullyCompleted,
       theme,
+      $direction,
     }) => {
       if ($stepsFullyCompleted)
         return css`
@@ -135,7 +176,7 @@ export const Wrapper = styled.li<{
             case 'start':
               return css`
                 background: linear-gradient(
-                  -90deg,
+                  ${$direction === 'row' ? '-90deg' : '0deg'},
                   ${theme.colors.palette.primary.light},
                   ${theme.colors.palette.primary.dark}
                 );
@@ -144,7 +185,7 @@ export const Wrapper = styled.li<{
               if ($isCurrentStep)
                 return css`
                   background: linear-gradient(
-                    -90deg,
+                    ${$direction === 'row' ? '-90deg' : '0deg'},
                     ${opacify(-0.5, theme.colors.content.detail)},
                     ${theme.colors.palette.primary.light}
                   );
@@ -157,7 +198,7 @@ export const Wrapper = styled.li<{
             case 'end':
               return css`
                 background: linear-gradient(
-                  90deg,
+                  ${$direction === 'row' ? '90deg' : '0deg'},
                   ${theme.colors.palette.primary.light},
                   ${theme.colors.palette.primary.dark}
                 );
@@ -173,15 +214,19 @@ export const Wrapper = styled.li<{
       }
     }}
 
-    ${({ $listPosition }) => {
+    ${({ $listPosition, $direction }) => {
       switch ($listPosition) {
         case 'start':
           return css`
-            border-radius: 99px 0 0 99px;
+            border-radius: ${$direction === 'row'
+              ? '99px 0 0 99px'
+              : '99px 99px 0 0'};
           `
         case 'end':
           return css`
-            border-radius: 0 99px 99px 0;
+            border-radius: ${$direction === 'row'
+              ? '0 99px 99px 0'
+              : '0 0 99px 99px'};
           `
         default:
         case 'middle':
