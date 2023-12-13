@@ -22,6 +22,7 @@ export const Button = styled(DefaultButton)`
 export const Suffix = styled.span`
   height: 100%;
   display: inline-flex;
+  gap: ${props => props.theme.spacing.components.medium};
   align-items: center;
   padding: 0 ${props => props.theme.spacing.components.xlarge};
   color: ${props => props.theme.colors.content.detail};

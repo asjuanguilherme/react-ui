@@ -12,7 +12,7 @@ import { HTMLStyleAttributes } from 'types'
 
 import { ThemeLayerIndex } from 'lib/theming'
 
-import { ButtonProps, FormField, FormTextField } from 'components'
+import { ButtonProps, FormField, FormTextField, Spinner } from 'components'
 import {
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
@@ -37,6 +37,7 @@ export type TextInputProps = {
   setRef?: MutableRefObject<HTMLInputElement | null>
   onFocused?: (isFocused: boolean) => void
   onClick?: MouseEventHandler
+  loading?: boolean
 } & HTMLStyleAttributes &
   HandleFormFieldStatusParams
 
@@ -56,6 +57,7 @@ export const TextInput = ({
   success,
   onFocus,
   onBlur,
+  loading,
   ...props
 }: TextInputProps) => {
   const [focused, setFocused] = useState(false)
@@ -91,7 +93,12 @@ export const TextInput = ({
           ref={setRef}
           {...props}
         />
-        {suffix && <S.Suffix>{suffix}</S.Suffix>}
+        {(suffix || loading) && (
+          <S.Suffix>
+            <Spinner size="extra-small" />
+            {suffix}
+          </S.Suffix>
+        )}
         {button && <S.Button {...button} />}
       </FormTextField.Wrapper>
       <FormField.Status {...fieldStatus} />
