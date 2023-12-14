@@ -17,11 +17,10 @@ export const Wrapper = styled.button<{
   $variant: ButtonVariant
   $color: ButtonColors
   $layer: ThemeLayerIndex
-  $loading: boolean
-  $shape: ButtonConfigTokenShape
   $transparent: boolean
   $borderLess: boolean
   $active: boolean
+  $shape?: ButtonConfigTokenShape
 }>`
   display: inline-flex;
   flex-shrink: 0;
@@ -56,12 +55,6 @@ export const Wrapper = styled.button<{
         `
     }
   }}
-
-  ${({ $loading }) =>
-    $loading &&
-    css`
-      pointer-events: none;
-    `}
 
   ${({ $variant, theme, $color, $layer, $active }) => {
     const palleteColor = (() => {

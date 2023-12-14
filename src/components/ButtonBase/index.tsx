@@ -1,7 +1,6 @@
+import NextLink from 'next/link'
 import React from 'react'
 import { MouseEvent, MutableRefObject, ReactNode } from 'react'
-
-import { WebTarget } from 'styled-components'
 
 import { HTMLStyleAttributes } from 'types'
 
@@ -24,13 +23,12 @@ export type ButtonBaseCommonProps = {
   setRef?: MutableRefObject<HTMLElement | null>
   type?: 'button' | 'submit'
   disabled?: boolean
-  loading?: boolean
   form?: string
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void
   isExternal?: boolean
   href?: string
-  linkComponent?: WebTarget
   shape?: ButtonConfigTokenShape
+  loading?: boolean
 } & HTMLStyleAttributes
 
 export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
@@ -57,8 +55,6 @@ export type ButtonBaseProps =
 
 export const ButtonBase = ({
   children,
-  linkComponent,
-  loading,
   isExternal,
   layer = 1,
   type = 'button',
@@ -68,12 +64,13 @@ export const ButtonBase = ({
   setRef,
   borderLess = false,
   transparent = false,
-  active,
+  active = false,
   ...props
 }: ButtonBaseProps) => {
   return (
     <S.Wrapper
-      as={props.href ? linkComponent || 'a' : 'button'}
+      as={props.href ? (NextLink as unknown as 'a') || 'a' : 'button'}
+      // @ts-expect-error
       ref={setRef}
       rel={props.href && isExternal ? 'noopener noreferrer' : undefined}
       target={props.href && isExternal ? '_blank' : '_self'}
@@ -83,7 +80,6 @@ export const ButtonBase = ({
       $borderLess={borderLess}
       $color={color}
       $layer={layer}
-      $loading={loading}
       $shape={shape}
       $transparent={transparent}
       $variant={variant}

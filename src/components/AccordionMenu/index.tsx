@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react'
+import React, { MouseEventHandler } from 'react'
 
 import { HTMLStyleAttributes } from 'types'
 
@@ -25,13 +25,11 @@ export type AccordionMenuProps = {
   items?: AccordionMenuItemProps[]
   layer?: ThemeLayerIndex
   icon?: IconComponent
-  anchorComponent?: FC<object>
   size?: 'small' | 'medium'
 } & HTMLStyleAttributes
 
 export const AccordionMenu = ({
   items,
-  anchorComponent,
   size = 'small',
   ...props
 }: AccordionMenuProps) => {
@@ -42,7 +40,6 @@ export const AccordionMenu = ({
           <Menu.Item
             key={item.key}
             {...item}
-            anchorComponent={anchorComponent}
             href={item.href || ''}
             layer={props.layer}
             liTag

@@ -1,4 +1,5 @@
-import React from 'react'
+import NextLinK from 'next/link'
+import React, { useMemo } from 'react'
 import { MouseEventHandler, MutableRefObject } from 'react'
 
 import { HTMLStyleAttributes } from 'types'
@@ -24,14 +25,12 @@ type MenuItemLinkVariant = MenuItemCommonProps & {
   href: string
   isExternal?: boolean
   setRef?: MutableRefObject<HTMLAnchorElement | null>
-  anchorComponent?: React.FC
 }
 
 type MenuItemButtonVariant = MenuItemCommonProps & {
   setRef?: MutableRefObject<HTMLButtonElement | null>
   href?: never
   isExternal?: never
-  anchorComponent?: never
 }
 
 export type MenuItemProps = MenuItemLinkVariant | MenuItemButtonVariant
@@ -44,19 +43,24 @@ export const MenuItem = ({
   isExternal,
   liTag = true,
   setRef,
-  anchorComponent,
   size = 'medium',
   ...props
 }: MenuItemProps) => {
+  const LinkComponent = useMemo(() => {
+    if (NextLinK) return NextLinK
+
+    return 'a'
+  }, [])
+
   return (
     <S.Wrapper as={liTag ? 'li' : 'span'}>
       <S.Button
         $active={active}
         $layer={layer}
         $size={size}
-        as={props.href ? (anchorComponent ? anchorComponent : 'a') : 'button'}
         ref={setRef}
         rel={isExternal ? 'noopener noreferrer' : undefined}
+        as={props.href ? LinkComponent : 'button'}
         {...props}
       >
         {Icon && <Icon />}
