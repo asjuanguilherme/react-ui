@@ -32,7 +32,7 @@ export const Wrapper = styled(ButtonBase)<{
         return css`
           height: ${theme.button.height.small};
           width: ${theme.button.height.small};
-          font-size: ${theme.fontSizes.small};
+          font-size: ${theme.fontSizes.medium};
         `
       case 'medium':
         return css`

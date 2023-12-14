@@ -19,14 +19,14 @@ import {
 } from 'components/FormField/utils/handleFormFieldStatus'
 
 import * as S from './styles'
+import { EyeIcon, EyeSlashIcon } from 'icons'
 
-export type TextInputProps = {
+type TextInputCommonProps = {
   label?: string
   suffix?: ReactNode
   prefix?: ReactNode
   fillWidth?: boolean
   layer?: ThemeLayerIndex
-  type?: 'text' | 'email' | 'password' | 'tel'
   placeholder?: string
   button?: ButtonProps
   value?: string
@@ -40,6 +40,18 @@ export type TextInputProps = {
   loading?: boolean
 } & HTMLStyleAttributes &
   HandleFormFieldStatusParams
+
+type TextInputPasswordProps = TextInputCommonProps & {
+  type: 'password'
+  showPasswordVisibilityButton?: boolean
+}
+
+type TextInputDefaultProps = TextInputCommonProps & {
+  type?: 'text' | 'email' | 'password' | 'tel'
+  showPasswordVisibilityButton?: never
+}
+
+export type TextInputProps = TextInputDefaultProps | TextInputPasswordProps
 
 export const TextInput = ({
   className,
@@ -58,9 +70,12 @@ export const TextInput = ({
   onFocus,
   onBlur,
   loading,
+  type,
+  showPasswordVisibilityButton = true,
   ...props
 }: TextInputProps) => {
   const [focused, setFocused] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   useEffect(() => {
     onFocused && onFocused(focused)
@@ -91,6 +106,9 @@ export const TextInput = ({
             onFocus && onFocus(e)
           }}
           ref={setRef}
+          type={
+            type === 'password' ? (showPassword ? 'text' : 'password') : type
+          }
           {...props}
         />
         {(suffix || loading) && (
@@ -99,6 +117,18 @@ export const TextInput = ({
             {suffix}
           </S.Suffix>
         )}
+        {!props.disabled &&
+          showPasswordVisibilityButton &&
+          type === 'password' && (
+            <S.ShowPasswordButton
+              icon={showPassword ? EyeIcon : EyeSlashIcon}
+              size="small"
+              layer={layer}
+              variant="layerBased"
+              borderLess
+              onClick={() => setShowPassword(state => !state)}
+            />
+          )}
         {button && <S.Button {...button} />}
       </FormTextField.Wrapper>
       <FormField.Status {...fieldStatus} />

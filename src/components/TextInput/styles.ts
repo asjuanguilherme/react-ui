@@ -2,7 +2,11 @@ import { FormTextField } from 'components/FormTextField'
 
 import styled, { keyframes } from 'styled-components'
 
-import { Button as DefaultButton } from '..'
+import { Button as DefaultButton, IconButton } from '..'
+
+export const ShowPasswordButton = styled(IconButton)`
+  margin-right: ${props => props.theme.spacing.components.small};
+`
 
 const appearButtonKeyframes = keyframes`
   from {
