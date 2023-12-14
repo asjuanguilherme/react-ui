@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@asjuanguilherme/eslint-config/-/eslint-config-0.1.3.tgz#3956ae6aec4d24369bf79759d8ff1ca059279806"
   integrity sha512-FCn55CE1DtPigwm4cgd03tADqq33zOdFrgyD4UfZg42FhFJSabneiWEhbqmlKYqgjrT/LNzSmanBMOH+j9lyvg==
 
-"@asjuanguilherme/js-utils@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@asjuanguilherme/js-utils/-/js-utils-0.4.3.tgz#eeeddf77a15b259ff635ee7076110d0e9b85d4fa"
-  integrity sha512-1gDTM0gQGkUy8Ey97tx9g2ioK52U+YmKbxY3Rekr/HmvLHvPZvJuX/BcH2UGx58B0r/OP3D8BrwsykFM9EjJ7w==
+"@asjuanguilherme/js-utils@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@asjuanguilherme/js-utils/-/js-utils-0.5.0.tgz#bd57b682c675622017ce4f1c6550771e447b13be"
+  integrity sha512-xqutQuxy4S4V1JJFbpj1KiiybzI+Rfs5eyUWu2tVqFix8PZKKfknL+TcfMg9++fUcedg6Hf/vcuJKdkOVc7iKQ==
 
 "@asjuanguilherme/prettier-config@^1.0.0":
   version "1.0.0"

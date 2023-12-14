@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@asjuanguilherme/eslint-config": "^0.1.2",
-    "@asjuanguilherme/js-utils": "^0.4.3",
+    "@asjuanguilherme/js-utils": "^0.5.0",
     "@asjuanguilherme/prettier-config": "^1.0.0",
     "@asjuanguilherme/tsconfig": "^0.2.1",
     "@types/lodash": "^4.14.202",
