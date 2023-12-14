@@ -5,7 +5,7 @@ export const Content = styled.span<{ $highlightContent: boolean }>`
     $highlightContent &&
     css`
       font-size: ${props => props.theme.fontSizes.small};
-      font-weight: ${props => props.theme.fontWeight.semibold};
+      font-weight: ${props => props.theme.fontWeights.bold};
     `}
 `
 
