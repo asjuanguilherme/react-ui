@@ -95,7 +95,7 @@ export const TextInput = ({
         />
         {(suffix || loading) && (
           <S.Suffix>
-            <Spinner size="extra-small" />
+            {loading && <Spinner size="extra-small" />}
             {suffix}
           </S.Suffix>
         )}
