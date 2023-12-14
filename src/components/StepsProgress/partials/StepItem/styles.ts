@@ -174,6 +174,14 @@ export const Wrapper = styled.li<{
         case true:
           switch ($listPosition) {
             case 'start':
+              if ($isCurrentStep)
+                return css`
+                  background: linear-gradient(
+                    ${$direction === 'row' ? '-90deg' : '0deg'},
+                    ${opacify(-0.5, theme.colors.content.detail)},
+                    ${theme.colors.palette.primary.light}
+                  );
+                `
               return css`
                 background: linear-gradient(
                   ${$direction === 'row' ? '-90deg' : '0deg'},
