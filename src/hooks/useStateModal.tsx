@@ -115,5 +115,16 @@ export const useStateModal = (modalIdentifier: string) => {
     })
   }
 
-  return { showErrorModal, showLoadingModal, showSuccessModal, destroy }
+  const closeAndResetModal = () => {
+    close()
+    reset()
+  }
+
+  return {
+    showErrorModal,
+    showLoadingModal,
+    showSuccessModal,
+    destroy,
+    closeAndResetModal,
+  }
 }
