@@ -4,12 +4,14 @@ const env = process.env.NODE_ENV
 
 export default defineConfig([
   {
-    entry: ['src/index.ts'],
-    format: ['cjs', 'esm'],
+    entry: ['src/**/*.ts', 'src/**/*.tsx'],
+    format: ['esm'],
     dts: true,
     cjsInterop: true,
-    splitting: true,
+    splitting: false,
     treeshake: true,
-    clean: env === 'production',
+    clean: true,
+    bundle: false,
+    keepNames: true,
   },
 ])

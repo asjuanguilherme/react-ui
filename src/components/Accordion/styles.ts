@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
-import { screens } from 'lib/responsiveness'
+import { screens } from '@/lib/responsiveness'
 
-import { CardBase } from 'components/CardBase'
+import { CardBase } from '@/components/CardBase'
 
 export const ContentWrapper = styled.div<{ $enableContentPadding: boolean }>`
   font-size: ${props => props.theme.fontSizes.small};

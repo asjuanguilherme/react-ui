@@ -1,9 +1,14 @@
 import React, { CSSProperties, ReactNode, useEffect, useState } from 'react'
 
-import { ThemeLayerIndex } from 'lib'
+import { ThemeLayerIndex } from '@/lib'
 
-import { Button, ButtonProps } from 'components/Button'
-import { CheckIcon, InfoIcon, TriangleExclamationIcon, XmarkIcon } from 'icons'
+import { Button, ButtonProps } from '@/components/Button'
+import {
+  CheckIcon,
+  InfoIcon,
+  TriangleExclamationIcon,
+  XmarkIcon,
+} from '@/icons'
 
 import * as S from './styles'
 

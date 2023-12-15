@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IconButtonProps } from 'components/IconButton'
+import { IconButtonProps } from '@/components/IconButton'
 
 import * as S from './styles'
 

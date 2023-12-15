@@ -1,11 +1,11 @@
 import React from 'react'
 import { ReactNode } from 'react'
 
-import { FieldHeightToken } from 'lib'
+import { FieldHeightToken } from '@/lib'
 
-import { Spinner } from 'components'
-import { ButtonBaseProps } from 'components/ButtonBase'
-import { IconComponent } from 'icons'
+import { Spinner } from '@/components'
+import { ButtonBaseProps } from '@/components/ButtonBase'
+import { IconComponent } from '@/icons'
 
 import * as S from './styles'
 

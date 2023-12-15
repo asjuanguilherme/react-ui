@@ -1,9 +1,9 @@
 import React, { MouseEventHandler, MutableRefObject } from 'react'
 
-import { ButtonHeightToken, ThemeLayerIndex } from 'lib/theming'
+import { ButtonHeightToken, ThemeLayerIndex } from '@/lib/theming'
 
-import { Chevron, ChevronDirection } from 'components'
-import { IconComponent } from 'icons'
+import { Chevron, ChevronDirection } from '@/components'
+import { IconComponent } from '@/icons'
 
 import * as S from './styles'
 

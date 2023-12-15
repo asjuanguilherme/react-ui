@@ -1,7 +1,7 @@
 import { math, opacify, rem } from 'polished'
 import styled, { css } from 'styled-components'
 
-import { CardBase } from 'components/CardBase'
+import { CardBase } from '@/components/CardBase'
 
 import { StepsProgressDirection } from '../Root'
 

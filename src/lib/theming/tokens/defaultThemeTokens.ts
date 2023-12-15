@@ -1,4 +1,4 @@
-import { fontFamily } from 'fonts'
+import { fontFamily } from '@/fonts'
 
 import { ThemeTokens } from './tokens'
 

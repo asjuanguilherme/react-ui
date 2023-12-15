@@ -1,9 +1,9 @@
 import styled, { css, keyframes } from 'styled-components'
 
-import { fontFamily } from 'fonts'
+import { fontFamily } from '@/fonts'
 
-import { screens } from 'lib/responsiveness'
-import { ThemeLayerIndex } from 'lib/theming'
+import { screens } from '@/lib/responsiveness'
+import { ThemeLayerIndex } from '@/lib/theming'
 
 import { ModalVariant } from '.'
 

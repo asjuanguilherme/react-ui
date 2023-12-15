@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, ReactNode } from 'react'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
 import * as S from './styles'
 

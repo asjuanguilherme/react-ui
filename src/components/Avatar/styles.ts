@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 import { generateColorFromString } from '@asjuanguilherme/js-utils'
 
-import { fontFamily } from 'fonts'
+import { fontFamily } from '@/fonts'
 
 export const Image = styled.img`
   width: 100%;

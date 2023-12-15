@@ -1,9 +1,9 @@
 import React from 'react'
 import { ReactNode } from 'react'
 
-import { HTMLStyleAttributes } from 'types'
+import { HTMLStyleAttributes } from '@/types'
 
-import { breakpoints } from 'lib/responsiveness'
+import { breakpoints } from '@/lib/responsiveness'
 
 import * as S from './styles'
 

@@ -3,7 +3,7 @@ import { MutableRefObject } from 'react'
 
 import { getInitialsFromName } from '@asjuanguilherme/js-utils'
 
-import { HTMLStyleAttributes } from 'types'
+import { HTMLStyleAttributes } from '@/types'
 
 import * as S from './styles'
 

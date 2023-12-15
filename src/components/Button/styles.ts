@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
-import { ButtonHeightToken } from 'lib'
+import { ButtonHeightToken } from '@/lib'
 
-import { ButtonBase } from 'components/ButtonBase'
+import { ButtonBase } from '@/components/ButtonBase'
 
 const horizontalPadding = (size: string) => css`
   padding-left: ${size};

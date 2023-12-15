@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { ChevronRightIcon } from 'icons'
+import { ChevronRightIcon } from '@/icons'
 
 export const ItemContent = styled.span`
   text-decoration: none;

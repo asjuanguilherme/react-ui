@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
 import { CardBaseProps } from '.'
 import { opacify } from 'polished'

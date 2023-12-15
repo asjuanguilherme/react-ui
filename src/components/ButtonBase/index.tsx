@@ -2,13 +2,13 @@ import NextLink from 'next/link'
 import React from 'react'
 import { MouseEvent, MutableRefObject, ReactNode } from 'react'
 
-import { HTMLStyleAttributes } from 'types'
+import { HTMLStyleAttributes } from '@/types'
 
 import {
   ButtonConfigTokenShape,
   ThemeLayerIndex,
   ThemePaletteColors,
-} from 'lib/theming'
+} from '@/lib/theming'
 
 import * as S from './styles'
 

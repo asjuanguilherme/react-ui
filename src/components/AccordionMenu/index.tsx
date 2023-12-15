@@ -1,11 +1,11 @@
 import React, { MouseEventHandler } from 'react'
 
-import { HTMLStyleAttributes } from 'types'
+import { HTMLStyleAttributes } from '@/types'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
-import { Accordion, Menu } from 'components'
-import { IconComponent } from 'icons'
+import { Accordion, Menu } from '@/components'
+import { IconComponent } from '@/icons'
 
 export type AccordionMenuItemProps = {
   key?: string

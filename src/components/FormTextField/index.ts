@@ -1,9 +1,9 @@
 import { mix } from 'polished'
 import styled, { css } from 'styled-components'
 
-import { fontFamily } from 'fonts'
+import { fontFamily } from '@/fonts'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
 export type TextFieldSharedStyleProps = {
   $layer: ThemeLayerIndex

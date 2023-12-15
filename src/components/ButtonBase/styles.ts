@@ -3,13 +3,13 @@ import styled, { css } from 'styled-components'
 
 import { regexPatterns } from '@asjuanguilherme/js-utils'
 
-import { fontFamily } from 'fonts'
+import { fontFamily } from '@/fonts'
 
 import {
   ButtonConfigTokenShape,
   ThemeLayerIndex,
   generateThemeColorPaletteItem,
-} from 'lib/theming'
+} from '@/lib/theming'
 
 import { ButtonColors, ButtonVariant } from '.'
 

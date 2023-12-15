@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
 import { RatingStar } from './RatingStar'
 import * as S from './styles'

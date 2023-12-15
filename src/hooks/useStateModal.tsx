@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ModalContextItemProps, useModal } from 'contexts/Modal'
+import { ModalContextItemProps, useModal } from '@/contexts/Modal'
 
-import { ButtonProps, StateModalContent } from 'components'
+import { ButtonProps, StateModalContent } from '@/components'
 
 type StateModalProps = {
   title?: string

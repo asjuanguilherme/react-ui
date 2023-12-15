@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-import { fontFamily } from 'fonts'
+import { fontFamily } from '@/fonts'
 
 export const resets = css`
   * {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { ChevronDownIcon } from 'icons'
+import { ChevronDownIcon } from '@/icons'
 
 import { ChevronDirection } from '.'
 

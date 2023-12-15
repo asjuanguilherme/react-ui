@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
-import { Button, IconButton } from 'components'
-import { XmarkIcon } from 'icons'
+import { Button, IconButton } from '@/components'
+import { XmarkIcon } from '@/icons'
 
 import * as S from './styles'
 

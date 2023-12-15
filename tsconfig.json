@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "jsx": "preserve",
     "incremental": false,
     "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["src"]
+    },
+    "outDir": "dist"
   },
   "extends": "@asjuanguilherme/tsconfig/react-library.json",
   "include": ["src/**/*.tsx", "src/**/*.ts", "styled.d.ts", "./tsup.config.ts"],

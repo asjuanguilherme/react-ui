@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
-import { fontFamily } from 'fonts'
+import { fontFamily } from '@/fonts'
 
-import { CardBase } from 'components/CardBase'
+import { CardBase } from '@/components/CardBase'
 
 export const Title = styled.span`
   font-size: ${props => props.theme.fontSizes.large};

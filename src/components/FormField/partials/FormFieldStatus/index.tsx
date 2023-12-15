@@ -5,7 +5,7 @@ import {
   CircleExclamationIcon,
   IconComponent,
   InfoCircleIcon,
-} from 'icons'
+} from '@/icons'
 
 import * as S from './styles'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { DropdownMenu, DropdownMenuProps } from 'components'
-import { BRFlagIcon, USAFlagIcon } from 'icons'
+import { DropdownMenu, DropdownMenuProps } from '@/components'
+import { BRFlagIcon, USAFlagIcon } from '@/icons'
 
 export type ValidLocales = 'pt-BR' | 'en'
 

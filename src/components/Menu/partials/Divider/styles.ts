@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
 export const Wrapper = styled.span<{ $layer: ThemeLayerIndex }>`
   display: inline-flex;

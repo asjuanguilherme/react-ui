@@ -9,9 +9,9 @@ import React, {
 
 import { ThemeProvider } from 'styled-components'
 
-import { getThemeCookie, saveThemeCookie } from 'misc'
+import { getThemeCookie, saveThemeCookie } from '@/misc'
 
-import { Theme } from 'lib/theming'
+import { Theme } from '@/lib/theming'
 
 export type GlobalThemeContextProps = {
   themeToggle: () => void

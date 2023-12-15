@@ -7,12 +7,12 @@ import React, {
 } from 'react'
 
 import _uniqueId from 'lodash/uniqueId'
-import { HTMLStyleAttributes } from 'types'
+import { HTMLStyleAttributes } from '@/types'
 
-import { ThemeLayerIndex } from 'lib/theming'
+import { ThemeLayerIndex } from '@/lib/theming'
 
-import { ChevronButton } from 'components'
-import { IconComponent } from 'icons'
+import { ChevronButton } from '@/components'
+import { IconComponent } from '@/icons'
 
 import * as S from './styles'
 
