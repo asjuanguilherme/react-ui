@@ -1,5 +1,5 @@
 import { mix } from 'polished'
-import styled, { css } from 'styled-components'
+import { styled, css } from 'styled-components'
 
 import { fontFamily } from '@/fonts'
 

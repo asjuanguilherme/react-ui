@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import { styled, css } from 'styled-components'
 import { StepsProgressDirection } from '../Root'
 
 export const Wrapper = styled.ol<{ $direction: StepsProgressDirection }>`

@@ -1,5 +1,5 @@
 import { math, opacify, rem } from 'polished'
-import styled, { css } from 'styled-components'
+import { styled, css } from 'styled-components'
 
 import { CardBase } from '@/components/CardBase'
 

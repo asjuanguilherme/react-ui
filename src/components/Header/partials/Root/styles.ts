@@ -1,5 +1,5 @@
 import { opacify } from 'polished'
-import styled, { css } from 'styled-components'
+import { styled, css } from 'styled-components'
 
 import { Container as DefaultContainer } from '@/components'
 

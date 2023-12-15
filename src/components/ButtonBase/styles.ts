@@ -1,5 +1,5 @@
 import { grayscale, readableColor } from 'polished'
-import styled, { css } from 'styled-components'
+import { styled, css } from 'styled-components'
 
 import { regexPatterns } from '@asjuanguilherme/js-utils'
 

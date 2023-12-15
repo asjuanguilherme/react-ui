@@ -1,5 +1,5 @@
 import { opacify } from 'polished'
-import styled, { css, keyframes } from 'styled-components'
+import { styled, css, keyframes } from 'styled-components'
 
 import { fontFamily } from '@/fonts'
 

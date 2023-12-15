@@ -1,5 +1,5 @@
 import { rem } from 'polished'
-import styled, { css } from 'styled-components'
+import { styled, css } from 'styled-components'
 
 import { ThemeLayerIndex } from '@/lib/theming'
 
