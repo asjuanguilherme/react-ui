@@ -1,6 +1,5 @@
+import { poppinsFontFamily } from '~/lib/font'
 import { css } from 'styled-components'
-
-import { fontFamily } from '@/fonts'
 
 export const resets = css`
   * {
@@ -16,8 +15,8 @@ export const resets = css`
   }
 
   html {
-    font-family: ${fontFamily.poppins.name};
-    font-weight: ${fontFamily.poppins.weights.regular};
+    font-family: ${poppinsFontFamily.name};
+    font-weight: ${poppinsFontFamily.weights.regular};
     color: ${props => props.theme.colors.content.text};
     background-color: ${props => props.theme.colors.layers[0].background};
   }

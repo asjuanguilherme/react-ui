@@ -7,16 +7,16 @@ import React, {
   useState,
 } from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
 import {
   FormField,
   FormTextField,
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
-} from '@/components'
+} from '~/components'
 
 export type TextAreaProps = {
   label?: string

@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
 import * as S from './styles'
 

@@ -3,13 +3,13 @@ import { styled, css } from 'styled-components'
 
 import { regexPatterns } from '@asjuanguilherme/js-utils'
 
-import { fontFamily } from '@/fonts'
+import { poppinsFontFamily } from '~/lib/font'
 
 import {
   ButtonConfigTokenShape,
   ThemeLayerIndex,
   generateThemeColorPaletteItem,
-} from '@/lib/theming'
+} from '~/lib/theming'
 
 import { ButtonColors, ButtonVariant } from '.'
 
@@ -27,7 +27,7 @@ export const Wrapper = styled.button<{
   line-height: 1em;
   align-items: center;
   justify-content: center;
-  font-weight: ${fontFamily.poppins.weights.medium};
+  font-weight: ${poppinsFontFamily.weights.medium};
   gap: ${props => props.theme.spacing.components.small};
   transition-duration: ${props => props.theme.transitionDurations.fast};
   transition-property: background;

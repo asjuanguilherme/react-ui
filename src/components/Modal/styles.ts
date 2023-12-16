@@ -1,9 +1,8 @@
 import { styled, css, keyframes } from 'styled-components'
 
-import { fontFamily } from '@/fonts'
-
-import { screens } from '@/lib/responsiveness'
-import { ThemeLayerIndex } from '@/lib/theming'
+import { screens } from '~/lib/responsiveness'
+import { poppinsFontFamily } from '~/lib/font'
+import { ThemeLayerIndex } from '~/lib/theming'
 
 import { ModalVariant } from '.'
 
@@ -23,7 +22,7 @@ export const BoxContent = styled.div`
 export const Title = styled.h2`
   color: ${props => props.theme.colors.content.text};
   font-size: ${props => props.theme.fontSizes.medium};
-  font-weight: ${fontFamily.poppins.weights.medium};
+  font-weight: ${poppinsFontFamily.weights.medium};
   margin-bottom: 0;
 `
 

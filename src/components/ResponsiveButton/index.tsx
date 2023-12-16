@@ -2,9 +2,9 @@ import React, { MouseEventHandler } from 'react'
 
 import { SupportedHTMLElements } from 'styled-components'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { IconComponent } from '@/icons'
+import { IconComponent } from '~/icons'
 
 import * as S from './styles'
 

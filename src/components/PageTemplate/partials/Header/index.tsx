@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { Breadcrumbs, BreadcrumbsProps, Container, Heading } from '@/components'
+import { Breadcrumbs, BreadcrumbsProps, Container, Heading } from '~/components'
 
 import * as S from './styles'
 

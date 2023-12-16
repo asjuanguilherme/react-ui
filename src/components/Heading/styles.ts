@@ -1,6 +1,6 @@
 import { styled, css } from 'styled-components'
 
-import { screens } from '@/lib'
+import { screens } from '~/lib'
 
 import { HeadingLevel } from '.'
 

@@ -1,8 +1,8 @@
 import { styled, css } from 'styled-components'
 
-import { fontFamily } from '@/fonts'
+import { poppinsFontFamily } from '~/lib/font'
 
-import { CardBase } from '@/components/CardBase'
+import { CardBase } from '~/components/CardBase'
 
 export const Slug = styled.span`
   position: absolute;
@@ -15,7 +15,7 @@ export const Slug = styled.span`
   overflow: hidden;
 
   b {
-    font-weight: ${fontFamily.poppins.weights.bold};
+    font-weight: ${poppinsFontFamily.weights.bold};
     color: ${props => props.theme.colors.palette.primary.normal};
   }
 `

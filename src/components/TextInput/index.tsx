@@ -8,18 +8,18 @@ import React, {
   useState,
 } from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
-import { ButtonProps, FormField, FormTextField, Spinner } from '@/components'
+import { ButtonProps, FormField, FormTextField, Spinner } from '~/components'
 import {
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
-} from '@/components/FormField/utils/handleFormFieldStatus'
+} from '~/components/FormField/utils/handleFormFieldStatus'
 
 import * as S from './styles'
-import { EyeIcon, EyeSlashIcon } from '@/icons'
+import { EyeIcon, EyeSlashIcon } from '~/icons'
 
 type TextInputCommonProps = {
   label?: string

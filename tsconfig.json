@@ -3,14 +3,16 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "incremental": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "pretty": true,
+    "target": "ESNext",
     "paths": {
-      "@/*": ["src"]
+      "~/*": ["src"]
     },
     "outDir": "dist"
   },
   "extends": "@asjuanguilherme/tsconfig/react-library.json",
-  "include": ["src/**/*.tsx", "src/**/*.ts", "styled.d.ts", "./tsup.config.ts"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./styled.d.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
-import { ChevronButton, Menu, Popover } from '@/components'
-import { MenuItemProps } from '@/components/Menu/partials'
-import { IconComponent } from '@/icons'
+import { ChevronButton, Menu, Popover } from '~/components'
+import { MenuItemProps } from '~/components/Menu/partials'
+import { IconComponent } from '~/icons'
 
 export type DropdownMenuItem = MenuItemProps & { key: string }
 

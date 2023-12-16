@@ -1,8 +1,7 @@
 import { opacify } from 'polished'
 import { styled, css, keyframes } from 'styled-components'
 
-import { fontFamily } from '@/fonts'
-
+import { poppinsFontFamily } from '~/lib/font'
 import { StateType } from '.'
 
 export const ActionButtons = styled.div`
@@ -20,7 +19,7 @@ export const Message = styled.div`
 
 export const Title = styled.span`
   font-size: ${props => props.theme.fontSizes.medium};
-  font-weight: ${fontFamily.poppins.weights.medium};
+  font-weight: ${poppinsFontFamily.weights.medium};
   line-height: 1.3em;
   margin-bottom: ${props => props.theme.spacing.components.medium};
 `

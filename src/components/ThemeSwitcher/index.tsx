@@ -2,12 +2,12 @@ import React from 'react'
 
 import { useTheme } from 'styled-components'
 
-import { ThemeType } from '@/lib/theming'
+import { ThemeType } from '~/lib/theming'
 
-import { useGlobalTheme } from '@/contexts'
+import { useGlobalTheme } from '~/contexts'
 
-import { IconButton } from '@/components/IconButton'
-import { IconComponent, MoonIcon, SunIcon } from '@/icons'
+import { IconButton } from '~/components/IconButton'
+import { IconComponent, MoonIcon, SunIcon } from '~/icons'
 
 const iconByTheme: Record<ThemeType, IconComponent> = {
   dark: MoonIcon,

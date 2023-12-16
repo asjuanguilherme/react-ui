@@ -1,12 +1,12 @@
 import { styled, css } from 'styled-components'
 
-import { fontFamily } from '@/fonts'
+import { poppinsFontFamily } from '~/lib/font'
 
-import { CardBase } from '@/components/CardBase'
+import { CardBase } from '~/components/CardBase'
 
 export const Title = styled.span`
   font-size: ${props => props.theme.fontSizes.large};
-  font-weight: ${fontFamily.poppins.weights.bold};
+  font-weight: ${poppinsFontFamily.weights.bold};
   text-transform: uppercase;
   color: ${props => props.theme.colors.palette.primary.normal};
 `

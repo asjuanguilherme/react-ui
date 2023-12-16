@@ -1,18 +1,18 @@
 import React from 'react'
 import { ChangeEventHandler, useMemo, useState } from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
 import {
   FormField,
   HandleFormFieldStatusParams,
   handleFormFieldStatus,
   TextInput,
-} from '@/components'
-import { ChevronButton, Popover, Menu } from '@/components'
-import { IconComponent, MagIcon } from '@/icons'
+} from '~/components'
+import { ChevronButton, Popover, Menu } from '~/components'
+import { IconComponent, MagIcon } from '~/icons'
 
 export type DropdownSelectSearchProps = {
   enabled: boolean

@@ -1,4 +1,4 @@
-import { fontFamily } from '@/fonts'
+import { poppinsFontFamily } from '~/lib/font'
 
 import { ThemeTokens } from './tokens'
 
@@ -35,7 +35,7 @@ export const defaultThemeTokens: ThemeTokens = {
     xxlarge: '2rem',
     xxxlarge: '2.5rem',
   },
-  fontWeights: fontFamily.poppins.weights,
+  fontWeights: poppinsFontFamily.weights,
   spacing: {
     components: {
       xsmall: '0.25rem',

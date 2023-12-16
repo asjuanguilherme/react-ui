@@ -1,6 +1,6 @@
 {
   "name": "@asjuanguilherme/react-ui",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A React UI components library built with TypeScript and styled-components with customizable styles",
   "keywords": [
     "react",
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/asjuanguilherme/react-ui#readme",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
@@ -41,7 +41,7 @@
     "lint": "eslint ./src/**/*{ts,tsx}",
     "prepublishOnly": "npm run build",
     "format": "prettier --write .",
-    "build": "tsup",
+    "build": "tsc && tsc-alias",
     "dev": "yarn build --watch",
     "clean": "rm -rf node_modules && rm -rf dist"
   },

@@ -1,9 +1,9 @@
 import React from 'react'
 import { HTMLAttributes, MouseEventHandler, useMemo } from 'react'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
-import { IconComponent } from '@/icons'
+import { IconComponent } from '~/icons'
 
 import * as S from './styles'
 

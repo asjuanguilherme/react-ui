@@ -1,5 +1,4 @@
-import { poppinsFontFamily } from '@/fonts/poppins'
-
+import { poppinsFontFamily } from '../font'
 import { defaultThemePalette } from './defaultThemePalette'
 import { ThemeColorPaletteItem } from './generateColorPaletteItem'
 import {

@@ -1,12 +1,12 @@
 import React, { ReactNode, useMemo } from 'react'
 
-import { Button, ButtonProps, Spinner } from '@/components'
+import { Button, ButtonProps, Spinner } from '~/components'
 import {
   CheckIcon,
   InfoIcon,
   TriangleExclamationIcon,
   XmarkIcon,
-} from '@/icons'
+} from '~/icons'
 
 import * as S from './styles'
 

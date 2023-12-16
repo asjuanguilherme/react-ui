@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react'
 
 import _uniqueId from 'lodash/uniqueId'
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
 import * as S from './styles'
 

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { ButtonConfigToken } from '@/lib'
+import { ButtonConfigToken } from '~/lib'
 
-import { Spinner } from '@/components'
-import { ButtonBaseProps } from '@/components/ButtonBase'
-import { IconComponent } from '@/icons'
+import { Spinner } from '~/components'
+import { ButtonBaseProps } from '~/components/ButtonBase'
+import { IconComponent } from '~/icons'
 
 import * as S from './styles'
 

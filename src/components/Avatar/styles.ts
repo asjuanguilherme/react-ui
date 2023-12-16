@@ -3,7 +3,7 @@ import { styled, css } from 'styled-components'
 
 import { generateColorFromString } from '@asjuanguilherme/js-utils'
 
-import { fontFamily } from '@/fonts'
+import { poppinsFontFamily } from '~/lib/font'
 
 export const Image = styled.img`
   width: 100%;
@@ -19,7 +19,7 @@ export const Wrapper = styled.span<{
   justify-content: center;
   border-radius: ${props => props.theme.borderRadius.circle};
   overflow: hidden;
-  font-weight: ${fontFamily.poppins.weights.bold};
+  font-weight: ${poppinsFontFamily.weights.bold};
   flex-shrink: 0;
 
   ${({ $size }) => css`

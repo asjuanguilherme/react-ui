@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
 import * as S from './styles'
 

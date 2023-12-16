@@ -1,9 +1,9 @@
 import { mix } from 'polished'
 import { styled, css } from 'styled-components'
 
-import { fontFamily } from '@/fonts'
+import { poppinsFontFamily } from '~/lib/font'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
 export type TextFieldSharedStyleProps = {
   $layer: ThemeLayerIndex
@@ -17,12 +17,12 @@ export type TextFieldSharedStyleProps = {
 const textFieldSharedStyle = css`
   width: 100%;
   font-size: ${props => props.theme.fontSizes.medium};
-  font-weight: ${fontFamily.poppins.weights.regular};
+  font-weight: ${poppinsFontFamily.weights.regular};
   background: transparent;
   color: ${props => props.theme.colors.content.title};
 
   &::placeholder {
-    font-weight: ${fontFamily.poppins.weights.regular};
+    font-weight: ${poppinsFontFamily.weights.regular};
     color: ${props => props.theme.colors.content.detail};
   }
 `

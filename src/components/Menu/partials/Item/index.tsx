@@ -2,11 +2,11 @@ import NextLinK from 'next/link'
 import React, { useMemo } from 'react'
 import { MouseEventHandler, MutableRefObject } from 'react'
 
-import { HTMLStyleAttributes } from '@/types'
+import { HTMLStyleAttributes } from '~/types'
 
-import { ThemeLayerIndex } from '@/lib/theming'
+import { ThemeLayerIndex } from '~/lib/theming'
 
-import { IconComponent } from '@/icons'
+import { IconComponent } from '~/icons'
 
 import * as S from './styles'
 

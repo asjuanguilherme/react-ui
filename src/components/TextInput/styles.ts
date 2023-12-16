@@ -1,4 +1,4 @@
-import { FormTextField } from '@/components/FormTextField'
+import { FormTextField } from '~/components/FormTextField'
 
 import { styled, keyframes } from 'styled-components'
 

@@ -1,9 +1,9 @@
 import { styled } from 'styled-components'
 
-import { fontFamily } from '@/fonts'
+import { poppinsFontFamily } from '~/lib/font'
 
 export const Wrapper = styled.span`
   display: block;
   font-size: ${props => props.theme.fontSizes.small};
-  font-weight: ${fontFamily.poppins.weights.bold};
+  font-weight: ${poppinsFontFamily.weights.bold};
 `

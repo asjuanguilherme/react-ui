@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ThemeLayerIndex } from '@/lib'
+import { ThemeLayerIndex } from '~/lib'
 
-import { IconComponent } from '@/icons'
+import { IconComponent } from '~/icons'
 
 import { StepsProgressDirection } from '../Root'
 

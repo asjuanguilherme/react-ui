@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react'
 
-import { Modal, ModalComponentProps } from '@/components'
+import { Modal, ModalComponentProps } from '~/components'
 
 export type ModalContextItemProps = Partial<ModalComponentProps> & {
   identifier: string

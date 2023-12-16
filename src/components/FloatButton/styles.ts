@@ -1,7 +1,7 @@
 import { opacify } from 'polished'
 import { styled, css } from 'styled-components'
 
-import { IconButton } from '@/components/IconButton'
+import { IconButton } from '~/components/IconButton'
 
 export const Wrapper = styled(IconButton)<{
   $zIndex: number

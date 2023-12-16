@@ -1,8 +1,8 @@
 import { styled, css } from 'styled-components'
 
-import { ButtonConfigToken } from '@/lib'
+import { ButtonConfigToken } from '~/lib'
 
-import { ButtonBase } from '@/components/ButtonBase'
+import { ButtonBase } from '~/components/ButtonBase'
 
 import {
   BackgroundImageFit,
