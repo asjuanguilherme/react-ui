@@ -1,7 +1,6 @@
 import { styled, css, keyframes } from 'styled-components'
 
 import { screens } from '~/lib/responsiveness'
-import { poppinsFontFamily } from '~/lib/font'
 import { ThemeLayerIndex } from '~/lib/theming'
 
 import { ModalVariant } from '.'
@@ -10,9 +9,10 @@ export const BoxContent = styled.div`
   flex: 1;
   overflow: auto;
   padding: ${props => props.theme.spacing.components.medium};
-  padding-top: 0;
   line-height: 1.8em;
   font-size: ${props => props.theme.fontSizes.small};
+  display: flex;
+  flex-direction: column;
 
   ${screens.tablet} {
     font-size: ${props => props.theme.fontSizes.medium};
@@ -21,8 +21,8 @@ export const BoxContent = styled.div`
 
 export const Title = styled.h2`
   color: ${props => props.theme.colors.content.text};
-  font-size: ${props => props.theme.fontSizes.medium};
-  font-weight: ${poppinsFontFamily.weights.medium};
+  font-size: ${props => props.theme.fontSizes.large};
+  font-weight: ${props => props.theme.fontWeights.medium};
   margin-bottom: 0;
 `
 
@@ -45,13 +45,17 @@ export const CloseButton = styled.button`
   }
 `
 
-export const BoxFooter = styled.div``
+export const BoxFooter = styled.div`
+  padding: ${props => props.theme.spacing.components.medium};
+  border-top: 1px solid ${props => props.theme.colors.layers[1].border};
+`
 
 export const BoxHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: ${props => props.theme.spacing.components.medium};
+  border-bottom: 1px solid ${props => props.theme.colors.layers[1].border};
 `
 
 const appearBoxKeyframes = keyframes`
@@ -108,17 +112,20 @@ export const Wrapper = styled.div<{ $opened: boolean; $variant: ModalVariant }>`
           pointer-events: none;
           justify-content: flex-start;
           align-items: flex-end;
+          transition: ${props => props.theme.transitionDurations.fast};
 
           ${Box} {
             pointer-events: initial;
             box-shadow: 0 0 3rem ${theme.colors.content.title}15;
           }
 
-          ${closed &&
+          ${!$opened &&
           css`
+            opacity: 0;
+
             ${Box} {
+              pointer-events: none;
               transform: scale(0.9);
-              opacity: 0;
             }
           `}
         `

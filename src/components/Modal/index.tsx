@@ -2,12 +2,16 @@ import React, { ReactNode } from 'react'
 
 import { ThemeLayerIndex } from '~/lib/theming'
 
-import { Button, IconButton } from '~/components'
+import { IconButton } from '~/components'
 import { XmarkIcon } from '~/icons'
 
 import * as S from './styles'
 
 export type ModalVariant = 'default' | 'discret'
+
+export type ModalContentCallbackProps = {
+  onClose: VoidFunction
+}
 
 export type ModalComponentProps = {
   onClose: () => void
@@ -16,11 +20,12 @@ export type ModalComponentProps = {
   opened?: boolean
   width?: number
   positionY?: string
-  footer?: ReactNode
   showX?: boolean
   closeOnBlur?: boolean
   variant?: ModalVariant
   layer?: ThemeLayerIndex
+  footer?: ((props: ModalContentCallbackProps) => ReactNode) | ReactNode
+  header?: ((props: ModalContentCallbackProps) => ReactNode) | ReactNode
 }
 
 export const Modal = ({
@@ -34,6 +39,7 @@ export const Modal = ({
   closeOnBlur = true,
   onClose,
   variant = 'default',
+  header,
   layer = 0,
 }: ModalComponentProps) => {
   return (
@@ -49,7 +55,12 @@ export const Modal = ({
         $width={width}
         onClick={e => e.stopPropagation()}
       >
-        {(title || showX) && (
+        {header && (
+          <S.BoxHeader>
+            {typeof header === 'function' ? header({ onClose }) : header}
+          </S.BoxHeader>
+        )}
+        {!header && (title || showX) && (
           <S.BoxHeader>
             <S.Title>{title}</S.Title>
             {showX && (
@@ -62,7 +73,11 @@ export const Modal = ({
           </S.BoxHeader>
         )}
         <S.BoxContent>{content}</S.BoxContent>
-        {footer && <S.BoxFooter>{footer}</S.BoxFooter>}
+        {footer && (
+          <S.BoxFooter>
+            {typeof footer === 'function' ? footer({ onClose }) : footer}
+          </S.BoxFooter>
+        )}
       </S.Box>
     </S.Wrapper>
   )
