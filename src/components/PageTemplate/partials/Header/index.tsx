@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 import { HTMLStyleAttributes } from '~/types'
 
@@ -11,20 +11,23 @@ export type PageTemplateHeaderProps = {
   breadcrumbs?: BreadcrumbsProps['items']
 } & HTMLStyleAttributes
 
-export const PageTemplateHeader = ({
-  title,
-  breadcrumbs,
-}: PageTemplateHeaderProps) => {
-  return (
-    <S.Wrapper>
-      {breadcrumbs && breadcrumbs.length > 0 && (
+export const PageTemplateHeader = forwardRef(
+  ({ title, breadcrumbs, ...props }: PageTemplateHeaderProps, ref) => {
+    return (
+      <S.Wrapper
+        // @ts-ignore
+        ref={ref}
+        {...props}
+      >
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <Container>
+            <Breadcrumbs items={breadcrumbs} />
+          </Container>
+        )}
         <Container>
-          <Breadcrumbs items={breadcrumbs} />
+          <Heading level={1}>{title}</Heading>
         </Container>
-      )}
-      <Container>
-        <Heading level={1}>{title}</Heading>
-      </Container>
-    </S.Wrapper>
-  )
-}
+      </S.Wrapper>
+    )
+  },
+)
