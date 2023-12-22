@@ -31,6 +31,10 @@ export type ModalProviderProps = {
 
 export const ModalContext = createContext({} as ModalContextProps)
 
+const closeModalEventName = 'ui@modal-content/close-modal'
+
+const closeModalEvent = new Event(closeModalEventName)
+
 export const useModal = (
   identifier: string,
   modalProps?: Partial<ModalContextItemProps>,
@@ -115,6 +119,8 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
   }, [])
 
   const closeModal = useCallback((identifier: string) => {
+    document.dispatchEvent(closeModalEvent)
+
     setModals(state =>
       state.map(modal => {
         if (modal.identifier === identifier) return { ...modal, opened: false }
@@ -126,6 +132,8 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
 
   const updateModal = useCallback(
     (identifier: string, newProps: Partial<ModalComponentProps>) => {
+      if (newProps.opened === false) document.dispatchEvent(closeModalEvent)
+
       setModals(state =>
         state.map(modal => {
           if (modal.identifier === identifier)
@@ -147,19 +155,26 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
   }, [])
 
   useEffect(() => {
-    const closedModal = modals.find(
-      modal => !modal.opened && !modal.keepRenderedAfterClosing,
-    )
-
-    if (closedModal) {
-      const timeoutBeforeRemove = setTimeout(
-        () => removeModalFromList(closedModal.identifier),
-        500,
+    const eventListener = () => {
+      const closedModal = modals.find(
+        modal => !modal.opened && !modal.keepRenderedAfterClosing,
       )
 
-      return () => clearTimeout(timeoutBeforeRemove)
+      if (closedModal) {
+        const timeoutBeforeRemove = setTimeout(
+          () => removeModalFromList(closedModal.identifier),
+          500,
+        )
+
+        return () => clearTimeout(timeoutBeforeRemove)
+      }
     }
-  }, [modals, removeModalFromList])
+
+    document.addEventListener(closeModalEventName, eventListener)
+
+    return () =>
+      document.removeEventListener(closeModalEventName, eventListener)
+  }, [])
 
   return (
     <ModalContext.Provider
