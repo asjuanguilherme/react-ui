@@ -29,11 +29,11 @@ export type ButtonBaseCommonProps = {
   href?: string
   shape?: ButtonConfigTokenShape
   loading?: boolean
+  color?: ButtonColors
 } & HTMLStyleAttributes
 
 export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
   variant: 'layerBased'
-  color?: never
   layer?: ThemeLayerIndex
   borderLess?: boolean
   transparent?: boolean
@@ -42,7 +42,6 @@ export type ButtonBaseLayerBasedVariant = ButtonBaseCommonProps & {
 
 export type ButtonBaseEitherVariantsProps = ButtonBaseCommonProps & {
   variant?: ButtonVariant
-  color?: ButtonColors
   layer?: never
   borderLess?: never
   transparent?: never
