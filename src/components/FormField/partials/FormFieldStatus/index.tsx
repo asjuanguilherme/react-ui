@@ -28,6 +28,8 @@ export const FormFieldStatus = ({
 }: FormFieldStatusProps) => {
   const Icon = iconsByType[type]
 
+  if (!text) return <></>
+
   return (
     <S.Wrapper $type={type}>
       {text && <Icon />}

@@ -70,7 +70,7 @@ export const DropdownSelect = ({
   options,
   layer = 1,
   icon,
-  fillWidth,
+  fillWidth = false,
   closeOnSelect = true,
   disabled = false,
   loading = false,
@@ -103,10 +103,17 @@ export const DropdownSelect = ({
   const optionsList = useMemo(() => {
     if (!search?.enabled || !searchValue) return options
 
-    return options?.filter(option => {
-      const regex = new RegExp(searchValue, 'i')
-      return regex.test(option.label)
-    })
+    try {
+      const filteredList = options?.filter(option => {
+        const regex = new RegExp(searchValue, 'i')
+        return regex.test(option.label)
+      })
+
+      return filteredList
+    } catch (err) {
+      console.error(err)
+      return options
+    }
   }, [options, searchValue, search])
 
   const fieldStatus = handleFormFieldStatus({ error, success, info })
@@ -165,6 +172,7 @@ export const DropdownSelect = ({
                     if (closeOnSelect) setIsActive(false)
                   }}
                   title={item.label}
+                  fillWidth
                 />
               ))}
             </Menu.List>

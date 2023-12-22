@@ -35,7 +35,7 @@ const TextArea = styled.textarea`
 
 const Input = styled.input`
   ${textFieldSharedStyle}
-  height: ${props => props.theme.field.height};
+  height: ${props => props.theme.button.height.medium};
 `
 
 const Wrapper = styled.span<TextFieldSharedStyleProps>`

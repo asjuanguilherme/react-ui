@@ -42,7 +42,7 @@ export const DropdownMenu = ({
   transparent,
 }: DropdownMenuProps) => {
   return (
-    <Popover.Root triggerOn={triggerOn}>
+    <Popover.Root triggerOn={triggerOn} fillWidth={fillWidth}>
       {({ isActive, setIsActive, triggerRef, popoverBoxProps }) => (
         <>
           <ChevronButton
@@ -71,6 +71,7 @@ export const DropdownMenu = ({
 
                     if (closeOnSelect) setIsActive(false)
                   }}
+                  fillWidth
                 />
               ))}
             </Menu.List>
