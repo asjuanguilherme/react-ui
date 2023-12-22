@@ -28,7 +28,7 @@ export const Suffix = styled.span`
   display: inline-flex;
   gap: ${props => props.theme.spacing.components.medium};
   align-items: center;
-  padding: 0 ${props => props.theme.spacing.components.xlarge};
+  padding: 0 ${props => props.theme.spacing.components.large};
   color: ${props => props.theme.colors.content.detail};
 `
 
