@@ -27,11 +27,13 @@ export type PopoverRootProps = {
     props: PopoverRootChildrenCallbackProps<T>,
   ) => ReactNode
   triggerOn?: 'hover' | 'click'
+  fillWidth?: boolean
 }
 
 export const PopoverRoot = ({
   children,
   triggerOn = 'hover',
+  fillWidth = false,
 }: PopoverRootProps) => {
   const [isActive, setIsActive] = useState(false)
   const [popoverId] = useState(_uniqueId('popoverId-'))
@@ -104,7 +106,7 @@ export const PopoverRoot = ({
   }
 
   return (
-    <S.Wrapper ref={wrapperRef}>
+    <S.Wrapper ref={wrapperRef} $fillWidth={fillWidth}>
       {children &&
         children({
           popoverId,

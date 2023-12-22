@@ -4,12 +4,12 @@ import { screens } from '~/lib/responsiveness'
 
 import { CardBase } from '~/components/CardBase'
 
-import { PopoverBoxHorizontalAlignment, PopoverBoxVerticalAlignment } from '.'
+import { PopoverBoxDirections, PopoverBoxAlignment } from '.'
 
 export const Box = styled(CardBase)<{
   $visible: boolean
-  $horizontalAlignment: PopoverBoxHorizontalAlignment
-  $verticalAlignment: PopoverBoxVerticalAlignment
+  $alignment?: PopoverBoxAlignment
+  $direction: PopoverBoxDirections
   $maxHeight?: number
   $maxWidth?: number
 }>`
@@ -23,7 +23,6 @@ export const Box = styled(CardBase)<{
     `}
 
   ${screens.tablet} {
-    top: 100%;
     position: absolute;
     z-index: 10;
     width: ${({ $maxWidth }) => ($maxWidth ? $maxWidth + 'px' : 'max-content')};
@@ -40,28 +39,66 @@ export const Box = styled(CardBase)<{
     ${({ $visible }) =>
       !$visible &&
       css`
-        top: calc(100% - 2rem);
         opacity: 0;
         pointer-events: none;
       `};
 
-    ${({ $horizontalAlignment }) => {
-      switch ($horizontalAlignment) {
-        default:
-        case 'center':
+    ${({ $direction }) => {
+      switch ($direction) {
+        case 'top':
           return css`
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 100%;
           `
-        case 'right':
+        case 'bottom':
           return css`
-            right: 0;
+            top: 100%;
           `
         case 'left':
           return css`
-            left: 0;
+            right: 100%;
+          `
+        case 'right':
+          return css`
+            left: 100%;
           `
       }
+    }}
+
+    ${({ $direction, $alignment }) => {
+      if ($direction === 'left' || $direction === 'right')
+        switch ($alignment) {
+          default:
+          case 'center':
+            return css`
+              top: 50%;
+              transform: translateY(-50%);
+            `
+          case 'top':
+            return css`
+              top: 0;
+            `
+          case 'bottom':
+            return css`
+              bottom: 0;
+            `
+        }
+      else
+        switch ($alignment) {
+          default:
+          case 'left':
+            return css`
+              left: 0;
+            `
+          case 'center':
+            return css`
+              left: 50%;
+              transform: translateX(-50%);
+            `
+          case 'right':
+            return css`
+              right: 0;
+            `
+        }
     }};
   }
 `

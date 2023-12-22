@@ -6,28 +6,57 @@ import { ThemeLayerIndex } from '~/lib/theming'
 
 import * as S from './styles'
 
-export type PopoverBoxHorizontalAlignment = 'right' | 'center' | 'left'
+export type PopoverAlignmentForVerticalDirections = 'left' | 'center' | 'right'
 
-export type PopoverBoxVerticalAlignment = 'top' | 'bottom'
+export type PopoverAlignmentForHorizontalDirections =
+  | 'top'
+  | 'center'
+  | 'bottom'
 
-export type PopoverBoxProps = {
+export type PopoverVerticalDirections = 'top' | 'bottom'
+
+export type PopoverHorizontalDirections = 'left' | 'right'
+
+export type PopoverBoxAlignment =
+  | PopoverAlignmentForVerticalDirections
+  | PopoverAlignmentForHorizontalDirections
+
+export type PopoverBoxDirections =
+  | PopoverVerticalDirections
+  | PopoverHorizontalDirections
+
+export type PopoverCommonProps = {
   onClose: () => void
   visible: boolean
   maxHeight?: number
   maxWidth?: number
   layer?: ThemeLayerIndex
   children?: ReactNode
-  horizontalAlignment?: PopoverBoxHorizontalAlignment
-  verticalAlignment?: PopoverBoxVerticalAlignment
+  alignment?: PopoverBoxAlignment
+  direction?: PopoverBoxDirections
 } & HTMLStyleAttributes
+
+export type PopoverBoxHorizontalDirectionProps = PopoverCommonProps & {
+  direction?: PopoverHorizontalDirections
+  alignment?: PopoverAlignmentForHorizontalDirections
+}
+
+export type PopoverBoxVerticalDirectionProps = PopoverCommonProps & {
+  direction?: PopoverVerticalDirections
+  alignment?: PopoverAlignmentForVerticalDirections
+}
+
+export type PopoverBoxProps =
+  | PopoverBoxHorizontalDirectionProps
+  | PopoverBoxVerticalDirectionProps
 
 export const PopoverBox = ({
   children,
   visible = false,
   layer = 1,
   maxHeight,
-  horizontalAlignment = 'center',
-  verticalAlignment = 'top',
+  alignment = 'center',
+  direction = 'bottom',
   maxWidth,
   onClose,
   ...props
@@ -35,11 +64,11 @@ export const PopoverBox = ({
   return (
     <S.Wrapper $visible={visible} onClick={onClose} {...props}>
       <S.Box
-        $horizontalAlignment={horizontalAlignment}
+        $alignment={alignment}
         $maxHeight={maxHeight}
         $maxWidth={maxWidth}
-        $verticalAlignment={verticalAlignment}
         $visible={visible}
+        $direction={direction}
         boxShadow
         layer={layer}
         onClick={e => e.stopPropagation()}
