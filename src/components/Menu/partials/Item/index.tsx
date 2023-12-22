@@ -1,5 +1,5 @@
 import NextLinK from 'next/link'
-import React, { useMemo } from 'react'
+import React, { ReactNode, useMemo } from 'react'
 import { MouseEventHandler, MutableRefObject } from 'react'
 
 import { HTMLStyleAttributes } from '~/types'
@@ -10,15 +10,22 @@ import { IconComponent } from '~/icons'
 
 import * as S from './styles'
 
+export type MenuItemVariant = 'button' | 'basic'
+
+export type MenuItemSize = 'small' | 'medium'
+
 type MenuItemCommonProps = {
-  title?: string
+  title?: ReactNode
   liTag?: boolean
   layer?: ThemeLayerIndex
   onClick?: MouseEventHandler
   active?: boolean
   icon?: IconComponent
   setRef?: never
-  size?: 'small' | 'medium'
+  size?: MenuItemSize
+  variant?: MenuItemVariant
+  fillWidth?: boolean
+  badge?: string
 } & HTMLStyleAttributes
 
 type MenuItemLinkVariant = MenuItemCommonProps & {
@@ -44,6 +51,8 @@ export const MenuItem = ({
   liTag = true,
   setRef,
   size = 'medium',
+  fillWidth = true,
+  variant = 'button',
   ...props
 }: MenuItemProps) => {
   const LinkComponent = useMemo(() => {
@@ -58,6 +67,8 @@ export const MenuItem = ({
         $active={active}
         $layer={layer}
         $size={size}
+        $variant={variant}
+        $fillWidth={fillWidth}
         ref={setRef}
         rel={isExternal ? 'noopener noreferrer' : undefined}
         as={props.href ? LinkComponent : 'button'}

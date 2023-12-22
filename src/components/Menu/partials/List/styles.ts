@@ -8,7 +8,7 @@ export const Wrapper = styled.ul<{
   list-style: none;
   display: flex;
   flex-direction: ${({ $direction }) => $direction};
-  gap: ${props => props.theme.spacing.components.xsmall};
+  gap: ${props => props.theme.spacing.components.small};
   overflow-y: auto;
   max-height: ${({ $maxHeight }) => $maxHeight + 'px'};
 
