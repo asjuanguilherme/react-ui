@@ -1,6 +1,6 @@
 {
   "name": "@asjuanguilherme/react-ui",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A React UI components library built with TypeScript and styled-components with customizable styles",
   "keywords": [
     "react",
