@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode, useEffect, useState } from 'react'
 
-import { ThemeLayerIndex } from '~/lib'
+import { IconComponent, ThemeLayerIndex } from '~/lib'
 
 import { Button, ButtonProps } from '~/components/Button'
 import {
@@ -26,6 +26,7 @@ export type StatusBoxProps = {
   layer?: ThemeLayerIndex
   style?: CSSProperties
   className?: string
+  icon?: IconComponent
 }
 
 const iconByType: Record<StatusBoxTypes, JSX.Element> = {
@@ -45,6 +46,7 @@ export const StatusBox = ({
   opened = true,
   height,
   width,
+  icon: CustomIcon,
   ...props
 }: StatusBoxProps) => {
   const [render, setRender] = useState(opened)
@@ -74,7 +76,7 @@ export const StatusBox = ({
     >
       <S.Header>
         <S.Title>
-          {iconByType[type]}
+          {CustomIcon ? <CustomIcon /> : iconByType[type]}
           {title}
         </S.Title>
         {onClose && (

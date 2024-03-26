@@ -77,8 +77,7 @@ export const Wrapper = styled.div<{
   height: ${props => props.$height ?? 'unset'};
   border-width: 1px;
   border-style: solid;
-  animation: ${appearCard} ${props => props.theme.transitionDurations.default}
-    linear;
+  animation: ${appearCard} ${props => props.theme.transitionDurations.fast} ease;
 
   ${({ $opened, theme }) =>
     !$opened &&
